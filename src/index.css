@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  height: 96vh;
+  /*height: 300px;*/
+  min-height: 100%;
+  width: 98vw;
+  min-width: 100%;
+}
+
+html {
+  /*overflow-y: hidden;*/
+}
+
+
+/* disable copy */
+body, html{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

@@ -1,0 +1,44 @@
+{
+  "name": "fqs-booklet-ghosts",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "production": "webpack -p",
+    "build": "webpack",
+    "dev": "webpack-dev-server --inline --devtool source-map --content-base src/",
+    "serve": "webpack-dev-server --devtool source-map --content-base src/",
+    "test": "jest",
+    "test:watch": "npm test -- --watch"
+  },
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-jest": "^20.0.0",
+    "babel-loader": "^6.4.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.22.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "css-loader": "^0.27.3",
+    "extract-text-webpack-plugin": "^2.1.2",
+    "file-loader": "^0.11.2",
+    "html-webpack-plugin": "^2.30.1",
+    "image-webpack-loader": "^3.3.1",
+    "jest": "^20.0.0",
+    "style-loader": "^0.13.2",
+    "url-loader": "^0.5.9",
+    "webpack": "^2.2.1"
+  },
+  "dependencies": {
+    "material-ui": "^0.17.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-hammer": "0.0.3",
+    "react-hammerjs": "^0.5.0",
+    "react-redux": "^5.0.5",
+    "react-swipeable-views": "^0.12.3",
+    "react-tap-event-plugin": "^2.0.1",
+    "redux": "^3.6.0"
+  }
+}
