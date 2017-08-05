@@ -1,0 +1,110 @@
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+/*.ios-dialog-shim-z-index span {
+  -webkit-transform: translateZ(1px)!important;
+}*/
+
+.SvgColorWhite  {
+  color: rgb(255, 255, 255)!important;
+}
+.SvgColorNone {
+  color: transparent!important;
+}
+.SvgShow {
+  height: 24px;
+}
+.SvgHide {
+  height: 0px!important;
+}
+.SvgColorCyan500 {
+  position: relative;
+  color: #00BCD4!important;
+  top: 6px;
+  left: -6px;
+}
+
+.SmallText article, .SideMenu div.SmallText, span.SmallText {
+  font-size: 20px!important;
+}
+.LargeText article, .SideMenu div.LargeText, span.LargeText  {
+  font-size: 26px!important;
+}
+
+.QuizLabel span {
+  font-size: 20px!important;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.App-inline {
+  display: inline-block!important;
+}
+
+.imgfit {display: inline; height: auto; max-width: 100%; postion: relative; top: 90px;}
+
+.AppBarTitle {
+  /*height: 90px;
+  padding-top: 30px;*/
+}
+
+.App section article table tbody tr td p {
+  text-indent: 50px;
+  margin-top: 0px;
+}
+
+@media screen and (max-width: 689px) {
+    body {
+        /*background-color: lightgreen;*/
+    }
+    section article div div {
+      width: 100%;
+
+    }
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  height: 96vh;
+  /*height: 300px;*/
+  min-height: 100%;
+  width: 98vw;
+  min-width: 100%;
+}
+
+html {
+  /*overflow-y: hidden;*/
+}
+
+
+/* disable copy */
+body, html{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
