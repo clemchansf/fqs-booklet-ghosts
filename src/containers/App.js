@@ -194,10 +194,18 @@ class App extends Component {
     }
 
     handleBookScroll = (e) => {
+
+        let currentTop = e.target.scrollTop
+        let previousTop = this.state.scrollTop
+        let clientHeight = e.target.clientHeight
+        let scrollHeight = e.target.scrollHeight
+
+        const reachedMaxScrollBoundary = () => scrollHeight - currentTop <= clientHeight
+
         // handle momentum scroll case and ending of page movement
-        let rollUp = ((e.target.scrollTop + window.innerHeight === this.state.documentHeight)
-                      || (this.state.scrollTop > (e.target.scrollTop)))
-                      ? false : true
+
+        let rollUp = (currentTop > previousTop && currentTop > 0)
+                      || (currentTop < previousTop && reachedMaxScrollBoundary())
 
         this.setState({
                       rollUp,            // handle momentum scroll reach 0 pixel
@@ -300,9 +308,8 @@ class App extends Component {
         return status
     }
     handleChangePageCallback = (page) => {
-        let rollUp = this.processRollUp(page)
+        this.setState({page})
 
-        this.setState({page,rollUp})
     }
     handlePageSwipe = (index, indexLatest )=>{
         let rollUp = this.processRollUp(index)
@@ -387,12 +394,6 @@ class App extends Component {
           />,
         ]
 
-        const platforms_check = () => {
-          return !is_iOS() || !is_android()
-        }
-        console.log(" window.innerHeight --- ",  window.innerHeight)
-        console.log(" window.outerHeight >>> ",  window.outerHeight)
-        console.log(" documentHeight >>> ",  this.state.documentHeight)
         return (
 
           <nav className="App" style={{height: window.innerHeight}}>
