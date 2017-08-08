@@ -20147,12 +20147,6 @@ var App = function (_Component) {
         onTouchTap: this.handleViewPreference
       })];
 
-      var platforms_check = function platforms_check() {
-        return !(0, _osDetection.is_iOS)() || !(0, _osDetection.is_android)();
-      };
-      console.log(" window.innerHeight --- ", window.innerHeight);
-      console.log(" window.outerHeight >>> ", window.outerHeight);
-      console.log(" documentHeight >>> ", this.state.documentHeight);
       return _react2.default.createElement(
         'nav',
         { className: 'App', style: { height: window.innerHeight } },
@@ -20296,8 +20290,19 @@ var _initialiseProps = function _initialiseProps() {
   };
 
   this.handleBookScroll = function (e) {
+
+    var currentTop = e.target.scrollTop;
+    var previousTop = _this2.state.scrollTop;
+    var clientHeight = e.target.clientHeight;
+    var scrollHeight = e.target.scrollHeight;
+
+    var reachedMaxScrollBoundary = function reachedMaxScrollBoundary() {
+      return scrollHeight - currentTop <= clientHeight;
+    };
+
     // handle momentum scroll case and ending of page movement
-    var rollUp = e.target.scrollTop + window.innerHeight === _this2.state.documentHeight || _this2.state.scrollTop > e.target.scrollTop ? false : true;
+
+    var rollUp = currentTop > previousTop && currentTop > 0 || currentTop < previousTop && reachedMaxScrollBoundary();
 
     _this2.setState({
       rollUp: rollUp, // handle momentum scroll reach 0 pixel
@@ -20413,9 +20418,7 @@ var _initialiseProps = function _initialiseProps() {
   };
 
   this.handleChangePageCallback = function (page) {
-    var rollUp = _this2.processRollUp(page);
-
-    _this2.setState({ page: page, rollUp: rollUp });
+    _this2.setState({ page: page });
   };
 
   this.handlePageSwipe = function (index, indexLatest) {
