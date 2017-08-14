@@ -166,7 +166,6 @@ class App extends Component {
           }, is_iOS() ? 0 : 130)
 
       }, false);
-
     }
 
     componentDidMount = () => {
@@ -203,9 +202,19 @@ class App extends Component {
         const reachedMaxScrollBoundary = () => scrollHeight - currentTop <= clientHeight
 
         // handle momentum scroll case and ending of page movement
+        if (!this.heightOfAppBar)
+          this.heightOfAppBar = parseInt(document.querySelector(".AppBarTitle h1").style.height, 10)
 
-        let rollUp = (currentTop > previousTop && currentTop > 0)
-                      || (currentTop < previousTop && reachedMaxScrollBoundary())
+        if (!this.heightOfNavigator)
+          this.heightOfNavigator = parseInt(document.querySelector(".pagination div").style.height, 10)
+
+        let minDisplacement = this.heightOfAppBar + this.heightOfNavigator
+
+        let rollUp = (currentTop > previousTop
+                       && currentTop > 0
+                        && currentTop > minDisplacement
+                     )
+                     || (currentTop < previousTop && reachedMaxScrollBoundary())
 
         this.setState({
                       rollUp,            // handle momentum scroll reach 0 pixel
@@ -308,12 +317,14 @@ class App extends Component {
         return status
     }
     handleChangePageCallback = (page) => {
-        this.setState({page})
-
+        this.setState({rollUp: false})
+        let self = this
+        setTimeout(()=>{self.setState({page})}, 300)
     }
     handlePageSwipe = (index, indexLatest )=>{
-        let rollUp = this.processRollUp(index)
-        this.setState({page: index, rollUp  })
+        this.setState({rollUp: false})
+        // give page change a small delay, hence call setState separately
+        this.setState({page: index})
     }
     handleQuiz = () => {
         this.setState({showQuizDialog:true, quizButtonClicked: true})

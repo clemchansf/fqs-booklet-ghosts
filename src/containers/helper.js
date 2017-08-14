@@ -33,9 +33,7 @@ export default class Helper extends Component {
     // should be a reducer here TBD
     switch (helpEvent.type) {
       case 'CHANGE_LANGUAGE':
-        //props.context.handleLangChange(helpEvent.lang)
-        let rollUp = context.processRollUp(context.state.page)
-        context.setState({rollUp, lang: helpEvent.lang, showHelperDialog: false})
+        context.setState({lang: helpEvent.lang, showHelperDialog: false})
         break
       case 'QUIZ_MODE':
         context.setState({quizMode: !context.state.quizMode, quizButtonClicked: false, showHelperDialog: false})

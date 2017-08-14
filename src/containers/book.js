@@ -82,7 +82,7 @@ export default class Book extends Component {
             fontSize: 15,
             textAlign: 'left',
             minBoundary: 12,
-            maxBoundary: 50,
+            maxBoundary: 25,
             skipFactor: 50,
           },
       }

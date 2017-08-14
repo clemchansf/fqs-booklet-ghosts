@@ -180,9 +180,9 @@ const intro_en = (
 
  {["Some people may think it is strange that in this scientifically enlightened century anyone would want to talk about ghosts. In the past, seven sages avoided the subject of the supernatural if they could. Confucius never spoke about ghosts. At the mere mention of ghosts, frightful images instantly arise in our minds of their pale faces, their wild hair and their sharp fangs. The truth is, however, ghosts generally are not very frightening. In fact, many of them are quite cute. Ghosts are like different types of animals: some of them are frightening as lions and tigers, while others are as cute as bunny rabbits and as gentle as little kittens.",
 
- "Buddhisim does not teach people to worship ghosts, but Buddhism does recognize that ghosts exist. The realm of ghosts is one of the six realms of existence amoung sentient beings. (The six realms are: hell, ghost, animal, human, heaven, asura.)",
+ "Buddhism does not teach people to worship ghosts, but Buddhism does recognize that ghosts exist. The realm of ghosts is one of the six realms of existence among sentient beings. (The six realms are: hell, ghost, animal, human, heaven, asura.)",
 
- "Many people do not believe in ghosts. Some people even purposely deny the existence of ghosts. They often say smugly, \"Humbug! I do not believe in ghosts.\" However, just because some people deny their existence, does that mean that ghosts really do not exist? People all over the world belive in ghosts. There are stories about ghosts even in the most scientifically advanced counties. The ghosts of Abraham Lincoln is said to appear sometimes in the White House. A tourist pamphlet has been published which describes the twenty-nine well-known haunted houses in the United States.",
+ "Many people do not believe in ghosts. Some people even purposely deny the existence of ghosts. They often say smugly, \"Humbug! I do not believe in ghosts.\" However, just because some people deny their existence, does that mean that ghosts really do not exist? People all over the world believe in ghosts. There are stories about ghosts even in the most scientifically advanced counties. The ghosts of Abraham Lincoln is said to appear sometimes in the White House. A tourist pamphlet has been published which describes the twenty-nine well-known haunted houses in the United States.",
 
 
  "In Taiwan, I personally have visited two houses where ghosts are known to appear. One is a house in Chiayi. It is a beautiful modern home with a large garden, but no one dares to live there because of the ghosts. In Taipei, I visited another ghost house on Jenai Road, right near a police station. The door of the house is bolted shut and no one has lived there for years. People say ghosts often appear in the house.",
@@ -201,7 +201,7 @@ const intro_en = (
 
  "Many people have the mistaken belief that after death, everyone turns into a ghost. Dead bodies frighten many people because they believe the ghosts of the body will attach itself to them if they draw too near. When parents pass away, many Chinese have memorial services for the ghosts of the deceased. They think their deceased parents and grandparents are ghosts wandering in hell, and if they do not appease them with ceremonies and gifts, they are not fulfilling their duties as filial sons and daughters. However, is this really a respectful attitude when you think about it? Why do people not believe they ancestors may be reborn in heaven or the Pure Land instead?",
 
- "Though Buddhism recognizes the existence of ghosts, Buddhism does not teach us that everyone turns into a ghost at death, nor does everyone go to hell. After death, some people may go to heaven and still others are quickly reborn as human beings. A person has to generate a lot of bad karma in this life to becamse a ghosts after death. Therefore, how can we assume that all deceased ancestors become ghosts? Furthermore, the real ghosts do not always have the power to harm us, and they are not nearly as scary as evil as is commonly believed.",].map((str,i)=>{
+ "Though Buddhism recognizes the existence of ghosts, Buddhism does not teach us that everyone turns into a ghost at death, nor does everyone go to hell. After death, some people may go to heaven and still others are quickly reborn as human beings. A person has to generate a lot of bad karma in this life to become a ghosts after death. Therefore, how can we assume that all deceased ancestors become ghosts? Furthermore, the real ghosts do not always have the power to harm us, and they are not nearly as scary as evil as is commonly believed.",].map((str,i)=>{
     return <div key={i}>{parseItalic(str)}</div>
  })
 }
@@ -859,7 +859,7 @@ const p1_en = (
 
   "\"Great,\" the ghost said, obviously pleased to hear that. \"I am on my way to the city, too. Let us walk together.\"",
 
-  "Song had no choice but to accept the invitation. With great trepidation he fell in behind the ghost to walk to the city. After a while, when they both began to show signs of fatique, the ghost turned and made a suggestion. \"The city is still far away,\" he said, \"Walking like this is tiring. Let us take turns carrying each other instead. That way we can still make good progress and one of us with be able to rest. What do you think about this?\"",
+  "Song had no choice but to accept the invitation. With great trepidation he fell in behind the ghost to walk to the city. After a while, when they both began to show signs of fatigue, the ghost turned and made a suggestion. \"The city is still far away,\" he said, \"Walking like this is tiring. Let us take turns carrying each other instead. That way we can still make good progress and one of us with be able to rest. What do you think about this?\"",
 
   "\"This is a good idea,\" Song said.",
 
@@ -887,29 +887,29 @@ const p1_en = (
 
   "Evil ghosts capable of harming human beings do exist, but if we are moral and kind throughout our lives, they can do us no harm. There is a Chinese saying that applies well here, <i>\"If we do no evil during the day, we need not worry about evil ghosts knocking on our doors at night.\"</i> The ghosts outside of us are not nearly as frightening as the ghosts inside of us.",
 
-  "Once there was an old monk who was just sitting down to meditate when a a ghosts with unkempt hair and wild eyes appeared before him, trying to distrub his peace of mind. The old monk looked at him and said, \"Oh my, what is this? What a mess! Look at that hair, and those eyes! You are really in no shape to be visiting people!\"",
+  "Once there was an old monk who was just sitting down to meditate when a a ghosts with unkempt hair and wild eyes appeared before him, trying to disturb his peace of mind. The old monk looked at him and said, \"Oh my, what is this? What a mess! Look at that hair, and those eyes! You are really in no shape to be visiting people!\"",
 
   "When the ghost saw that he had failed to frighten the monk and was being admonished instead, he screwed up his face, bared his sharp teeth and stuck his long tongue far outside his mouth.",
 
-  "The monk only said in reply, \"What is so great about that? Your face is the same as mine; it is only a little paler and you teeth are sharper and your tonque is longer. That is all.\"",
+  "The monk only said in reply, \"What is so great about that? Your face is the same as mine; it is only a little paler and you teeth are sharper and your tongue is longer. That is all.\"",
 
   "When the ghost saw that once again he had failed to scare the old monk, he changed his appearance again. He made his eyes and his nose disappear. Then he made his hands and feet disappear. However, the monk stayed the same, behaving as if nothing special were happening.",
 
-  "\"My, you are pitful!\" he said. \"You have no eyes, nose, hands of feet. I really feel quite sorry for you!\"",
+  "\"My, you are pitiful!\" he said. \"You have no eyes, nose, hands or feet. I really feel quite sorry for you!\"",
 
-  "With this response, the ghost at last gave up trying to scare the monk and disappeared. When the old monk saw the frightful appearance of the ghost, all he felt was compassion for him for having accumulated such bad karma to be turned into a ghost. Mercy has no enemies. In the face of compassion, all perverse and evil forces melt into northingness.",
+  "With this response, the ghost at last gave up trying to scare the monk and disappeared. When the old monk saw the frightful appearance of the ghost, all he felt was compassion for him for having accumulated such bad karma to be turned into a ghost. Mercy has no enemies. In the face of compassion, all perverse and evil forces melt into nothingness.",
 
   "We all know that people fear ghosts, but, actually, ghosts fear people much more than people fear ghosts. When ghosts see people, they run as far away as they can. They behave the same way wild animals do when they see people: they run and hide. Ghosts never come out during the day; they always wait until nighttime because they fear people so much that they come out only when the fewest people are around. Once this is understood, seeing a ghost should not be a cause for panic. Ghosts exist in a different realm than humans and their karma has nothing to do with them.",
 
   "The <i>Records of Hell</i> contains a story about a man named Yuan Deru who got up in the middle of the night to go to the bathroom. In the bathroom, Yuan suddenly saw a giant ghost standing quietly in front of him. The ghost had enormous eyes and a black face. He was wearing a long white robe. The two looked steadily at each other for a while. Then Yuan broke into a laugh and said, \"People have always told me that ghosts have ugly faces. Now I can see for myself that they are right!\"",
 
-  "When he heard Yuan say this, the ghost felt so embarrased his ears and face turned red and he had to leave. Sometimes a ghost's sense of shame can be even more developed than a human being's. If humans are clear in their minds about what constitutes good and bad, and always try to behave in the right way, no ghost will ever dare interfere in their lives.",
+  "When he heard Yuan say this, the ghost felt so embarrassed his ears and face turned red and he had to leave. Sometimes a ghost's sense of shame can be even more developed than a human being's. If humans are clear in their minds about what constitutes good and bad, and always try to behave in the right way, no ghost will ever dare interfere in their lives.",
 
   "There are reasons why ghosts exist. There are certain kinds of karma that cause people to become ghosts. The <i>Buddhist Karmic Rewards Sutra</i> gives ten reasons\:",
 
   "1) The body has committed evil. One has killed, or stolen, or indulged in other evil behavior.",
 
-  "2) The mouth has commited evil. One has repeatedly lied, slandered, or spoken with great harshness. One has indulged in idle, thoughtless talk.",
+  "2) The mouth has committed evil. One has repeatedly lied, slandered, or spoken with great harshness. One has indulged in idle, thoughtless talk.",
 
   "3) The mind has committed evil. One's thoughts have been full of greed, hatred, ignorance or other defilements.",
 
@@ -923,11 +923,11 @@ const p1_en = (
 
   "8) Attachment and not letting go. One feels strong attachment and clinging in one's mind and cannot joyfully let go.",
 
-  "9) Dying of starvation. People who starve to dealth become hungry ghosts.",
+  "9) Dying of starvation. People who starve to death become hungry ghosts.",
 
   "10) Dying of thirst. People who die of thirst become ghosts.",
 
-  "One of the Buddha's greated disciples, Mahamaudgalyayana, often traveled to hell to ask the ghosts there about their conditions and about the causes that had sent them to hell. In the <i>Mahamaudgalyayana Sutra</i> there is a fasicinating record of one of the Mahamaudgalyayana's conversation with the ghosts in hell. From their exchange, one can see how the law of cause and effect works. At one point a ghost asked Mahamaudgalyayana, \"Venerable One, I have fallen into the ghost realm and I suffer all kinds of pain and punishment. Why does my head always hurts so much? It feels like it is about to split open!\"",
+  "One of the Buddha's greatest disciples, Mahamaudgalyayana, often traveled to hell to ask the ghosts there about their conditions and about the causes that had sent them to hell. In the <i>Mahamaudgalyayana Sutra</i> there is a fascinating record of one of the Mahamaudgalyayana's conversation with the ghosts in hell. From their exchange, one can see how the law of cause and effect works. At one point a ghost asked Mahamaudgalyayana, \"Venerable One, I have fallen into the ghost realm and I suffer all kinds of pain and punishment. Why does my head always hurts so much? It feels like it is about to split open!\"",
 
   "Mahamaudgalyayana answered him, \"When you were a human being you often hit other people on their heads. For this reason you not only have become a ghost, but you also have to endure those terrible headaches.\"",
 
@@ -983,11 +983,11 @@ const p2_en = (
 
     "Ghosts can also be divided into the general categories of large and small ghosts. Large ghosts are about one yojana tall, based on the Indian measurement units. One yojana is approximately seven miles. Imagine that! They are huge creatures. In Chinese, they are sometimes called \"Big-headed\" ghosts because their heads are as big as mountains. However, their long throats are as narrow as needles and, for the most part, they are unable to eat anything. For this reason, they are very weak and they have to use canes whenever they want to walk somewhere. Their hair is long and messy and dirty. In contrast, small ghosts are very tiny. They are about as big as newborn babies.",
 
-    "There also are beautiful ghosts and ugly ones. Beautiful ghosts are so beautiful they look like heavenly beings and are not in the least bit frightening. Ugly ghosts are remarkable, especially for their runny noses and the sores all over their bodies, which constantly bleed and emit noxious pus. There are noble weathy ghosts and lowly impoverished ones also. Noble ghosts, like the Ghost King of Great Strength, are venerated by people. Lowly ghosts are orphaned ones who wander from place to place.",
+    "There also are beautiful ghosts and ugly ones. Beautiful ghosts are so beautiful they look like heavenly beings and are not in the least bit frightening. Ugly ghosts are remarkable, especially for their runny noses and the sores all over their bodies, which constantly bleed and emit noxious pus. There are noble wealthy ghosts and lowly impoverished ones also. Noble ghosts, like the Ghost King of Great Strength, are venerated by people. Lowly ghosts are orphaned ones who wander from place to place.",
 
     "Whether ghosts are wealthy or poor, beautiful or ugly, with or without Dignity and prominence, large or small, they all are representative of human beings in some way, and they do not all live in hell. Are there not visible signs of them in this world?",
 
-    "Zen master Ruman once had a friend named Wang. When Wang died, Master Ruman held a special Dharma service, chanting sutras to help him in the next rebirth. A year or so after Wang's death, Master Ruman set out for Yangzhou in Jiangsu Province. While he was on the road, Master Ruman suddenly saw his old friend Wang standing in front of him. Master Runman was astonished at the sight of him and asked, \"Did you not die already? How is it possible that you are here now walking around?\"",
+    "Zen master Ruman once had a friend named Wang. When Wang died, Master Ruman held a special Dharma service, chanting sutras to help him in the next rebirth. A year or so after Wang's death, Master Ruman set out for Yangzhou in Jiangsu Province. While he was on the road, Master Ruman suddenly saw his old friend Wang standing in front of him. Master Ruman was astonished at the sight of him and asked, \"Did you not die already? How is it possible that you are here now walking around?\"",
 
     "Wang quickly interrupted the Master. \"Hush, do not talk so loudly. Come with me into the mountains and we will discuss everything in detail.\"",
 
@@ -1074,7 +1074,7 @@ const p3_en = (
 
     "\"Hey, you! You told me to play some ghost tricks to make my life better,\" he complained angrily. \"I followed your advice completely. I worked all night, yet I did not get one thing to eat!\"",
 
-    "\"Oh, you fool,\" the old ghost said. \"The people in the home you went to believe in Buddhism. Buddhists are not afraid of ghosts. Why should they give you anthing to eat?\"",
+    "\"Oh, you fool,\" the old ghost said. \"The people in the home you went to believe in Buddhism. Buddhists are not afraid of ghosts. Why should they give you anything to eat?\"",
 
     "\"So that is how it is. I see. I will try another place tonight,\" the new ghost said. That night he slipped through the shadows and went to a different house on the west side of town where some people were pounding rice. He picked up the pounding stick and began pounding the rice for them. When the people saw what was happening, they were very surprised.",
 
@@ -1106,7 +1106,7 @@ const p3_en = (
 
     "The people quickly did as instructed and prepared a bounteous feast for the ghost, who enjoyed every last bite of it. \"That was great!\" he said when he was finished. \"That was really good!\" The food was so good, in fact, the new ghosts never wanted to leave that house again. Every night after that he performed some new trick to get the people to make hime more food. So, this is truly the way to \"invite a ghost into your house.\"",
 
-    "In life, people have to be careful to always treat others with kindness and to keep themselves well within the limits of good behavior. Definitely they should not ever invide a ghost into their home. Sometimes people fall in with bad company, with robbers or murders. If they ask that kind of person to help them even once, they will have a world of trouble on their hands. They may even lost their lives for it. In Taiwan, there are some really foolish customs in which people worship ghosts, rocks, trees, and practically everything. If people follow these customs and invite all these spirits and ghosts into their homes and honor them as special guests, they will be inviting disasters onto themselves. They should be careful to give their respect only to people who deserve it, to people who are honorable in their own lives. To ensure well-being and safety, one should maintain some distance from people who worship spirits and practice magic.",
+    "In life, people have to be careful to always treat others with kindness and to keep themselves well within the limits of good behavior. Definitely they should not ever invite a ghost into their home. Sometimes people fall in with bad company, with robbers or murders. If they ask that kind of person to help them even once, they will have a world of trouble on their hands. They may even lost their lives for it. In Taiwan, there are some really foolish customs in which people worship ghosts, rocks, trees, and practically everything. If people follow these customs and invite all these spirits and ghosts into their homes and honor them as special guests, they will be inviting disasters onto themselves. They should be careful to give their respect only to people who deserve it, to people who are honorable in their own lives. To ensure well-being and safety, one should maintain some distance from people who worship spirits and practice magic.",
   ].map((str,i)=>{
     //  return <div key={i} style={{width:window.innerWidth, textAlign: 'justify', flexWrap: 'wrap'}}><div style={{textIndent: 50, margin: 0}}>{parseItalic(str)}</div></div>
     // return <div key={i} style={{textIndent: 50, margin: 0, textAlign: 'justify'}}>{parseItalic(str)}</div>
@@ -1119,8 +1119,7 @@ const p3_en = (
 const p4_en = (
 <section>
   <article>
-  {[
-"In this universe, there are respective worlds for the then dharma realms (Buddhas, Bodhisattvas, Pratyekabuddhas, Sravakas, and the six realms mentioned earlier) There are the Buddhas' worlds such as the world of the Eastern Pure Land of Azure Radiance and that of the Western Pure Land of Ultimate Bliss. Heavenly beings have their worlds subdivided into three realms and twenty-eight heavens. We human beings have our world with the three oceans and five continents. Among human beings there are different faces with different body types. Some of us are rich and some poor, some are smart and some are a little slow. Animals, too, have their worlds; some of them fly in the air, others walk on the ground and still others swim in the ocean. In the same way, the ghosts in hell have many different ways of being. Ghosts live in a world somewhat like the one people live in. They have families, and they have to work to maintain themselves. Some of them are rich while others are poor. Their world, too, has disputes and grievances. Ghosts have many different sorts of characters; some to them are violent and cruel, but some of them are kind and good.",
+  {["In this universe, there are respective worlds for the then dharma realms (Buddhas, Bodhisattvas, Pratyekabuddhas, Sravakas, and the six realms mentioned earlier) There are the Buddhas' worlds such as the world of the Eastern Pure Land of Azure Radiance and that of the Western Pure Land of Ultimate Bliss. Heavenly beings have their worlds subdivided into three realms and twenty-eight heavens. We human beings have our world with the three oceans and five continents. Among human beings there are different faces with different body types. Some of us are rich and some poor, some are smart and some are a little slow. Animals, too, have their worlds; some of them fly in the air, others walk on the ground and still others swim in the ocean. In the same way, the ghosts in hell have many different ways of being. Ghosts live in a world somewhat like the one people live in. They have families, and they have to work to maintain themselves. Some of them are rich while others are poor. Their world, too, has disputes and grievances. Ghosts have many different sorts of characters; some to them are violent and cruel, but some of them are kind and good.",
 
 "Ghosts and human beings actually live very close to the one another. Not all ghosts live in hell. They are right here with us, to the left and right of us. You do not have to travel to hell to find ghosts because ghosts are all over the place, right here in our world. What kinds of ghosts live in our world? Look around you. Everywhere you can see people who abuse drugs, waste themselves away in sexual indulgence, harm others, commit violent acts, rob, steal and murder. Are these people not worse than ghosts?  Are we not all tempted at times to be like ghosts ourselves, to withhold help when it is needed, to turn away when we see something wrong, to be suspicious, to speak badly about our friends, to be gluttonous and mean spirited when we know full well the right thing to do? It really is true that \"human ghosts\" can be much worse than the ghosts in hell.",
 
