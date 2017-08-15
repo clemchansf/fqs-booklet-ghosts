@@ -362,7 +362,7 @@ if (process.env.NODE_ENV !== 'production') {
 } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(371)();
+  module.exports = __webpack_require__(370)();
 }
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
@@ -1062,7 +1062,7 @@ module.exports = ExecutionEnvironment;
 "use strict";
 
 
-module.exports = __webpack_require__(387);
+module.exports = __webpack_require__(386);
 
 /***/ }),
 /* 19 */
@@ -1501,7 +1501,7 @@ module.exports = ReactComponentTreeHook;
 "use strict";
 
 
-var core = module.exports = { version: '2.4.0' };
+var core = module.exports = { version: '2.5.0' };
 if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 
 /***/ }),
@@ -1527,7 +1527,7 @@ if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 var debugTool = null;
 
 if (process.env.NODE_ENV !== 'production') {
-  var ReactDebugTool = __webpack_require__(402);
+  var ReactDebugTool = __webpack_require__(401);
   debugTool = ReactDebugTool;
 }
 
@@ -1546,7 +1546,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _SvgIcon = __webpack_require__(343);
+var _SvgIcon = __webpack_require__(342);
 
 var _SvgIcon2 = _interopRequireDefault(_SvgIcon);
 
@@ -1607,10 +1607,10 @@ exports.default = pure;
 "use strict";
 
 
-var store = __webpack_require__(95)('wks'),
-    uid = __webpack_require__(66),
-    _Symbol = __webpack_require__(32).Symbol,
-    USE_SYMBOL = typeof _Symbol == 'function';
+var store = __webpack_require__(95)('wks');
+var uid = __webpack_require__(66);
+var _Symbol = __webpack_require__(32).Symbol;
+var USE_SYMBOL = typeof _Symbol == 'function';
 
 var $exports = module.exports = function (name) {
   return store[name] || (store[name] = USE_SYMBOL && _Symbol[name] || (USE_SYMBOL ? _Symbol : uid)('Symbol.' + name));
@@ -2292,25 +2292,23 @@ function getPooledWarningPropertyDefinition(propName, getVal) {
 "use strict";
 
 
-var global = __webpack_require__(32),
-    core = __webpack_require__(21),
-    ctx = __webpack_require__(87),
-    hide = __webpack_require__(43),
-    PROTOTYPE = 'prototype';
+var global = __webpack_require__(32);
+var core = __webpack_require__(21);
+var ctx = __webpack_require__(87);
+var hide = __webpack_require__(43);
+var PROTOTYPE = 'prototype';
 
 var $export = function $export(type, name, source) {
-  var IS_FORCED = type & $export.F,
-      IS_GLOBAL = type & $export.G,
-      IS_STATIC = type & $export.S,
-      IS_PROTO = type & $export.P,
-      IS_BIND = type & $export.B,
-      IS_WRAP = type & $export.W,
-      exports = IS_GLOBAL ? core : core[name] || (core[name] = {}),
-      expProto = exports[PROTOTYPE],
-      target = IS_GLOBAL ? global : IS_STATIC ? global[name] : (global[name] || {})[PROTOTYPE],
-      key,
-      own,
-      out;
+  var IS_FORCED = type & $export.F;
+  var IS_GLOBAL = type & $export.G;
+  var IS_STATIC = type & $export.S;
+  var IS_PROTO = type & $export.P;
+  var IS_BIND = type & $export.B;
+  var IS_WRAP = type & $export.W;
+  var exports = IS_GLOBAL ? core : core[name] || (core[name] = {});
+  var expProto = exports[PROTOTYPE];
+  var target = IS_GLOBAL ? global : IS_STATIC ? global[name] : (global[name] || {})[PROTOTYPE];
+  var key, own, out;
   if (IS_GLOBAL) source = name;
   for (key in source) {
     // contains in native
@@ -2356,7 +2354,7 @@ $export.P = 8; // proto
 $export.B = 16; // bind
 $export.W = 32; // wrap
 $export.U = 64; // safe
-$export.R = 128; // real proto method for `library` 
+$export.R = 128; // real proto method for `library`
 module.exports = $export;
 
 /***/ }),
@@ -2367,7 +2365,9 @@ module.exports = $export;
 
 
 // https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
-var global = module.exports = typeof window != 'undefined' && window.Math == Math ? window : typeof self != 'undefined' && self.Math == Math ? self : Function('return this')();
+var global = module.exports = typeof window != 'undefined' && window.Math == Math ? window : typeof self != 'undefined' && self.Math == Math ? self
+// eslint-disable-next-line no-new-func
+: Function('return this')();
 if (typeof __g == 'number') __g = global; // eslint-disable-line no-undef
 
 /***/ }),
@@ -2377,10 +2377,10 @@ if (typeof __g == 'number') __g = global; // eslint-disable-line no-undef
 "use strict";
 
 
-var anObject = __webpack_require__(41),
-    IE8_DOM_DEFINE = __webpack_require__(136),
-    toPrimitive = __webpack_require__(97),
-    dP = Object.defineProperty;
+var anObject = __webpack_require__(41);
+var IE8_DOM_DEFINE = __webpack_require__(136);
+var toPrimitive = __webpack_require__(97);
+var dP = Object.defineProperty;
 
 exports.f = __webpack_require__(36) ? Object.defineProperty : function defineProperty(O, P, Attributes) {
   anObject(O);
@@ -2406,7 +2406,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _Paper = __webpack_require__(337);
+var _Paper = __webpack_require__(336);
 
 var _Paper2 = _interopRequireDefault(_Paper);
 
@@ -2665,8 +2665,8 @@ module.exports = function (it, key) {
 
 
 // to indexed object, toObject with fallback for non-array-like ES3 strings
-var IObject = __webpack_require__(137),
-    defined = __webpack_require__(88);
+var IObject = __webpack_require__(137);
+var defined = __webpack_require__(88);
 module.exports = function (it) {
   return IObject(defined(it));
 };
@@ -3173,8 +3173,8 @@ module.exports = function (exec) {
 "use strict";
 
 
-var dP = __webpack_require__(33),
-    createDesc = __webpack_require__(56);
+var dP = __webpack_require__(33);
+var createDesc = __webpack_require__(56);
 module.exports = __webpack_require__(36) ? function (object, key, value) {
   return dP.f(object, key, createDesc(1, value));
 } : function (object, key, value) {
@@ -3190,8 +3190,8 @@ module.exports = __webpack_require__(36) ? function (object, key, value) {
 
 
 // 19.1.2.14 / 15.2.3.14 Object.keys(O)
-var $keys = __webpack_require__(142),
-    enumBugKeys = __webpack_require__(89);
+var $keys = __webpack_require__(142);
+var enumBugKeys = __webpack_require__(89);
 
 module.exports = Object.keys || function keys(O) {
   return $keys(O, enumBugKeys);
@@ -3778,7 +3778,7 @@ module.exports = EventPropagators;
 
 
 
-var ReactRef = __webpack_require__(416);
+var ReactRef = __webpack_require__(415);
 var ReactInstrumentation = __webpack_require__(22);
 
 var warning = __webpack_require__(4);
@@ -4489,7 +4489,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _IconButton = __webpack_require__(332);
+var _IconButton = __webpack_require__(331);
 
 var _IconButton2 = _interopRequireDefault(_IconButton);
 
@@ -5036,8 +5036,8 @@ exports.f = {}.propertyIsEnumerable;
 "use strict";
 
 
-var id = 0,
-    px = Math.random();
+var id = 0;
+var px = Math.random();
 module.exports = function (key) {
   return 'Symbol('.concat(key === undefined ? '' : key, ')_', (++id + px).toString(36));
 };
@@ -5803,7 +5803,7 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactAddonsCreateFragment = __webpack_require__(372);
+var _reactAddonsCreateFragment = __webpack_require__(371);
 
 var _reactAddonsCreateFragment2 = _interopRequireDefault(_reactAddonsCreateFragment);
 
@@ -6357,10 +6357,10 @@ module.exports = EventPluginUtils;
 var _assign = __webpack_require__(14);
 
 var EventPluginRegistry = __webpack_require__(72);
-var ReactEventEmitterMixin = __webpack_require__(406);
+var ReactEventEmitterMixin = __webpack_require__(405);
 var ViewportMetrics = __webpack_require__(119);
 
-var getVendorPrefixedEventName = __webpack_require__(441);
+var getVendorPrefixedEventName = __webpack_require__(440);
 var isEventSupported = __webpack_require__(124);
 
 /**
@@ -7272,7 +7272,7 @@ var _warning = __webpack_require__(28);
 
 var _warning2 = _interopRequireDefault(_warning);
 
-var _supports = __webpack_require__(445);
+var _supports = __webpack_require__(444);
 
 var supports = _interopRequireWildcard(_supports);
 
@@ -7674,21 +7674,21 @@ module.exports = true;
 
 
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
-var anObject = __webpack_require__(41),
-    dPs = __webpack_require__(251),
-    enumBugKeys = __webpack_require__(89),
-    IE_PROTO = __webpack_require__(94)('IE_PROTO'),
-    Empty = function Empty() {/* empty */},
-    PROTOTYPE = 'prototype';
+var anObject = __webpack_require__(41);
+var dPs = __webpack_require__(251);
+var enumBugKeys = __webpack_require__(89);
+var IE_PROTO = __webpack_require__(94)('IE_PROTO');
+var Empty = function Empty() {/* empty */};
+var PROTOTYPE = 'prototype';
 
 // Create object with fake `null` prototype: use iframe Object with cleared prototype
 var _createDict = function createDict() {
   // Thrash, waste and sodomy: IE GC bug
-  var iframe = __webpack_require__(135)('iframe'),
-      i = enumBugKeys.length,
-      lt = '<',
-      gt = '>',
-      iframeDocument;
+  var iframe = __webpack_require__(135)('iframe');
+  var i = enumBugKeys.length;
+  var lt = '<';
+  var gt = '>';
+  var iframeDocument;
   iframe.style.display = 'none';
   __webpack_require__(241).appendChild(iframe);
   iframe.src = 'javascript:'; // eslint-disable-line no-script-url
@@ -7732,9 +7732,9 @@ exports.f = Object.getOwnPropertySymbols;
 "use strict";
 
 
-var def = __webpack_require__(33).f,
-    has = __webpack_require__(37),
-    TAG = __webpack_require__(25)('toStringTag');
+var def = __webpack_require__(33).f;
+var has = __webpack_require__(37);
+var TAG = __webpack_require__(25)('toStringTag');
 
 module.exports = function (it, tag, stat) {
   if (it && !has(it = stat ? it : it.prototype, TAG)) def(it, TAG, { configurable: true, value: tag });
@@ -7747,8 +7747,8 @@ module.exports = function (it, tag, stat) {
 "use strict";
 
 
-var shared = __webpack_require__(95)('keys'),
-    uid = __webpack_require__(66);
+var shared = __webpack_require__(95)('keys');
+var uid = __webpack_require__(66);
 module.exports = function (key) {
   return shared[key] || (shared[key] = uid(key));
 };
@@ -7760,9 +7760,9 @@ module.exports = function (key) {
 "use strict";
 
 
-var global = __webpack_require__(32),
-    SHARED = '__core-js_shared__',
-    store = global[SHARED] || (global[SHARED] = {});
+var global = __webpack_require__(32);
+var SHARED = '__core-js_shared__';
+var store = global[SHARED] || (global[SHARED] = {});
 module.exports = function (key) {
   return store[key] || (store[key] = {});
 };
@@ -7775,8 +7775,8 @@ module.exports = function (key) {
 
 
 // 7.1.4 ToInteger
-var ceil = Math.ceil,
-    floor = Math.floor;
+var ceil = Math.ceil;
+var floor = Math.floor;
 module.exports = function (it) {
   return isNaN(it = +it) ? 0 : (it > 0 ? floor : ceil)(it);
 };
@@ -7808,11 +7808,11 @@ module.exports = function (it, S) {
 "use strict";
 
 
-var global = __webpack_require__(32),
-    core = __webpack_require__(21),
-    LIBRARY = __webpack_require__(90),
-    wksExt = __webpack_require__(99),
-    defineProperty = __webpack_require__(33).f;
+var global = __webpack_require__(32);
+var core = __webpack_require__(21);
+var LIBRARY = __webpack_require__(90);
+var wksExt = __webpack_require__(99);
+var defineProperty = __webpack_require__(33).f;
 module.exports = function (name) {
   var $Symbol = core.Symbol || (core.Symbol = LIBRARY ? {} : global.Symbol || {});
   if (name.charAt(0) != '_' && !(name in $Symbol)) defineProperty($Symbol, name, { value: wksExt.f(name) });
@@ -7886,15 +7886,15 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _baseGetTag = __webpack_require__(311);
+var _baseGetTag = __webpack_require__(310);
 
 var _baseGetTag2 = _interopRequireDefault(_baseGetTag);
 
-var _getPrototype = __webpack_require__(313);
+var _getPrototype = __webpack_require__(312);
 
 var _getPrototype2 = _interopRequireDefault(_getPrototype);
 
-var _isObjectLike = __webpack_require__(318);
+var _isObjectLike = __webpack_require__(317);
 
 var _isObjectLike2 = _interopRequireDefault(_isObjectLike);
 
@@ -7970,7 +7970,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _AppBar = __webpack_require__(321);
+var _AppBar = __webpack_require__(320);
 
 var _AppBar2 = _interopRequireDefault(_AppBar);
 
@@ -8039,7 +8039,7 @@ var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _getMuiTheme = __webpack_require__(352);
+var _getMuiTheme = __webpack_require__(351);
 
 var _getMuiTheme2 = _interopRequireDefault(_getMuiTheme);
 
@@ -8254,7 +8254,7 @@ module.exports = __webpack_require__(467);
 
 
 var DOMLazyTree = __webpack_require__(46);
-var Danger = __webpack_require__(378);
+var Danger = __webpack_require__(377);
 var ReactDOMComponentTree = __webpack_require__(15);
 var ReactInstrumentation = __webpack_require__(22);
 
@@ -10029,11 +10029,10 @@ exports.default = function (arr) {
 "use strict";
 
 
-var isObject = __webpack_require__(54),
-    document = __webpack_require__(32).document
-// in old IE typeof document.createElement is 'object'
-,
-    is = isObject(document) && isObject(document.createElement);
+var isObject = __webpack_require__(54);
+var document = __webpack_require__(32).document;
+// typeof document.createElement is 'object' in old IE
+var is = isObject(document) && isObject(document.createElement);
 module.exports = function (it) {
   return is ? document.createElement(it) : {};
 };
@@ -10060,6 +10059,7 @@ module.exports = !__webpack_require__(36) && !__webpack_require__(42)(function (
 
 // fallback for non-array-like ES3 and non-enumerable old V8 strings
 var cof = __webpack_require__(86);
+// eslint-disable-next-line no-prototype-builtins
 module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
   return cof(it) == 'String' ? it.split('') : Object(it);
 };
@@ -10071,21 +10071,20 @@ module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
 "use strict";
 
 
-var LIBRARY = __webpack_require__(90),
-    $export = __webpack_require__(31),
-    redefine = __webpack_require__(144),
-    hide = __webpack_require__(43),
-    has = __webpack_require__(37),
-    Iterators = __webpack_require__(55),
-    $iterCreate = __webpack_require__(245),
-    setToStringTag = __webpack_require__(93),
-    getPrototypeOf = __webpack_require__(141),
-    ITERATOR = __webpack_require__(25)('iterator'),
-    BUGGY = !([].keys && 'next' in [].keys()) // Safari has buggy iterators w/o `next`
-,
-    FF_ITERATOR = '@@iterator',
-    KEYS = 'keys',
-    VALUES = 'values';
+var LIBRARY = __webpack_require__(90);
+var $export = __webpack_require__(31);
+var redefine = __webpack_require__(144);
+var hide = __webpack_require__(43);
+var has = __webpack_require__(37);
+var Iterators = __webpack_require__(55);
+var $iterCreate = __webpack_require__(245);
+var setToStringTag = __webpack_require__(93);
+var getPrototypeOf = __webpack_require__(141);
+var ITERATOR = __webpack_require__(25)('iterator');
+var BUGGY = !([].keys && 'next' in [].keys()); // Safari has buggy iterators w/o `next`
+var FF_ITERATOR = '@@iterator';
+var KEYS = 'keys';
+var VALUES = 'values';
 
 var returnThis = function returnThis() {
   return this;
@@ -10108,21 +10107,19 @@ module.exports = function (Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCE
       return new Constructor(this, kind);
     };
   };
-  var TAG = NAME + ' Iterator',
-      DEF_VALUES = DEFAULT == VALUES,
-      VALUES_BUG = false,
-      proto = Base.prototype,
-      $native = proto[ITERATOR] || proto[FF_ITERATOR] || DEFAULT && proto[DEFAULT],
-      $default = $native || getMethod(DEFAULT),
-      $entries = DEFAULT ? !DEF_VALUES ? $default : getMethod('entries') : undefined,
-      $anyNative = NAME == 'Array' ? proto.entries || $native : $native,
-      methods,
-      key,
-      IteratorPrototype;
+  var TAG = NAME + ' Iterator';
+  var DEF_VALUES = DEFAULT == VALUES;
+  var VALUES_BUG = false;
+  var proto = Base.prototype;
+  var $native = proto[ITERATOR] || proto[FF_ITERATOR] || DEFAULT && proto[DEFAULT];
+  var $default = $native || getMethod(DEFAULT);
+  var $entries = DEFAULT ? !DEF_VALUES ? $default : getMethod('entries') : undefined;
+  var $anyNative = NAME == 'Array' ? proto.entries || $native : $native;
+  var methods, key, IteratorPrototype;
   // Fix native
   if ($anyNative) {
     IteratorPrototype = getPrototypeOf($anyNative.call(new Base()));
-    if (IteratorPrototype !== Object.prototype) {
+    if (IteratorPrototype !== Object.prototype && IteratorPrototype.next) {
       // Set @@toStringTag to native iterators
       setToStringTag(IteratorPrototype, TAG, true);
       // fix for some old engines
@@ -10163,13 +10160,13 @@ module.exports = function (Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCE
 "use strict";
 
 
-var pIE = __webpack_require__(65),
-    createDesc = __webpack_require__(56),
-    toIObject = __webpack_require__(38),
-    toPrimitive = __webpack_require__(97),
-    has = __webpack_require__(37),
-    IE8_DOM_DEFINE = __webpack_require__(136),
-    gOPD = Object.getOwnPropertyDescriptor;
+var pIE = __webpack_require__(65);
+var createDesc = __webpack_require__(56);
+var toIObject = __webpack_require__(38);
+var toPrimitive = __webpack_require__(97);
+var has = __webpack_require__(37);
+var IE8_DOM_DEFINE = __webpack_require__(136);
+var gOPD = Object.getOwnPropertyDescriptor;
 
 exports.f = __webpack_require__(36) ? gOPD : function getOwnPropertyDescriptor(O, P) {
   O = toIObject(O);
@@ -10188,8 +10185,8 @@ exports.f = __webpack_require__(36) ? gOPD : function getOwnPropertyDescriptor(O
 
 
 // 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
-var $keys = __webpack_require__(142),
-    hiddenKeys = __webpack_require__(89).concat('length', 'prototype');
+var $keys = __webpack_require__(142);
+var hiddenKeys = __webpack_require__(89).concat('length', 'prototype');
 
 exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
   return $keys(O, hiddenKeys);
@@ -10203,10 +10200,10 @@ exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
 
 
 // 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
-var has = __webpack_require__(37),
-    toObject = __webpack_require__(57),
-    IE_PROTO = __webpack_require__(94)('IE_PROTO'),
-    ObjectProto = Object.prototype;
+var has = __webpack_require__(37);
+var toObject = __webpack_require__(57);
+var IE_PROTO = __webpack_require__(94)('IE_PROTO');
+var ObjectProto = Object.prototype;
 
 module.exports = Object.getPrototypeOf || function (O) {
   O = toObject(O);
@@ -10223,16 +10220,16 @@ module.exports = Object.getPrototypeOf || function (O) {
 "use strict";
 
 
-var has = __webpack_require__(37),
-    toIObject = __webpack_require__(38),
-    arrayIndexOf = __webpack_require__(237)(false),
-    IE_PROTO = __webpack_require__(94)('IE_PROTO');
+var has = __webpack_require__(37);
+var toIObject = __webpack_require__(38);
+var arrayIndexOf = __webpack_require__(237)(false);
+var IE_PROTO = __webpack_require__(94)('IE_PROTO');
 
 module.exports = function (object, names) {
-  var O = toIObject(object),
-      i = 0,
-      result = [],
-      key;
+  var O = toIObject(object);
+  var i = 0;
+  var result = [];
+  var key;
   for (key in O) {
     if (key != IE_PROTO) has(O, key) && result.push(key);
   } // Don't enum bug & hidden keys
@@ -10251,12 +10248,12 @@ module.exports = function (object, names) {
 
 
 // most Object methods by ES6 should accept primitives
-var $export = __webpack_require__(31),
-    core = __webpack_require__(21),
-    fails = __webpack_require__(42);
+var $export = __webpack_require__(31);
+var core = __webpack_require__(21);
+var fails = __webpack_require__(42);
 module.exports = function (KEY, exec) {
-  var fn = (core.Object || {})[KEY] || Object[KEY],
-      exp = {};
+  var fn = (core.Object || {})[KEY] || Object[KEY];
+  var exp = {};
   exp[KEY] = exec(fn);
   $export($export.S + $export.F * fails(function () {
     fn(1);
@@ -10280,8 +10277,8 @@ module.exports = __webpack_require__(43);
 
 
 // 7.1.15 ToLength
-var toInteger = __webpack_require__(96),
-    min = Math.min;
+var toInteger = __webpack_require__(96);
+var min = Math.min;
 module.exports = function (it) {
   return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
 };
@@ -10301,9 +10298,9 @@ __webpack_require__(138)(String, 'String', function (iterated) {
   this._i = 0; // next index
   // 21.1.5.2.1 %StringIteratorPrototype%.next()
 }, function () {
-  var O = this._t,
-      index = this._i,
-      point;
+  var O = this._t;
+  var index = this._i;
+  var point;
   if (index >= O.length) return { value: undefined, done: true };
   point = $at(O, index);
   this._i += point.length;
@@ -10322,7 +10319,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = hyphenateProperty;
 
-var _hyphenateStyleName = __webpack_require__(290);
+var _hyphenateStyleName = __webpack_require__(289);
 
 var _hyphenateStyleName2 = _interopRequireDefault(_hyphenateStyleName);
 
@@ -10574,7 +10571,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _root = __webpack_require__(317);
+var _root = __webpack_require__(316);
 
 var _root2 = _interopRequireDefault(_root);
 
@@ -10597,7 +10594,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _Divider = __webpack_require__(326);
+var _Divider = __webpack_require__(325);
 
 var _Divider2 = _interopRequireDefault(_Divider);
 
@@ -10619,7 +10616,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _Drawer = __webpack_require__(327);
+var _Drawer = __webpack_require__(326);
 
 var _Drawer2 = _interopRequireDefault(_Drawer);
 
@@ -10641,7 +10638,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _FlatButton = __webpack_require__(328);
+var _FlatButton = __webpack_require__(327);
 
 var _FlatButton2 = _interopRequireDefault(_FlatButton);
 
@@ -10663,7 +10660,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = exports.MenuItem = exports.IconMenu = undefined;
 
-var _IconMenu2 = __webpack_require__(333);
+var _IconMenu2 = __webpack_require__(332);
 
 var _IconMenu3 = _interopRequireDefault(_IconMenu2);
 
@@ -10730,7 +10727,7 @@ var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _Subheader = __webpack_require__(342);
+var _Subheader = __webpack_require__(341);
 
 var _Subheader2 = _interopRequireDefault(_Subheader);
 
@@ -10854,7 +10851,7 @@ var _shallowEqual = __webpack_require__(53);
 
 var _shallowEqual2 = _interopRequireDefault(_shallowEqual);
 
-var _ClickAwayListener = __webpack_require__(347);
+var _ClickAwayListener = __webpack_require__(346);
 
 var _ClickAwayListener2 = _interopRequireDefault(_ClickAwayListener);
 
@@ -10870,7 +10867,7 @@ var _List = __webpack_require__(159);
 
 var _List2 = _interopRequireDefault(_List);
 
-var _menuUtils = __webpack_require__(336);
+var _menuUtils = __webpack_require__(335);
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -11540,11 +11537,11 @@ var _Popover = __webpack_require__(162);
 
 var _Popover2 = _interopRequireDefault(_Popover);
 
-var _check = __webpack_require__(359);
+var _check = __webpack_require__(358);
 
 var _check2 = _interopRequireDefault(_check);
 
-var _ListItem = __webpack_require__(334);
+var _ListItem = __webpack_require__(333);
 
 var _ListItem2 = _interopRequireDefault(_ListItem);
 
@@ -11931,15 +11928,15 @@ var _Paper = __webpack_require__(34);
 
 var _Paper2 = _interopRequireDefault(_Paper);
 
-var _lodash = __webpack_require__(320);
+var _lodash = __webpack_require__(319);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
-var _PopoverAnimationDefault = __webpack_require__(338);
+var _PopoverAnimationDefault = __webpack_require__(337);
 
 var _PopoverAnimationDefault2 = _interopRequireDefault(_PopoverAnimationDefault);
 
-var _iOSHelpers = __webpack_require__(368);
+var _iOSHelpers = __webpack_require__(367);
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -12383,7 +12380,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _Toggle = __webpack_require__(344);
+var _Toggle = __webpack_require__(343);
 
 var _Toggle2 = _interopRequireDefault(_Toggle);
 
@@ -12878,7 +12875,7 @@ var _transitions = __webpack_require__(16);
 
 var _transitions2 = _interopRequireDefault(_transitions);
 
-var _ScaleIn = __webpack_require__(348);
+var _ScaleIn = __webpack_require__(347);
 
 var _ScaleIn2 = _interopRequireDefault(_ScaleIn);
 
@@ -13076,7 +13073,7 @@ var _transitions = __webpack_require__(16);
 
 var _transitions2 = _interopRequireDefault(_transitions);
 
-var _AutoLockScrolling = __webpack_require__(345);
+var _AutoLockScrolling = __webpack_require__(344);
 
 var _AutoLockScrolling2 = _interopRequireDefault(_AutoLockScrolling);
 
@@ -13423,7 +13420,7 @@ var _dom = __webpack_require__(170);
 
 var _dom2 = _interopRequireDefault(_dom);
 
-var _CircleRipple = __webpack_require__(346);
+var _CircleRipple = __webpack_require__(345);
 
 var _CircleRipple2 = _interopRequireDefault(_CircleRipple);
 
@@ -13786,7 +13783,7 @@ var invariant = __webpack_require__(2);
 var warning = __webpack_require__(4);
 
 var ReactPropTypesSecret = __webpack_require__(110);
-var checkPropTypes = __webpack_require__(370);
+var checkPropTypes = __webpack_require__(369);
 
 module.exports = function (isValidElement, throwOnDirectAccess) {
   /* global Symbol */
@@ -14567,7 +14564,7 @@ var DOMProperty = __webpack_require__(35);
 var ReactDOMComponentTree = __webpack_require__(15);
 var ReactInstrumentation = __webpack_require__(22);
 
-var quoteAttributeValueForBrowser = __webpack_require__(442);
+var quoteAttributeValueForBrowser = __webpack_require__(441);
 var warning = __webpack_require__(4);
 
 var VALID_ATTRIBUTE_NAME_REGEX = new RegExp('^[' + DOMProperty.ATTRIBUTE_NAME_START_CHAR + '][' + DOMProperty.ATTRIBUTE_NAME_CHAR + ']*$');
@@ -15169,7 +15166,7 @@ module.exports = ReactHostComponent;
 
 
 
-var ReactDOMSelection = __webpack_require__(397);
+var ReactDOMSelection = __webpack_require__(396);
 
 var containsNode = __webpack_require__(276);
 var focusNode = __webpack_require__(149);
@@ -15305,12 +15302,12 @@ var React = __webpack_require__(51);
 var ReactBrowserEventEmitter = __webpack_require__(74);
 var ReactCurrentOwner = __webpack_require__(27);
 var ReactDOMComponentTree = __webpack_require__(15);
-var ReactDOMContainerInfo = __webpack_require__(389);
-var ReactDOMFeatureFlags = __webpack_require__(391);
+var ReactDOMContainerInfo = __webpack_require__(388);
+var ReactDOMFeatureFlags = __webpack_require__(390);
 var ReactFeatureFlags = __webpack_require__(179);
 var ReactInstanceMap = __webpack_require__(62);
 var ReactInstrumentation = __webpack_require__(22);
-var ReactMarkupChecksum = __webpack_require__(411);
+var ReactMarkupChecksum = __webpack_require__(410);
 var ReactReconciler = __webpack_require__(49);
 var ReactUpdateQueue = __webpack_require__(118);
 var ReactUpdates = __webpack_require__(26);
@@ -16214,7 +16211,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 var _prodInvariant = __webpack_require__(10),
     _assign = __webpack_require__(14);
 
-var ReactCompositeComponent = __webpack_require__(386);
+var ReactCompositeComponent = __webpack_require__(385);
 var ReactEmptyComponent = __webpack_require__(178);
 var ReactHostComponent = __webpack_require__(180);
 
@@ -16464,9 +16461,9 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 var _prodInvariant = __webpack_require__(10);
 
 var ReactCurrentOwner = __webpack_require__(27);
-var REACT_ELEMENT_TYPE = __webpack_require__(405);
+var REACT_ELEMENT_TYPE = __webpack_require__(404);
 
-var getIteratorFn = __webpack_require__(439);
+var getIteratorFn = __webpack_require__(438);
 var invariant = __webpack_require__(2);
 var KeyEscapeUtils = __webpack_require__(114);
 var warning = __webpack_require__(4);
@@ -16641,17 +16638,17 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 exports.default = connectAdvanced;
 
-var _hoistNonReactStatics = __webpack_require__(289);
+var _hoistNonReactStatics = __webpack_require__(455);
 
 var _hoistNonReactStatics2 = _interopRequireDefault(_hoistNonReactStatics);
 
-var _invariant = __webpack_require__(310);
+var _invariant = __webpack_require__(309);
 
 var _invariant2 = _interopRequireDefault(_invariant);
 
 var _react = __webpack_require__(1);
 
-var _Subscription = __webpack_require__(454);
+var _Subscription = __webpack_require__(453);
 
 var _Subscription2 = _interopRequireDefault(_Subscription);
 
@@ -16887,7 +16884,7 @@ selectorFactory) {
       Connect.prototype.notifyNestedSubsOnComponentDidUpdate = function notifyNestedSubsOnComponentDidUpdate() {
         // `componentDidUpdate` is conditionally implemented when `onStateChange` determines it
         // needs to notify nested subs. Once called, it unimplements itself until further state
-        // changes occur. Doing it this way vs having a permanent `componentDidMount` that does
+        // changes occur. Doing it this way vs having a permanent `componentDidUpdate` that does
         // a boolean check every time avoids an extra method call most of the time, resulting
         // in some perf boost.
         this.componentDidUpdate = undefined;
@@ -16933,14 +16930,31 @@ selectorFactory) {
 
     if (process.env.NODE_ENV !== 'production') {
       Connect.prototype.componentWillUpdate = function componentWillUpdate() {
+        var _this2 = this;
+
         // We are hot reloading!
         if (this.version !== version) {
           this.version = version;
           this.initSelector();
 
-          if (this.subscription) this.subscription.tryUnsubscribe();
+          // If any connected descendants don't hot reload (and resubscribe in the process), their
+          // listeners will be lost when we unsubscribe. Unfortunately, by copying over all
+          // listeners, this does mean that the old versions of connected descendants will still be
+          // notified of state changes; however, their onStateChange function is a no-op so this
+          // isn't a huge deal.
+          var oldListeners = [];
+
+          if (this.subscription) {
+            oldListeners = this.subscription.listeners.get();
+            this.subscription.tryUnsubscribe();
+          }
           this.initSubscription();
-          if (shouldHandleStateChanges) this.subscription.trySubscribe();
+          if (shouldHandleStateChanges) {
+            this.subscription.trySubscribe();
+            oldListeners.forEach(function (listener) {
+              return _this2.subscription.listeners.subscribe(listener);
+            });
+          }
         }
       };
     }
@@ -18284,9 +18298,7 @@ var c0 = function c0(lang) {
   return _react2.default.createElement(
     'div',
     null,
-    _react2.default.createElement('img', { src: __webpack_require__(515), alt: 'icon_title' }),
-    _react2.default.createElement('img', { style: styles.middleImg, src: __webpack_require__(516), alt: 'icon_title', className: 'fit shim-left' }),
-    _react2.default.createElement('img', { style: styles.bottomImg, src: __webpack_require__(517), alt: 'icon_series_num', className: 'fit shim-left' })
+    _react2.default.createElement('img', { src: __webpack_require__(515), alt: 'icon_title' })
   );
 };
 var a0 = function a0(lang) {
@@ -18443,7 +18455,7 @@ var intro_en = _react2.default.createElement(
   _react2.default.createElement(
     'article',
     null,
-    ["Some people may think it is strange that in this scientifically enlightened century anyone would want to talk about ghosts. In the past, seven sages avoided the subject of the supernatural if they could. Confucius never spoke about ghosts. At the mere mention of ghosts, frightful images instantly arise in our minds of their pale faces, their wild hair and their sharp fangs. The truth is, however, ghosts generally are not very frightening. In fact, many of them are quite cute. Ghosts are like different types of animals: some of them are frightening as lions and tigers, while others are as cute as bunny rabbits and as gentle as little kittens.", "Buddhisim does not teach people to worship ghosts, but Buddhism does recognize that ghosts exist. The realm of ghosts is one of the six realms of existence amoung sentient beings. (The six realms are: hell, ghost, animal, human, heaven, asura.)", "Many people do not believe in ghosts. Some people even purposely deny the existence of ghosts. They often say smugly, \"Humbug! I do not believe in ghosts.\" However, just because some people deny their existence, does that mean that ghosts really do not exist? People all over the world belive in ghosts. There are stories about ghosts even in the most scientifically advanced counties. The ghosts of Abraham Lincoln is said to appear sometimes in the White House. A tourist pamphlet has been published which describes the twenty-nine well-known haunted houses in the United States.", "In Taiwan, I personally have visited two houses where ghosts are known to appear. One is a house in Chiayi. It is a beautiful modern home with a large garden, but no one dares to live there because of the ghosts. In Taipei, I visited another ghost house on Jenai Road, right near a police station. The door of the house is bolted shut and no one has lived there for years. People say ghosts often appear in the house.", "We do not have to deny the existence of ghosts regardless of whether they actually exist of not. We already know there are many different kinds of creatures living along side us. Birds, fish, insects and animals of all sorts add to the beauty and variety of life here. If there are also ghosts among us, would the world be that much more interesting? Is it not narrow-minded and arrogant of human beings to deny the existence of life forms different from themselves? People are active during the day and in the early evening. Ghosts are active only late at night. They do not interfere with us and we do not interfere with them. Is that not a convenient arrangement?", "In the <i>Twenty-five Historical Tales</i> there is a story about a scholar named Yuan Qianli. Even though Yuan Qianli had read many books and written many poems, he still did not believe in ghosts. Late one night, a very refined and scholarly gentleman visited Yuan Qianli. The visitor was a stranger, but he spoke very well and the two men soon fell to talking about all sorts of things. Eventually, their conversation turned to the subject of ghosts. Yuan Qianli was forceful in his denial of the existence of ghosts. He said, \"Humbug! I do not believe in ghosts. How can someone like you be as superstitious as fishmongers and country folks?\"", "Tactfully, his guest gave repeated examples to persuade Yuan that ghosts did exist, but Yuan continued to deny even the possibility of their existence. \"Until I actually see one with my own eyes, I will never believe in ghosts,\" he said.", "At this, his guest's demeanor changed dramatically. \"Sages and scholars throughout the ages have believed in ghosts, but you maintain they do not exist. Well, watch this... because <i>I am a ghost</i>.\"", "Suddenly the guest's face began to change into a hideous ghost face with wild hair and blazing eyes. Yuan was so frightened that he lost all color in his face and became ill. Within a year he was dead.", "If a lone scholar in a white robe visits you in the middle of the night, will you dare to talk to him? What is a shy young woman with a pale face comes to you door at midnight, will you let her in?", "Many people have the mistaken belief that after death, everyone turns into a ghost. Dead bodies frighten many people because they believe the ghosts of the body will attach itself to them if they draw too near. When parents pass away, many Chinese have memorial services for the ghosts of the deceased. They think their deceased parents and grandparents are ghosts wandering in hell, and if they do not appease them with ceremonies and gifts, they are not fulfilling their duties as filial sons and daughters. However, is this really a respectful attitude when you think about it? Why do people not believe they ancestors may be reborn in heaven or the Pure Land instead?", "Though Buddhism recognizes the existence of ghosts, Buddhism does not teach us that everyone turns into a ghost at death, nor does everyone go to hell. After death, some people may go to heaven and still others are quickly reborn as human beings. A person has to generate a lot of bad karma in this life to becamse a ghosts after death. Therefore, how can we assume that all deceased ancestors become ghosts? Furthermore, the real ghosts do not always have the power to harm us, and they are not nearly as scary as evil as is commonly believed."].map(function (str, i) {
+    ["Some people may think it is strange that in this scientifically enlightened century anyone would want to talk about ghosts. In the past, seven sages avoided the subject of the supernatural if they could. Confucius never spoke about ghosts. At the mere mention of ghosts, frightful images instantly arise in our minds of their pale faces, their wild hair and their sharp fangs. The truth is, however, ghosts generally are not very frightening. In fact, many of them are quite cute. Ghosts are like different types of animals: some of them are frightening as lions and tigers, while others are as cute as bunny rabbits and as gentle as little kittens.", "Buddhism does not teach people to worship ghosts, but Buddhism does recognize that ghosts exist. The realm of ghosts is one of the six realms of existence among sentient beings. (The six realms are: hell, ghost, animal, human, heaven, asura.)", "Many people do not believe in ghosts. Some people even purposely deny the existence of ghosts. They often say smugly, \"Humbug! I do not believe in ghosts.\" However, just because some people deny their existence, does that mean that ghosts really do not exist? People all over the world believe in ghosts. There are stories about ghosts even in the most scientifically advanced counties. The ghosts of Abraham Lincoln is said to appear sometimes in the White House. A tourist pamphlet has been published which describes the twenty-nine well-known haunted houses in the United States.", "In Taiwan, I personally have visited two houses where ghosts are known to appear. One is a house in Chiayi. It is a beautiful modern home with a large garden, but no one dares to live there because of the ghosts. In Taipei, I visited another ghost house on Jenai Road, right near a police station. The door of the house is bolted shut and no one has lived there for years. People say ghosts often appear in the house.", "We do not have to deny the existence of ghosts regardless of whether they actually exist of not. We already know there are many different kinds of creatures living along side us. Birds, fish, insects and animals of all sorts add to the beauty and variety of life here. If there are also ghosts among us, would the world be that much more interesting? Is it not narrow-minded and arrogant of human beings to deny the existence of life forms different from themselves? People are active during the day and in the early evening. Ghosts are active only late at night. They do not interfere with us and we do not interfere with them. Is that not a convenient arrangement?", "In the <i>Twenty-five Historical Tales</i> there is a story about a scholar named Yuan Qianli. Even though Yuan Qianli had read many books and written many poems, he still did not believe in ghosts. Late one night, a very refined and scholarly gentleman visited Yuan Qianli. The visitor was a stranger, but he spoke very well and the two men soon fell to talking about all sorts of things. Eventually, their conversation turned to the subject of ghosts. Yuan Qianli was forceful in his denial of the existence of ghosts. He said, \"Humbug! I do not believe in ghosts. How can someone like you be as superstitious as fishmongers and country folks?\"", "Tactfully, his guest gave repeated examples to persuade Yuan that ghosts did exist, but Yuan continued to deny even the possibility of their existence. \"Until I actually see one with my own eyes, I will never believe in ghosts,\" he said.", "At this, his guest's demeanor changed dramatically. \"Sages and scholars throughout the ages have believed in ghosts, but you maintain they do not exist. Well, watch this... because <i>I am a ghost</i>.\"", "Suddenly the guest's face began to change into a hideous ghost face with wild hair and blazing eyes. Yuan was so frightened that he lost all color in his face and became ill. Within a year he was dead.", "If a lone scholar in a white robe visits you in the middle of the night, will you dare to talk to him? What is a shy young woman with a pale face comes to you door at midnight, will you let her in?", "Many people have the mistaken belief that after death, everyone turns into a ghost. Dead bodies frighten many people because they believe the ghosts of the body will attach itself to them if they draw too near. When parents pass away, many Chinese have memorial services for the ghosts of the deceased. They think their deceased parents and grandparents are ghosts wandering in hell, and if they do not appease them with ceremonies and gifts, they are not fulfilling their duties as filial sons and daughters. However, is this really a respectful attitude when you think about it? Why do people not believe they ancestors may be reborn in heaven or the Pure Land instead?", "Though Buddhism recognizes the existence of ghosts, Buddhism does not teach us that everyone turns into a ghost at death, nor does everyone go to hell. After death, some people may go to heaven and still others are quickly reborn as human beings. A person has to generate a lot of bad karma in this life to become a ghosts after death. Therefore, how can we assume that all deceased ancestors become ghosts? Furthermore, the real ghosts do not always have the power to harm us, and they are not nearly as scary as evil as is commonly believed."].map(function (str, i) {
       return _react2.default.createElement(
         'div',
         { key: i },
@@ -19676,7 +19688,7 @@ var p1_en = _react2.default.createElement(
   _react2.default.createElement(
     'article',
     null,
-    ["In this world, there are good people and bad people. In the world of ghosts, it is the same. There are good ghosts and bad ghosts. Even though there are bad people in this world, good people outnumber them by quite a lot. It is the same with ghosts. There are some very evil ghosts, but most ghosts are good ghosts. People, sometimes, are much worse than ghosts. Human begins sometimes will do things no ghost would ever consider doing.", "In Nanyang there once was a man named Song Dingbo. One night Song was hurrying home when suddenly he saw a ghost. Song acted as bravely as he could and asked, \"Who are you and why are you walking so strangely?\"", "\"I am a ghost, that is why. Now, who are you?\" the figure answered.", "Song was frightened to hear the ghost's reply, and he was even more afraid to admit that he was a human being. Might not the ghost harm him if he admitted that? In a moment's inspiration, Song decided to do what human beings do best--lie. \"Oh! I am a ghost too,\" he said.", "\"You are a ghost, too, are you? Well, where are you going?\"", "\"I am on my way to the city,\" Song replied.", "\"Great,\" the ghost said, obviously pleased to hear that. \"I am on my way to the city, too. Let us walk together.\"", "Song had no choice but to accept the invitation. With great trepidation he fell in behind the ghost to walk to the city. After a while, when they both began to show signs of fatique, the ghost turned and made a suggestion. \"The city is still far away,\" he said, \"Walking like this is tiring. Let us take turns carrying each other instead. That way we can still make good progress and one of us with be able to rest. What do you think about this?\"", "\"This is a good idea,\" Song said.", "\"Okay, I will carry you first.\" With that, the ghost hoisted Sung onto his back. \"Wow! Are you ever heavy! How did you get so heavy?\" the ghost asked.", "Ghosts have no definite form and no weight. They are kind of spirit or a kind of energy (chi). They can pass through walls and become invisible at will. So, to a ghost, a human being is very gross and heavy.", "As soon as Song heard the ghost's question, he made up another lie. \"I am so heavy,\" he said, \"because I died just recently.\"", "The ghost believed Song and they continued to travel along with the ghost carrying Song.", "After a while, they came to a river. The ghost stopped and said, \"We better swim across here.\" With that he dove into the water and, with the grace of a cloud flying through the air, swam to the other side. When the ghost got to his feet and turned around, he saw Song still struggling in the middle of the river, splashing the water and panting very loudly. Gradually, Song got closer. When he reached the reached the bank, the ghost hurried over to ask him, \"Why do you make so much noise when you swim? You will scare everybody around here!\"", "Song could see that the ghost was getting suspicious of him so he used his best trick and repeated his lie from before. \"I just died, so I really have not learned to swim yet,\" he said.", "The two started for town again. As they walked, Song thought to himself, \"This is a bad night for me. Here I am walking along with a ghost. I have to think of some way to get away from him!\" In an innocent manner, Song asked the ghost, \"Friend, I just died, and I am not all that clear about the world of ghosts. You have much more experience than I do. Tell me, what is the most frightening thing for us ghosts? What do we most need to watch out for?\"", "\"Human saliva,\" the ghost replied. \"If a human being ever spits on a ghost, that ghost has had it. There is nothing he can do to save himself.\"", "The ghost was candid with his reply. Above them the sky was slowly starting to take on a shade of silvery gray. Dawn was approaching. The two were now close to the city.", "Song waited for a chance when the ghost was not looking, and spit a large gob of spittle on the ghost's back. Immediately, the ghost began to twist and turn. Then he fell to the ground, writhing in agony before he completely disappeared. In his place stood a small mountain goat. Song took the goat into town and sold him for a good price.", "This little story displays well the cruelty and deceitfulness of human beings. Sometimes ghosts are willing to help us, but we replay them with striking them with such cruel force. It really is true that sometimes people are much worse than ghosts.", "Evil ghosts capable of harming human beings do exist, but if we are moral and kind throughout our lives, they can do us no harm. There is a Chinese saying that applies well here, <i>\"If we do no evil during the day, we need not worry about evil ghosts knocking on our doors at night.\"</i> The ghosts outside of us are not nearly as frightening as the ghosts inside of us.", "Once there was an old monk who was just sitting down to meditate when a a ghosts with unkempt hair and wild eyes appeared before him, trying to distrub his peace of mind. The old monk looked at him and said, \"Oh my, what is this? What a mess! Look at that hair, and those eyes! You are really in no shape to be visiting people!\"", "When the ghost saw that he had failed to frighten the monk and was being admonished instead, he screwed up his face, bared his sharp teeth and stuck his long tongue far outside his mouth.", "The monk only said in reply, \"What is so great about that? Your face is the same as mine; it is only a little paler and you teeth are sharper and your tonque is longer. That is all.\"", "When the ghost saw that once again he had failed to scare the old monk, he changed his appearance again. He made his eyes and his nose disappear. Then he made his hands and feet disappear. However, the monk stayed the same, behaving as if nothing special were happening.", "\"My, you are pitful!\" he said. \"You have no eyes, nose, hands of feet. I really feel quite sorry for you!\"", "With this response, the ghost at last gave up trying to scare the monk and disappeared. When the old monk saw the frightful appearance of the ghost, all he felt was compassion for him for having accumulated such bad karma to be turned into a ghost. Mercy has no enemies. In the face of compassion, all perverse and evil forces melt into northingness.", "We all know that people fear ghosts, but, actually, ghosts fear people much more than people fear ghosts. When ghosts see people, they run as far away as they can. They behave the same way wild animals do when they see people: they run and hide. Ghosts never come out during the day; they always wait until nighttime because they fear people so much that they come out only when the fewest people are around. Once this is understood, seeing a ghost should not be a cause for panic. Ghosts exist in a different realm than humans and their karma has nothing to do with them.", "The <i>Records of Hell</i> contains a story about a man named Yuan Deru who got up in the middle of the night to go to the bathroom. In the bathroom, Yuan suddenly saw a giant ghost standing quietly in front of him. The ghost had enormous eyes and a black face. He was wearing a long white robe. The two looked steadily at each other for a while. Then Yuan broke into a laugh and said, \"People have always told me that ghosts have ugly faces. Now I can see for myself that they are right!\"", "When he heard Yuan say this, the ghost felt so embarrased his ears and face turned red and he had to leave. Sometimes a ghost's sense of shame can be even more developed than a human being's. If humans are clear in their minds about what constitutes good and bad, and always try to behave in the right way, no ghost will ever dare interfere in their lives.", "There are reasons why ghosts exist. There are certain kinds of karma that cause people to become ghosts. The <i>Buddhist Karmic Rewards Sutra</i> gives ten reasons\:", "1) The body has committed evil. One has killed, or stolen, or indulged in other evil behavior.", "2) The mouth has commited evil. One has repeatedly lied, slandered, or spoken with great harshness. One has indulged in idle, thoughtless talk.", "3) The mind has committed evil. One's thoughts have been full of greed, hatred, ignorance or other defilements.", "4) Greed. Once has ben greedy and grasping and not understanding of the value of giving.", "5) Covetousness. One has been envious and wanted things that do not belong to oneself.", "6) Fawning and jealousy. One has often been jealous of other people and thus created evil thoughts.", "7) Perverse ideas. One has denied the value of morality and the difference between good and bad.", "8) Attachment and not letting go. One feels strong attachment and clinging in one's mind and cannot joyfully let go.", "9) Dying of starvation. People who starve to dealth become hungry ghosts.", "10) Dying of thirst. People who die of thirst become ghosts.", "One of the Buddha's greated disciples, Mahamaudgalyayana, often traveled to hell to ask the ghosts there about their conditions and about the causes that had sent them to hell. In the <i>Mahamaudgalyayana Sutra</i> there is a fasicinating record of one of the Mahamaudgalyayana's conversation with the ghosts in hell. From their exchange, one can see how the law of cause and effect works. At one point a ghost asked Mahamaudgalyayana, \"Venerable One, I have fallen into the ghost realm and I suffer all kinds of pain and punishment. Why does my head always hurts so much? It feels like it is about to split open!\"", "Mahamaudgalyayana answered him, \"When you were a human being you often hit other people on their heads. For this reason you not only have become a ghost, but you also have to endure those terrible headaches.\"", "Then another ghost begged him, \"Venerable One, I am a ghost and my life is miserable! I have to sleep out from the wind and rain. Why do I have to suffer like this day after day?\"", "Mahamaudgalyayana answered, \"In you last human life you were very wealthy and you had a beautiful home, but you never helped others. Instead, you only made it difficult for anyone in need of shelter. Therefore, you ended up suffering, sleeping outdoors in the cold and rain now.\"", "Then another ghost asked, \"Venerable One, now that I am a ghost I still have lots of money. Yet, it is strange because I never spend any of it. I just walk around in old patched clothes all the time. Why is that?\"", "Mahamaudgalyayana answered him, \"When you were a human being, you were often generous with others but after giving something away, you always had second thoughts for having been kind. Your generosity in that life is the cause for you having wealth now, but you wavering has made you live like a poor person.\"", "As all the ghosts crowded around Mahamaudgalyayana to learn more from him, a sallow, emaciated ghost standing alone at the edge of the group slowly intoned in a long quavering voice, \"Venerable One, I am a ghost, but I can eat nothing! Why is that? I am so hungry that I feel dizzy all the time! Why is that?\"", "Mahamaudgalyayana answered, \"When you were a human being you worked in the kitchen of a temple, and in that position you often stole money which had been donated for food. If a devotee gave you twenty coins, you would keep ten for youself and use only ten to buy food for the kitchen. The result of those actions is that now you have to go hungry yourself.\"", "\"Venerable One,\" another ghost complained in desperation. \"Now that I am ghost, I suffer so much pain. My body hurts all the time as if it were being poked with needles and slashed with knife blades. I feel as if I am being burned in a fire. Why do I have to suffer so much?\"", "\"When you were a human being you often caught fish and hunted animals. You killed so many creatures that you have to suffer their pain now,\" Mahamaudgalyayana said, answering him with great compassion.", "When the ghosts at last began to fail silent and reflect on Mahamaudgalyayana's words, one of them in a halting and uncertain tone asked, \"Venerable One, why have I become a ghost who is so slow at thinking? I am so stupid compared to these other ghosts who all posses quick minds. Why is that?\"", "\"Because when you were a human being you loved to indulge yourself in alcohol. On social occasions you often encouraged people to drink alcohol and to indulge in meat, so now you are a little slow in your thinking and not as nimble as the other ghosts.\"", "Mahamaudgalyayana patiently stayed with the ghosts until all of their questions had been answered, and then he left. From these questions and answers recorded in Buddhist sutras, we can get a pretty good idea of why some people become ghosts and what kinds of punishments fit what kinds of transgressions. Chefs and homemakers, be warned! Do not take money intended for food and keep it for yourselves, or you too might become a hungry ghost one day! If you are in business, be careful what you do! Do not think you can get away with skimming a little extra for yourself or with cheating your customers. Those who slaughter for the sake of satisfying their tastes and those who indulge in intoxicating drink, be forewarned. Do not let a moment of self-gratification cause you endless suffering and regret."].map(function (str, i) {
+    ["In this world, there are good people and bad people. In the world of ghosts, it is the same. There are good ghosts and bad ghosts. Even though there are bad people in this world, good people outnumber them by quite a lot. It is the same with ghosts. There are some very evil ghosts, but most ghosts are good ghosts. People, sometimes, are much worse than ghosts. Human begins sometimes will do things no ghost would ever consider doing.", "In Nanyang there once was a man named Song Dingbo. One night Song was hurrying home when suddenly he saw a ghost. Song acted as bravely as he could and asked, \"Who are you and why are you walking so strangely?\"", "\"I am a ghost, that is why. Now, who are you?\" the figure answered.", "Song was frightened to hear the ghost's reply, and he was even more afraid to admit that he was a human being. Might not the ghost harm him if he admitted that? In a moment's inspiration, Song decided to do what human beings do best--lie. \"Oh! I am a ghost too,\" he said.", "\"You are a ghost, too, are you? Well, where are you going?\"", "\"I am on my way to the city,\" Song replied.", "\"Great,\" the ghost said, obviously pleased to hear that. \"I am on my way to the city, too. Let us walk together.\"", "Song had no choice but to accept the invitation. With great trepidation he fell in behind the ghost to walk to the city. After a while, when they both began to show signs of fatigue, the ghost turned and made a suggestion. \"The city is still far away,\" he said, \"Walking like this is tiring. Let us take turns carrying each other instead. That way we can still make good progress and one of us with be able to rest. What do you think about this?\"", "\"This is a good idea,\" Song said.", "\"Okay, I will carry you first.\" With that, the ghost hoisted Sung onto his back. \"Wow! Are you ever heavy! How did you get so heavy?\" the ghost asked.", "Ghosts have no definite form and no weight. They are kind of spirit or a kind of energy (chi). They can pass through walls and become invisible at will. So, to a ghost, a human being is very gross and heavy.", "As soon as Song heard the ghost's question, he made up another lie. \"I am so heavy,\" he said, \"because I died just recently.\"", "The ghost believed Song and they continued to travel along with the ghost carrying Song.", "After a while, they came to a river. The ghost stopped and said, \"We better swim across here.\" With that he dove into the water and, with the grace of a cloud flying through the air, swam to the other side. When the ghost got to his feet and turned around, he saw Song still struggling in the middle of the river, splashing the water and panting very loudly. Gradually, Song got closer. When he reached the reached the bank, the ghost hurried over to ask him, \"Why do you make so much noise when you swim? You will scare everybody around here!\"", "Song could see that the ghost was getting suspicious of him so he used his best trick and repeated his lie from before. \"I just died, so I really have not learned to swim yet,\" he said.", "The two started for town again. As they walked, Song thought to himself, \"This is a bad night for me. Here I am walking along with a ghost. I have to think of some way to get away from him!\" In an innocent manner, Song asked the ghost, \"Friend, I just died, and I am not all that clear about the world of ghosts. You have much more experience than I do. Tell me, what is the most frightening thing for us ghosts? What do we most need to watch out for?\"", "\"Human saliva,\" the ghost replied. \"If a human being ever spits on a ghost, that ghost has had it. There is nothing he can do to save himself.\"", "The ghost was candid with his reply. Above them the sky was slowly starting to take on a shade of silvery gray. Dawn was approaching. The two were now close to the city.", "Song waited for a chance when the ghost was not looking, and spit a large gob of spittle on the ghost's back. Immediately, the ghost began to twist and turn. Then he fell to the ground, writhing in agony before he completely disappeared. In his place stood a small mountain goat. Song took the goat into town and sold him for a good price.", "This little story displays well the cruelty and deceitfulness of human beings. Sometimes ghosts are willing to help us, but we replay them with striking them with such cruel force. It really is true that sometimes people are much worse than ghosts.", "Evil ghosts capable of harming human beings do exist, but if we are moral and kind throughout our lives, they can do us no harm. There is a Chinese saying that applies well here, <i>\"If we do no evil during the day, we need not worry about evil ghosts knocking on our doors at night.\"</i> The ghosts outside of us are not nearly as frightening as the ghosts inside of us.", "Once there was an old monk who was just sitting down to meditate when a a ghosts with unkempt hair and wild eyes appeared before him, trying to disturb his peace of mind. The old monk looked at him and said, \"Oh my, what is this? What a mess! Look at that hair, and those eyes! You are really in no shape to be visiting people!\"", "When the ghost saw that he had failed to frighten the monk and was being admonished instead, he screwed up his face, bared his sharp teeth and stuck his long tongue far outside his mouth.", "The monk only said in reply, \"What is so great about that? Your face is the same as mine; it is only a little paler and you teeth are sharper and your tongue is longer. That is all.\"", "When the ghost saw that once again he had failed to scare the old monk, he changed his appearance again. He made his eyes and his nose disappear. Then he made his hands and feet disappear. However, the monk stayed the same, behaving as if nothing special were happening.", "\"My, you are pitiful!\" he said. \"You have no eyes, nose, hands or feet. I really feel quite sorry for you!\"", "With this response, the ghost at last gave up trying to scare the monk and disappeared. When the old monk saw the frightful appearance of the ghost, all he felt was compassion for him for having accumulated such bad karma to be turned into a ghost. Mercy has no enemies. In the face of compassion, all perverse and evil forces melt into nothingness.", "We all know that people fear ghosts, but, actually, ghosts fear people much more than people fear ghosts. When ghosts see people, they run as far away as they can. They behave the same way wild animals do when they see people: they run and hide. Ghosts never come out during the day; they always wait until nighttime because they fear people so much that they come out only when the fewest people are around. Once this is understood, seeing a ghost should not be a cause for panic. Ghosts exist in a different realm than humans and their karma has nothing to do with them.", "The <i>Records of Hell</i> contains a story about a man named Yuan Deru who got up in the middle of the night to go to the bathroom. In the bathroom, Yuan suddenly saw a giant ghost standing quietly in front of him. The ghost had enormous eyes and a black face. He was wearing a long white robe. The two looked steadily at each other for a while. Then Yuan broke into a laugh and said, \"People have always told me that ghosts have ugly faces. Now I can see for myself that they are right!\"", "When he heard Yuan say this, the ghost felt so embarrassed his ears and face turned red and he had to leave. Sometimes a ghost's sense of shame can be even more developed than a human being's. If humans are clear in their minds about what constitutes good and bad, and always try to behave in the right way, no ghost will ever dare interfere in their lives.", "There are reasons why ghosts exist. There are certain kinds of karma that cause people to become ghosts. The <i>Buddhist Karmic Rewards Sutra</i> gives ten reasons\:", "1) The body has committed evil. One has killed, or stolen, or indulged in other evil behavior.", "2) The mouth has committed evil. One has repeatedly lied, slandered, or spoken with great harshness. One has indulged in idle, thoughtless talk.", "3) The mind has committed evil. One's thoughts have been full of greed, hatred, ignorance or other defilements.", "4) Greed. Once has ben greedy and grasping and not understanding of the value of giving.", "5) Covetousness. One has been envious and wanted things that do not belong to oneself.", "6) Fawning and jealousy. One has often been jealous of other people and thus created evil thoughts.", "7) Perverse ideas. One has denied the value of morality and the difference between good and bad.", "8) Attachment and not letting go. One feels strong attachment and clinging in one's mind and cannot joyfully let go.", "9) Dying of starvation. People who starve to death become hungry ghosts.", "10) Dying of thirst. People who die of thirst become ghosts.", "One of the Buddha's greatest disciples, Mahamaudgalyayana, often traveled to hell to ask the ghosts there about their conditions and about the causes that had sent them to hell. In the <i>Mahamaudgalyayana Sutra</i> there is a fascinating record of one of the Mahamaudgalyayana's conversation with the ghosts in hell. From their exchange, one can see how the law of cause and effect works. At one point a ghost asked Mahamaudgalyayana, \"Venerable One, I have fallen into the ghost realm and I suffer all kinds of pain and punishment. Why does my head always hurts so much? It feels like it is about to split open!\"", "Mahamaudgalyayana answered him, \"When you were a human being you often hit other people on their heads. For this reason you not only have become a ghost, but you also have to endure those terrible headaches.\"", "Then another ghost begged him, \"Venerable One, I am a ghost and my life is miserable! I have to sleep out from the wind and rain. Why do I have to suffer like this day after day?\"", "Mahamaudgalyayana answered, \"In you last human life you were very wealthy and you had a beautiful home, but you never helped others. Instead, you only made it difficult for anyone in need of shelter. Therefore, you ended up suffering, sleeping outdoors in the cold and rain now.\"", "Then another ghost asked, \"Venerable One, now that I am a ghost I still have lots of money. Yet, it is strange because I never spend any of it. I just walk around in old patched clothes all the time. Why is that?\"", "Mahamaudgalyayana answered him, \"When you were a human being, you were often generous with others but after giving something away, you always had second thoughts for having been kind. Your generosity in that life is the cause for you having wealth now, but you wavering has made you live like a poor person.\"", "As all the ghosts crowded around Mahamaudgalyayana to learn more from him, a sallow, emaciated ghost standing alone at the edge of the group slowly intoned in a long quavering voice, \"Venerable One, I am a ghost, but I can eat nothing! Why is that? I am so hungry that I feel dizzy all the time! Why is that?\"", "Mahamaudgalyayana answered, \"When you were a human being you worked in the kitchen of a temple, and in that position you often stole money which had been donated for food. If a devotee gave you twenty coins, you would keep ten for youself and use only ten to buy food for the kitchen. The result of those actions is that now you have to go hungry yourself.\"", "\"Venerable One,\" another ghost complained in desperation. \"Now that I am ghost, I suffer so much pain. My body hurts all the time as if it were being poked with needles and slashed with knife blades. I feel as if I am being burned in a fire. Why do I have to suffer so much?\"", "\"When you were a human being you often caught fish and hunted animals. You killed so many creatures that you have to suffer their pain now,\" Mahamaudgalyayana said, answering him with great compassion.", "When the ghosts at last began to fail silent and reflect on Mahamaudgalyayana's words, one of them in a halting and uncertain tone asked, \"Venerable One, why have I become a ghost who is so slow at thinking? I am so stupid compared to these other ghosts who all posses quick minds. Why is that?\"", "\"Because when you were a human being you loved to indulge yourself in alcohol. On social occasions you often encouraged people to drink alcohol and to indulge in meat, so now you are a little slow in your thinking and not as nimble as the other ghosts.\"", "Mahamaudgalyayana patiently stayed with the ghosts until all of their questions had been answered, and then he left. From these questions and answers recorded in Buddhist sutras, we can get a pretty good idea of why some people become ghosts and what kinds of punishments fit what kinds of transgressions. Chefs and homemakers, be warned! Do not take money intended for food and keep it for yourselves, or you too might become a hungry ghost one day! If you are in business, be careful what you do! Do not think you can get away with skimming a little extra for yourself or with cheating your customers. Those who slaughter for the sake of satisfying their tastes and those who indulge in intoxicating drink, be forewarned. Do not let a moment of self-gratification cause you endless suffering and regret."].map(function (str, i) {
       //return <div key={i} style={{width:window.innerWidth, textAlign: 'justify', flexWrap: 'wrap'}}><p style={{textIndent: 50, margin: 0}}>{parseItalic(str)}</p></div>
       //return <div key={i} style={{textIndent: 50, margin: 0, textAlign: 'justify'}}>{parseItalic(str)}</div>
       return _react2.default.createElement(
@@ -19694,7 +19706,7 @@ var p2_en = _react2.default.createElement(
   _react2.default.createElement(
     'article',
     null,
-    ["How many kinds of ghosts are there and what do they look like? The <i>Abhidharma-nyayanusara</i> says there are three kinds of ghosts.", "A. Wealthy Ghosts", "Wealthy ghosts are something like wealthy human beings. They enjoy a lot of offerings and they do not want for food or clothing. Examples of such ghosts include those honored in an ancestral shrine or  those revered for their great powers and blessings.", "B. Not-So-Wealthy-Ghosts", "Those ghosts are like most people in the world. Although they receive some offerings, they are less well-off than wealthy ghosts.", "C. Poor Ghosts", "These are ghosts are much like homeless human beggars. They have no place to live. Sometimes they eat and sometimes they do not. Their livelihood depends largely on handouts from others. For the most part, these poor ghosts wander around alone in very remote parts of the world. Only when there is a special offering made for them in the temple can they get something to eat. The <i>Abhidharmamahavibhasa-sastra</i> says that there are two kinds of ghosts.", "A. Ghosts with Dignity and Prominence", "These ghosts are strong and tall. They wear ornate headpieces, flower garlands, and beautiful clothing. They eat delicacies and ride in carriages pulled by horses or elephants. They have servants who care for them wherever they go and they live lives full of pleasure and amusement. They are much like royal people in the human realm. The Chinese folk god, Cheng Huang Lao Ye, is this kind of ghost.", "B. Ghosts Lacking in Dignity and Prominence", "These ghosts have messy hair that flies all over and covers their faces. Their clothing is ragged, at best, and often they are forced to go completely naked. Their faces are pale and ugly. They carry old broken begging bowls. They are very similar to downtrodden beggars in the human realm.", "Ghosts can also be divided into the general categories of large and small ghosts. Large ghosts are about one yojana tall, based on the Indian measurement units. One yojana is approximately seven miles. Imagine that! They are huge creatures. In Chinese, they are sometimes called \"Big-headed\" ghosts because their heads are as big as mountains. However, their long throats are as narrow as needles and, for the most part, they are unable to eat anything. For this reason, they are very weak and they have to use canes whenever they want to walk somewhere. Their hair is long and messy and dirty. In contrast, small ghosts are very tiny. They are about as big as newborn babies.", "There also are beautiful ghosts and ugly ones. Beautiful ghosts are so beautiful they look like heavenly beings and are not in the least bit frightening. Ugly ghosts are remarkable, especially for their runny noses and the sores all over their bodies, which constantly bleed and emit noxious pus. There are noble weathy ghosts and lowly impoverished ones also. Noble ghosts, like the Ghost King of Great Strength, are venerated by people. Lowly ghosts are orphaned ones who wander from place to place.", "Whether ghosts are wealthy or poor, beautiful or ugly, with or without Dignity and prominence, large or small, they all are representative of human beings in some way, and they do not all live in hell. Are there not visible signs of them in this world?", "Zen master Ruman once had a friend named Wang. When Wang died, Master Ruman held a special Dharma service, chanting sutras to help him in the next rebirth. A year or so after Wang's death, Master Ruman set out for Yangzhou in Jiangsu Province. While he was on the road, Master Ruman suddenly saw his old friend Wang standing in front of him. Master Runman was astonished at the sight of him and asked, \"Did you not die already? How is it possible that you are here now walking around?\"", "Wang quickly interrupted the Master. \"Hush, do not talk so loudly. Come with me into the mountains and we will discuss everything in detail.\"", "When the two at last got to a remote mountain gorge, Wang said, \"Master Ruman, let me tell you now. I am not a human being. I am a ghost. When I was a human, I never did anything bad and I often tried to help other people. In addition to that, there were all those sutras you chanted for me after I died. Now King Yama of Hell has appointed me to be an investigator for him in the human realm.\"", "\"Amazing! So, what do you do as a ghost investigator?\"", "\"It is my job to make a detailed record of human acts of corruption, murder, theft, depravity and cruelty. I record everything I see and report all of it to King Yama. He keeps these records and makes sure that all transgressions are repaid in kind. People who murder will experience being murdered. People who steal will someday have thing stolen from them, and so on.\"", "After Wang finished speaking, he reached into his clothing and pulled out a red flower to give to Master Ruman as a token of payment for the kindness Master Ruman had shown him when he was still a human being. When Master Ruman saw the flower, he tried to refuse it. \"I am just a monk.\" He said. \"What do I need this flower for?\"", "\"This flower is not like other flowers,\" Wang said. \"If you carry it in your hand, it will allow you to tell if someone is a human being or a ghost.\"", "\"How will carrying a flower in my hand help me do that?\" Master Ruman asked.", "\"If you have this flower in your hand as you walk down the street, a righteous person will never look at it. Ghosts, however, will stare at the flower with great intensity. If an individual stares at the flower and then makes gestures to attract attention, then you will know that this individual is a <i>show-off ghost</i>. If a ghost looks at the flower and then looks at you, you will know that he is a <i>lustful ghost</i>. If the ghost looks at the flower and then looks at himself, then you will know that he is a <i>greedy ghost</i>. If a ghost looks at the flower and then starts rubbing his hand together, you will know that he is a <i>cheating ghost</i>.\"", "After Master Ruman and Wang had parted company, Master Ruman walked into town carrying the red flower in his hand. The first person who came toward him sauntered along contentedly, never once glancing at the flower. \"Good, that must be a righteous human being,\" Master Ruman thought to himself.", "He walked a little farther and saw a very fashionable woman dressed in beautiful clothes. She stared directly at the flower, and patted her cheek.", "\"Oh no, that must be a <i>show-off ghost</i>,\" Master Ruman thought.", "After a while, a man, also dressed very well, walked toward Master Ruman. He stared at the flower, turned his eyes to Master Ruman, and said disappointedly, \"This is only an old monk.\"", "\"Oh no, he is a lustful ghost!\" the Master muttered to himself, somewhat displeased.", "Master Ruman kept walking and before long another person approached himself. This one stared at the flower and then at himself. \"Oh no,\" Master Ruman thought. \"He is a greedy ghost!\"", "Master Ruman turned and started down another street. Far down the street someone started staring at the flower and rubbing his hands together. \"Oh no, now I have run into a cheating ghost. This flower is really powerful. Look what it is showing me!\"", "Master Ruman walked some more and thought about what he had just seen. Before long, he found himself at the gate of his temple. Thinking it would be inappropriate to bring the red flower into the temple, Master Ruman threw it on the ground behind him and started to enter the temple gate. In seconds, he heard a lot of noise and arguing going on behind him. He turned and saw that all the ghosts he had just seen in town and had been following him. Now they were fighting over the flower he had thrown on the ground. At last, one of the ghosts prevailed in the fight and held the flower in his hand. As the other ghosts stopped to look at it, Master Ruman saw that the beautiful red flower had turned into a mere bone from some dead body.", "In this world, sometimes people try so hard to attain wealth, fame or power, but in the end what do they really get? Is it not just like that story? In the end, they are left holding nothing but a pile of old bones and a handful of dirt.", "There is an old Buddhist saying, \"Today I know nothing of tomorrow: Why should I waste my time on disputes and discord?\" Therefore, people should not fight over the flowers of superficial glory and vanity in life, but should honestly and diligently work toward meaningful goals in life."].map(function (str, i) {
+    ["How many kinds of ghosts are there and what do they look like? The <i>Abhidharma-nyayanusara</i> says there are three kinds of ghosts.", "A. Wealthy Ghosts", "Wealthy ghosts are something like wealthy human beings. They enjoy a lot of offerings and they do not want for food or clothing. Examples of such ghosts include those honored in an ancestral shrine or  those revered for their great powers and blessings.", "B. Not-So-Wealthy-Ghosts", "Those ghosts are like most people in the world. Although they receive some offerings, they are less well-off than wealthy ghosts.", "C. Poor Ghosts", "These are ghosts are much like homeless human beggars. They have no place to live. Sometimes they eat and sometimes they do not. Their livelihood depends largely on handouts from others. For the most part, these poor ghosts wander around alone in very remote parts of the world. Only when there is a special offering made for them in the temple can they get something to eat. The <i>Abhidharmamahavibhasa-sastra</i> says that there are two kinds of ghosts.", "A. Ghosts with Dignity and Prominence", "These ghosts are strong and tall. They wear ornate headpieces, flower garlands, and beautiful clothing. They eat delicacies and ride in carriages pulled by horses or elephants. They have servants who care for them wherever they go and they live lives full of pleasure and amusement. They are much like royal people in the human realm. The Chinese folk god, Cheng Huang Lao Ye, is this kind of ghost.", "B. Ghosts Lacking in Dignity and Prominence", "These ghosts have messy hair that flies all over and covers their faces. Their clothing is ragged, at best, and often they are forced to go completely naked. Their faces are pale and ugly. They carry old broken begging bowls. They are very similar to downtrodden beggars in the human realm.", "Ghosts can also be divided into the general categories of large and small ghosts. Large ghosts are about one yojana tall, based on the Indian measurement units. One yojana is approximately seven miles. Imagine that! They are huge creatures. In Chinese, they are sometimes called \"Big-headed\" ghosts because their heads are as big as mountains. However, their long throats are as narrow as needles and, for the most part, they are unable to eat anything. For this reason, they are very weak and they have to use canes whenever they want to walk somewhere. Their hair is long and messy and dirty. In contrast, small ghosts are very tiny. They are about as big as newborn babies.", "There also are beautiful ghosts and ugly ones. Beautiful ghosts are so beautiful they look like heavenly beings and are not in the least bit frightening. Ugly ghosts are remarkable, especially for their runny noses and the sores all over their bodies, which constantly bleed and emit noxious pus. There are noble wealthy ghosts and lowly impoverished ones also. Noble ghosts, like the Ghost King of Great Strength, are venerated by people. Lowly ghosts are orphaned ones who wander from place to place.", "Whether ghosts are wealthy or poor, beautiful or ugly, with or without Dignity and prominence, large or small, they all are representative of human beings in some way, and they do not all live in hell. Are there not visible signs of them in this world?", "Zen master Ruman once had a friend named Wang. When Wang died, Master Ruman held a special Dharma service, chanting sutras to help him in the next rebirth. A year or so after Wang's death, Master Ruman set out for Yangzhou in Jiangsu Province. While he was on the road, Master Ruman suddenly saw his old friend Wang standing in front of him. Master Ruman was astonished at the sight of him and asked, \"Did you not die already? How is it possible that you are here now walking around?\"", "Wang quickly interrupted the Master. \"Hush, do not talk so loudly. Come with me into the mountains and we will discuss everything in detail.\"", "When the two at last got to a remote mountain gorge, Wang said, \"Master Ruman, let me tell you now. I am not a human being. I am a ghost. When I was a human, I never did anything bad and I often tried to help other people. In addition to that, there were all those sutras you chanted for me after I died. Now King Yama of Hell has appointed me to be an investigator for him in the human realm.\"", "\"Amazing! So, what do you do as a ghost investigator?\"", "\"It is my job to make a detailed record of human acts of corruption, murder, theft, depravity and cruelty. I record everything I see and report all of it to King Yama. He keeps these records and makes sure that all transgressions are repaid in kind. People who murder will experience being murdered. People who steal will someday have thing stolen from them, and so on.\"", "After Wang finished speaking, he reached into his clothing and pulled out a red flower to give to Master Ruman as a token of payment for the kindness Master Ruman had shown him when he was still a human being. When Master Ruman saw the flower, he tried to refuse it. \"I am just a monk.\" He said. \"What do I need this flower for?\"", "\"This flower is not like other flowers,\" Wang said. \"If you carry it in your hand, it will allow you to tell if someone is a human being or a ghost.\"", "\"How will carrying a flower in my hand help me do that?\" Master Ruman asked.", "\"If you have this flower in your hand as you walk down the street, a righteous person will never look at it. Ghosts, however, will stare at the flower with great intensity. If an individual stares at the flower and then makes gestures to attract attention, then you will know that this individual is a <i>show-off ghost</i>. If a ghost looks at the flower and then looks at you, you will know that he is a <i>lustful ghost</i>. If the ghost looks at the flower and then looks at himself, then you will know that he is a <i>greedy ghost</i>. If a ghost looks at the flower and then starts rubbing his hand together, you will know that he is a <i>cheating ghost</i>.\"", "After Master Ruman and Wang had parted company, Master Ruman walked into town carrying the red flower in his hand. The first person who came toward him sauntered along contentedly, never once glancing at the flower. \"Good, that must be a righteous human being,\" Master Ruman thought to himself.", "He walked a little farther and saw a very fashionable woman dressed in beautiful clothes. She stared directly at the flower, and patted her cheek.", "\"Oh no, that must be a <i>show-off ghost</i>,\" Master Ruman thought.", "After a while, a man, also dressed very well, walked toward Master Ruman. He stared at the flower, turned his eyes to Master Ruman, and said disappointedly, \"This is only an old monk.\"", "\"Oh no, he is a lustful ghost!\" the Master muttered to himself, somewhat displeased.", "Master Ruman kept walking and before long another person approached himself. This one stared at the flower and then at himself. \"Oh no,\" Master Ruman thought. \"He is a greedy ghost!\"", "Master Ruman turned and started down another street. Far down the street someone started staring at the flower and rubbing his hands together. \"Oh no, now I have run into a cheating ghost. This flower is really powerful. Look what it is showing me!\"", "Master Ruman walked some more and thought about what he had just seen. Before long, he found himself at the gate of his temple. Thinking it would be inappropriate to bring the red flower into the temple, Master Ruman threw it on the ground behind him and started to enter the temple gate. In seconds, he heard a lot of noise and arguing going on behind him. He turned and saw that all the ghosts he had just seen in town and had been following him. Now they were fighting over the flower he had thrown on the ground. At last, one of the ghosts prevailed in the fight and held the flower in his hand. As the other ghosts stopped to look at it, Master Ruman saw that the beautiful red flower had turned into a mere bone from some dead body.", "In this world, sometimes people try so hard to attain wealth, fame or power, but in the end what do they really get? Is it not just like that story? In the end, they are left holding nothing but a pile of old bones and a handful of dirt.", "There is an old Buddhist saying, \"Today I know nothing of tomorrow: Why should I waste my time on disputes and discord?\" Therefore, people should not fight over the flowers of superficial glory and vanity in life, but should honestly and diligently work toward meaningful goals in life."].map(function (str, i) {
       //let italicized = parseItalic(str)
       //  return <div key={i} style={{width:window.innerWidth, textAlign: 'justify', flexWrap: 'wrap'}}><div style={{textIndent: 50, margin: 0}}>{parseItalic(str)}</div></div>
       // return <div key={i} style={{textIndent: 50, margin: 0, textAlign: 'justify'}}>{italicized}</div>
@@ -19713,7 +19725,7 @@ var p3_en = _react2.default.createElement(
   _react2.default.createElement(
     'article',
     null,
-    ["Human beings live on the earth in the human realm. Where do ghosts live? In human life there is pleasure and pain. What gives ghosts pleasure and pain?", "The <i>Abhidharmamahavibhasa-sastra</i> says that wealthy ghosts live in mountain valleys and gorges, on the coasts of the world's oceans, in the air, in forests or in temples where people worship them. They are like people who live in penthouses in cities or in luxurious resorts in the picturesque countryside. Poor ghosts live in remote areas near graveyards, or in piles of grass and wood, or in latrines, or in deserted areas. Poor ghosts do not have homes for themselves, but usually wander around like human beggars, completely exposed to the natural elements of wind and rain. They are mired in anguish.", "Some ghosts suffer a great deal and some of them actually have quite a lot of fun. Suffering ghosts experience terrible hunger and unbearable thirst. They never have anything to eat and even if they see a river, they cannot drank from it. If ever they do take water from a river to drink, it will instantly turn into flames in their throats. Even the most delicious food offerings are useless in relieving their perpetual hunger. If you want to help these beings, you may offer them a simple meal of fruits and vegetables in a Buddhist ceremony. Through the merits and blessings of the Buddhist sutras and mantras, the burning fire in their throats may cease, thereby allowing them to eat. Definitely do not offer them sacrifices, otherwise, you will only increase their evil karma and suffering.", "The <i>Ksitigarbha Sutra</i> says that, of the merits in chanting sutras and making offerings for the ghosts, six out of seven parts will benefit human beings while only one in seven parts will benefit the deceased. From this we can see how important it is to use our time here while we are healthy to do as much as we can. If we wait until we are dead and our bodies are stretched out and stiff, then it will be too late to do anything for ourselves, and other people will not be able to do us much good either.", "Happy ghosts live pleasant lives full of good food and beautiful clothes.  They have vehicles to take them wherever they want to go and they generally pass their time pleasantly. Happy ghosts have it pretty easy because when they were alive, they were generous towards others. They became ghosts, though, because they often regretted their generosity or felt stingy in their hearts. Even though the life of a happy ghost is more pleasant than the life of a human being, it is still much better to be a human being. These ghosts are very timid and only dare to come out late at night. They are afraid of light and never appear during the day. If they happen to come across a human being, they run and hide in dark places because they are afraid to touch people. Once it is understood how deeply ghosts fear human beings there will be no need to feat ghosts so much.", "Sometimes human beings unintentionally disturb ghosts. In Taiwan, there is a folk custom of \"marrying\" a dead daughter (so she will have a place on someone's ancestral shrine). There is a story about a couple that tried very hard to find someone to \"marry\" their daughter who had died before she was married in life. The daughter had not married in life because she did not want to, and their forcing her to do so after death only angered her and caused her more misery.", "\"Father, Mother,\" she said. \"when I was alive you tried to force me to marry to carry on the family name and now that I am dead and have become a ghost, you still want to force your will on me!\"", "Since the ghost thought this young man was good-for-nothing in wishing to \"marry\" a ghost, she intentionally caused her \"husband\" a lot of trouble. On the \"wedding night,\" she came and hit her \"husband\" on the head, boxed his ears and struck him in the face. She continued to push and hit him all night long. The \"bridegroom\" never once caught sight of his \"bride,\" but when the morning came, his face was swollen from being punched so often. The next day he took her name away from his family shrine and returned it to her parents.", "Why do people do such ignorant things? How strange a man would consider sleeping with a ghost and putting her name in his family shrine. What good could that ever bring? In Taiwan, some people also have the custom of burning paper representations of automobiles, houses, American dollars, television sets, refrigerators and other things so that these items will go to the ghost realm where they departed loved ones can enjoy them. (The smoke is thought to carry them to the ghost realm.)", "The truth is, ghosts have five types of magical powers, and they can move around by just thinking of where they want to go. They do not need cars. If they did use cars, it would take them longer than if they had gone by their own powers. If everybody burned a paper car for their loved ones, pretty soon hell would be overloaded with automobiles. There would be traffic accidents and no one would every get anywhere. In his human realm, home appliances are either 110 volts or 220 volts. If they do not have the right outlets in hell, our appliances will be useless there. American dollars are used almost all over the world, but do you think they will also be accepted in hell?", "Ghosts have their own ways of living and we do not need to be too concerned with them. A loved one who has passed away may have gone to heaven or been reborn as a human being. You can not be sure they have become ghosts and their lives are full of sorrow and need. If we are going to honor our ancestors, we do not need to burn paper money for them because we will only end up with a heap of useless ashes. It would be much better for everyone to donate money in the names of our ancestors. We can build schools, establish scholarship funds and do other good things in their names. In this way our ancestors can make a use full contribution to the human realm.", "In Chinese literature, there is a wonderful and vivid story about ghosts. Once there was a ghost who had just left his human body. As a new ghost, he discovered that he was so inexperienced he could not find anything to eat. He was getting really hungry when he met an old ghost. The old ghost said to him, \"Young fellow, why are you so skinny and why is tour face so pale and gaunt?\"", "\"I have been a ghosts for quite a few days now,\" the new ghost replied, \"but I have not yet succeeded in finding anything to eat. That is why I look so bad. My friend, you have been a ghost for a much longer time than I have. Please tell me how to get some food!\"", "\"That is so easy,\" the old ghost said, \"What I usually do is play some ghost tricks and do something supernatural. That is what gets me fed!\"", "\"So that is how you do it.\" the new ghost said. \"Now I understand.\"", "The new ghost was delighted with his new understanding and immediately ran to the east side of town. He entered a poor person's house where someone was grinding flour. As soon as he had the chance, the ghost stepped up to the grinding wheel and started to move it himself. When the person in the house saw that the wheel was moving all by itself, he called out in surprise, \"Wow! The wheel is moving all by itself and no one is pushing it! There must be a ghost here! It must be our compassionate Buddha who sent him here to help us because we are so poor and have to work hard all the time!\"", "\"The new ghost kept pushing the grinding wheel all night long. He got very tired from the work and his eyes began to glaze over, but then dawn came he still had not gotten anything to eat. He ran straight back to the old ghost.", "\"Hey, you! You told me to play some ghost tricks to make my life better,\" he complained angrily. \"I followed your advice completely. I worked all night, yet I did not get one thing to eat!\"", "\"Oh, you fool,\" the old ghost said. \"The people in the home you went to believe in Buddhism. Buddhists are not afraid of ghosts. Why should they give you anthing to eat?\"", "\"So that is how it is. I see. I will try another place tonight,\" the new ghost said. That night he slipped through the shadows and went to a different house on the west side of town where some people were pounding rice. He picked up the pounding stick and began pounding the rice for them. When the people saw what was happening, they were very surprised.", "\"Amazing! Look at that! Last night the Buddha sent a ghost to someone's home to help him grind flour, and tonight Lao Tzu has sent a ghost to help us pound rice.\"", "The new ghost worked as hard as he could until dawn and he heard rooster crowing. His back and arms were terribly sore and he felt tired all through his body, but still he had not been given a single thing to eat. He raced back to the old ghost, more than a little bit angry this time.", "\"Now, try to explain this to me. Why did they not give me anything to eat? I do not understand!\"", "\"My young friend, those people were Taoists. Not only do they not fear ghosts, sometimes they even try to catch them!\"", "\"Then what should I do? Do I have to go hungry day in and day out? I can hardly bear it!\"", "\"Here is what you do,\" the old ghost said. \"Find a house without any Buddhist statues or signs of Taoist gods. In that place, anything will be possible.\"", "The new ghost looked all over the town until at last he found a house that had no gods and no images of Buddha in it. Inside there was a room full of people enjoying a feast of fish, meat, vegetables and wine. When the new ghost saw their sumptuous meal, he was so tempted that he began to drool. He had to promptly think of what to do to get them to feed him. He saw a skinny little dog crouched by one of the legs of the table. The dog was wagging its tail in the hope that someone would throw him a bone. The ghost grabbed the dog and started to race around the room so it looked to the people as if the dog were flying.", "\"Look at that!\" someone exclaimed. \"How can that be?\" How can the day be flying around like that? Did someone cast a spell on him?\"", "The whole room fell into a commotion as the dog flew around and around. Somebody suggested that they call on Jesus to help them. Another person said, \"No, Jesus can help people change, but he cannot do anything when it comes to ghosts.\"", "Someone else said, \"Let us read Confucius's words out loud. Maybe he can help us!\"", "Another person answered, \"No! Have you forgotten that Confucius refused to talk about ghosts? He told us to keep away from them! He will not be able to help us, either!\"", "Things went on like this with people arguing back and forth for quite some time. At last they decided to call on a medium to exercise his magical power. ", "\"This ghost is bewitched. Let us kill the dog and prepare for him a table of food complete with three type of meat and wine. That will appease him!\"", "The people quickly did as instructed and prepared a bounteous feast for the ghost, who enjoyed every last bite of it. \"That was great!\" he said when he was finished. \"That was really good!\" The food was so good, in fact, the new ghosts never wanted to leave that house again. Every night after that he performed some new trick to get the people to make hime more food. So, this is truly the way to \"invite a ghost into your house.\"", "In life, people have to be careful to always treat others with kindness and to keep themselves well within the limits of good behavior. Definitely they should not ever invide a ghost into their home. Sometimes people fall in with bad company, with robbers or murders. If they ask that kind of person to help them even once, they will have a world of trouble on their hands. They may even lost their lives for it. In Taiwan, there are some really foolish customs in which people worship ghosts, rocks, trees, and practically everything. If people follow these customs and invite all these spirits and ghosts into their homes and honor them as special guests, they will be inviting disasters onto themselves. They should be careful to give their respect only to people who deserve it, to people who are honorable in their own lives. To ensure well-being and safety, one should maintain some distance from people who worship spirits and practice magic."].map(function (str, i) {
+    ["Human beings live on the earth in the human realm. Where do ghosts live? In human life there is pleasure and pain. What gives ghosts pleasure and pain?", "The <i>Abhidharmamahavibhasa-sastra</i> says that wealthy ghosts live in mountain valleys and gorges, on the coasts of the world's oceans, in the air, in forests or in temples where people worship them. They are like people who live in penthouses in cities or in luxurious resorts in the picturesque countryside. Poor ghosts live in remote areas near graveyards, or in piles of grass and wood, or in latrines, or in deserted areas. Poor ghosts do not have homes for themselves, but usually wander around like human beggars, completely exposed to the natural elements of wind and rain. They are mired in anguish.", "Some ghosts suffer a great deal and some of them actually have quite a lot of fun. Suffering ghosts experience terrible hunger and unbearable thirst. They never have anything to eat and even if they see a river, they cannot drank from it. If ever they do take water from a river to drink, it will instantly turn into flames in their throats. Even the most delicious food offerings are useless in relieving their perpetual hunger. If you want to help these beings, you may offer them a simple meal of fruits and vegetables in a Buddhist ceremony. Through the merits and blessings of the Buddhist sutras and mantras, the burning fire in their throats may cease, thereby allowing them to eat. Definitely do not offer them sacrifices, otherwise, you will only increase their evil karma and suffering.", "The <i>Ksitigarbha Sutra</i> says that, of the merits in chanting sutras and making offerings for the ghosts, six out of seven parts will benefit human beings while only one in seven parts will benefit the deceased. From this we can see how important it is to use our time here while we are healthy to do as much as we can. If we wait until we are dead and our bodies are stretched out and stiff, then it will be too late to do anything for ourselves, and other people will not be able to do us much good either.", "Happy ghosts live pleasant lives full of good food and beautiful clothes.  They have vehicles to take them wherever they want to go and they generally pass their time pleasantly. Happy ghosts have it pretty easy because when they were alive, they were generous towards others. They became ghosts, though, because they often regretted their generosity or felt stingy in their hearts. Even though the life of a happy ghost is more pleasant than the life of a human being, it is still much better to be a human being. These ghosts are very timid and only dare to come out late at night. They are afraid of light and never appear during the day. If they happen to come across a human being, they run and hide in dark places because they are afraid to touch people. Once it is understood how deeply ghosts fear human beings there will be no need to feat ghosts so much.", "Sometimes human beings unintentionally disturb ghosts. In Taiwan, there is a folk custom of \"marrying\" a dead daughter (so she will have a place on someone's ancestral shrine). There is a story about a couple that tried very hard to find someone to \"marry\" their daughter who had died before she was married in life. The daughter had not married in life because she did not want to, and their forcing her to do so after death only angered her and caused her more misery.", "\"Father, Mother,\" she said. \"when I was alive you tried to force me to marry to carry on the family name and now that I am dead and have become a ghost, you still want to force your will on me!\"", "Since the ghost thought this young man was good-for-nothing in wishing to \"marry\" a ghost, she intentionally caused her \"husband\" a lot of trouble. On the \"wedding night,\" she came and hit her \"husband\" on the head, boxed his ears and struck him in the face. She continued to push and hit him all night long. The \"bridegroom\" never once caught sight of his \"bride,\" but when the morning came, his face was swollen from being punched so often. The next day he took her name away from his family shrine and returned it to her parents.", "Why do people do such ignorant things? How strange a man would consider sleeping with a ghost and putting her name in his family shrine. What good could that ever bring? In Taiwan, some people also have the custom of burning paper representations of automobiles, houses, American dollars, television sets, refrigerators and other things so that these items will go to the ghost realm where they departed loved ones can enjoy them. (The smoke is thought to carry them to the ghost realm.)", "The truth is, ghosts have five types of magical powers, and they can move around by just thinking of where they want to go. They do not need cars. If they did use cars, it would take them longer than if they had gone by their own powers. If everybody burned a paper car for their loved ones, pretty soon hell would be overloaded with automobiles. There would be traffic accidents and no one would every get anywhere. In his human realm, home appliances are either 110 volts or 220 volts. If they do not have the right outlets in hell, our appliances will be useless there. American dollars are used almost all over the world, but do you think they will also be accepted in hell?", "Ghosts have their own ways of living and we do not need to be too concerned with them. A loved one who has passed away may have gone to heaven or been reborn as a human being. You can not be sure they have become ghosts and their lives are full of sorrow and need. If we are going to honor our ancestors, we do not need to burn paper money for them because we will only end up with a heap of useless ashes. It would be much better for everyone to donate money in the names of our ancestors. We can build schools, establish scholarship funds and do other good things in their names. In this way our ancestors can make a use full contribution to the human realm.", "In Chinese literature, there is a wonderful and vivid story about ghosts. Once there was a ghost who had just left his human body. As a new ghost, he discovered that he was so inexperienced he could not find anything to eat. He was getting really hungry when he met an old ghost. The old ghost said to him, \"Young fellow, why are you so skinny and why is tour face so pale and gaunt?\"", "\"I have been a ghosts for quite a few days now,\" the new ghost replied, \"but I have not yet succeeded in finding anything to eat. That is why I look so bad. My friend, you have been a ghost for a much longer time than I have. Please tell me how to get some food!\"", "\"That is so easy,\" the old ghost said, \"What I usually do is play some ghost tricks and do something supernatural. That is what gets me fed!\"", "\"So that is how you do it.\" the new ghost said. \"Now I understand.\"", "The new ghost was delighted with his new understanding and immediately ran to the east side of town. He entered a poor person's house where someone was grinding flour. As soon as he had the chance, the ghost stepped up to the grinding wheel and started to move it himself. When the person in the house saw that the wheel was moving all by itself, he called out in surprise, \"Wow! The wheel is moving all by itself and no one is pushing it! There must be a ghost here! It must be our compassionate Buddha who sent him here to help us because we are so poor and have to work hard all the time!\"", "\"The new ghost kept pushing the grinding wheel all night long. He got very tired from the work and his eyes began to glaze over, but then dawn came he still had not gotten anything to eat. He ran straight back to the old ghost.", "\"Hey, you! You told me to play some ghost tricks to make my life better,\" he complained angrily. \"I followed your advice completely. I worked all night, yet I did not get one thing to eat!\"", "\"Oh, you fool,\" the old ghost said. \"The people in the home you went to believe in Buddhism. Buddhists are not afraid of ghosts. Why should they give you anything to eat?\"", "\"So that is how it is. I see. I will try another place tonight,\" the new ghost said. That night he slipped through the shadows and went to a different house on the west side of town where some people were pounding rice. He picked up the pounding stick and began pounding the rice for them. When the people saw what was happening, they were very surprised.", "\"Amazing! Look at that! Last night the Buddha sent a ghost to someone's home to help him grind flour, and tonight Lao Tzu has sent a ghost to help us pound rice.\"", "The new ghost worked as hard as he could until dawn and he heard rooster crowing. His back and arms were terribly sore and he felt tired all through his body, but still he had not been given a single thing to eat. He raced back to the old ghost, more than a little bit angry this time.", "\"Now, try to explain this to me. Why did they not give me anything to eat? I do not understand!\"", "\"My young friend, those people were Taoists. Not only do they not fear ghosts, sometimes they even try to catch them!\"", "\"Then what should I do? Do I have to go hungry day in and day out? I can hardly bear it!\"", "\"Here is what you do,\" the old ghost said. \"Find a house without any Buddhist statues or signs of Taoist gods. In that place, anything will be possible.\"", "The new ghost looked all over the town until at last he found a house that had no gods and no images of Buddha in it. Inside there was a room full of people enjoying a feast of fish, meat, vegetables and wine. When the new ghost saw their sumptuous meal, he was so tempted that he began to drool. He had to promptly think of what to do to get them to feed him. He saw a skinny little dog crouched by one of the legs of the table. The dog was wagging its tail in the hope that someone would throw him a bone. The ghost grabbed the dog and started to race around the room so it looked to the people as if the dog were flying.", "\"Look at that!\" someone exclaimed. \"How can that be?\" How can the day be flying around like that? Did someone cast a spell on him?\"", "The whole room fell into a commotion as the dog flew around and around. Somebody suggested that they call on Jesus to help them. Another person said, \"No, Jesus can help people change, but he cannot do anything when it comes to ghosts.\"", "Someone else said, \"Let us read Confucius's words out loud. Maybe he can help us!\"", "Another person answered, \"No! Have you forgotten that Confucius refused to talk about ghosts? He told us to keep away from them! He will not be able to help us, either!\"", "Things went on like this with people arguing back and forth for quite some time. At last they decided to call on a medium to exercise his magical power. ", "\"This ghost is bewitched. Let us kill the dog and prepare for him a table of food complete with three type of meat and wine. That will appease him!\"", "The people quickly did as instructed and prepared a bounteous feast for the ghost, who enjoyed every last bite of it. \"That was great!\" he said when he was finished. \"That was really good!\" The food was so good, in fact, the new ghosts never wanted to leave that house again. Every night after that he performed some new trick to get the people to make hime more food. So, this is truly the way to \"invite a ghost into your house.\"", "In life, people have to be careful to always treat others with kindness and to keep themselves well within the limits of good behavior. Definitely they should not ever invite a ghost into their home. Sometimes people fall in with bad company, with robbers or murders. If they ask that kind of person to help them even once, they will have a world of trouble on their hands. They may even lost their lives for it. In Taiwan, there are some really foolish customs in which people worship ghosts, rocks, trees, and practically everything. If people follow these customs and invite all these spirits and ghosts into their homes and honor them as special guests, they will be inviting disasters onto themselves. They should be careful to give their respect only to people who deserve it, to people who are honorable in their own lives. To ensure well-being and safety, one should maintain some distance from people who worship spirits and practice magic."].map(function (str, i) {
       //  return <div key={i} style={{width:window.innerWidth, textAlign: 'justify', flexWrap: 'wrap'}}><div style={{textIndent: 50, margin: 0}}>{parseItalic(str)}</div></div>
       // return <div key={i} style={{textIndent: 50, margin: 0, textAlign: 'justify'}}>{parseItalic(str)}</div>
       return _react2.default.createElement(
@@ -19893,7 +19905,7 @@ var _book2 = _interopRequireDefault(_book);
 
 var _controlText = __webpack_require__(63);
 
-var _Dialog = __webpack_require__(325);
+var _Dialog = __webpack_require__(324);
 
 var _Dialog2 = _interopRequireDefault(_Dialog);
 
@@ -19905,7 +19917,7 @@ var _helper = __webpack_require__(503);
 
 var _helper2 = _interopRequireDefault(_helper);
 
-var _reactRedux = __webpack_require__(453);
+var _reactRedux = __webpack_require__(452);
 
 var _quizzes = __webpack_require__(504);
 
@@ -20081,7 +20093,6 @@ var App = function (_Component) {
         self.forceUpdate();
       }, (0, _osDetection.is_iOS)() ? 0 : 130);
     }, false);
-
     return _this;
   }
 
@@ -20301,8 +20312,13 @@ var _initialiseProps = function _initialiseProps() {
     };
 
     // handle momentum scroll case and ending of page movement
+    if (!_this2.heightOfAppBar) _this2.heightOfAppBar = parseInt(document.querySelector(".AppBarTitle h1").style.height, 10);
 
-    var rollUp = currentTop > previousTop && currentTop > 0 || currentTop < previousTop && reachedMaxScrollBoundary();
+    if (!_this2.heightOfNavigator) _this2.heightOfNavigator = parseInt(document.querySelector(".pagination div").style.height, 10);
+
+    var minDisplacement = _this2.heightOfAppBar + _this2.heightOfNavigator;
+
+    var rollUp = currentTop > previousTop && currentTop > 0 && currentTop > minDisplacement || currentTop < previousTop && reachedMaxScrollBoundary();
 
     _this2.setState({
       rollUp: rollUp, // handle momentum scroll reach 0 pixel
@@ -20418,12 +20434,17 @@ var _initialiseProps = function _initialiseProps() {
   };
 
   this.handleChangePageCallback = function (page) {
-    _this2.setState({ page: page });
+    _this2.setState({ rollUp: false });
+    var self = _this2;
+    setTimeout(function () {
+      self.setState({ page: page });
+    }, 300);
   };
 
   this.handlePageSwipe = function (index, indexLatest) {
-    var rollUp = _this2.processRollUp(index);
-    _this2.setState({ page: index, rollUp: rollUp });
+    _this2.setState({ rollUp: false });
+    // give page change a small delay, hence call setState separately
+    _this2.setState({ page: index });
   };
 
   this.handleQuiz = function () {
@@ -20532,7 +20553,7 @@ module.exports = { "default": __webpack_require__(234), __esModule: true };
  */
 
 !function (root, name, definition) {
-  if (typeof module != 'undefined' && module.exports) module.exports = definition();else if (true) __webpack_require__(518)(name, definition);else root[name] = definition();
+  if (typeof module != 'undefined' && module.exports) module.exports = definition();else if (true) __webpack_require__(516)(name, definition);else root[name] = definition();
 }(undefined, 'bowser', function () {
   /**
     * See useragents.js for examples of navigator.userAgent
@@ -21227,20 +21248,22 @@ module.exports = function () {/* empty */};
 
 // false -> Array#indexOf
 // true  -> Array#includes
-var toIObject = __webpack_require__(38),
-    toLength = __webpack_require__(145),
-    toIndex = __webpack_require__(255);
+var toIObject = __webpack_require__(38);
+var toLength = __webpack_require__(145);
+var toAbsoluteIndex = __webpack_require__(255);
 module.exports = function (IS_INCLUDES) {
   return function ($this, el, fromIndex) {
-    var O = toIObject($this),
-        length = toLength(O.length),
-        index = toIndex(fromIndex, length),
-        value;
+    var O = toIObject($this);
+    var length = toLength(O.length);
+    var index = toAbsoluteIndex(fromIndex, length);
+    var value;
     // Array#includes uses SameValueZero equality algorithm
+    // eslint-disable-next-line no-self-compare
     if (IS_INCLUDES && el != el) while (length > index) {
       value = O[index++];
+      // eslint-disable-next-line no-self-compare
       if (value != value) return true;
-      // Array#toIndex ignores holes, Array#includes - not
+      // Array#indexOf ignores holes, Array#includes - not
     } else for (; length > index; index++) {
       if (IS_INCLUDES || index in O) {
         if (O[index] === el) return IS_INCLUDES || index || 0;
@@ -21257,11 +21280,10 @@ module.exports = function (IS_INCLUDES) {
 
 
 // getting tag from 19.1.3.6 Object.prototype.toString()
-var cof = __webpack_require__(86),
-    TAG = __webpack_require__(25)('toStringTag')
+var cof = __webpack_require__(86);
+var TAG = __webpack_require__(25)('toStringTag');
 // ES3 wrong here
-,
-    ARG = cof(function () {
+var ARG = cof(function () {
   return arguments;
 }()) == 'Arguments';
 
@@ -21290,8 +21312,8 @@ module.exports = function (it) {
 "use strict";
 
 
-var $defineProperty = __webpack_require__(33),
-    createDesc = __webpack_require__(56);
+var $defineProperty = __webpack_require__(33);
+var createDesc = __webpack_require__(56);
 
 module.exports = function (object, index, value) {
   if (index in object) $defineProperty.f(object, index, createDesc(0, value));else object[index] = value;
@@ -21305,17 +21327,17 @@ module.exports = function (object, index, value) {
 
 
 // all enumerable object keys, includes symbols
-var getKeys = __webpack_require__(44),
-    gOPS = __webpack_require__(92),
-    pIE = __webpack_require__(65);
+var getKeys = __webpack_require__(44);
+var gOPS = __webpack_require__(92);
+var pIE = __webpack_require__(65);
 module.exports = function (it) {
-  var result = getKeys(it),
-      getSymbols = gOPS.f;
+  var result = getKeys(it);
+  var getSymbols = gOPS.f;
   if (getSymbols) {
-    var symbols = getSymbols(it),
-        isEnum = pIE.f,
-        i = 0,
-        key;
+    var symbols = getSymbols(it);
+    var isEnum = pIE.f;
+    var i = 0;
+    var key;
     while (symbols.length > i) {
       if (isEnum.call(it, key = symbols[i++])) result.push(key);
     }
@@ -21329,7 +21351,8 @@ module.exports = function (it) {
 "use strict";
 
 
-module.exports = __webpack_require__(32).document && document.documentElement;
+var document = __webpack_require__(32).document;
+module.exports = document && document.documentElement;
 
 /***/ }),
 /* 242 */
@@ -21339,9 +21362,9 @@ module.exports = __webpack_require__(32).document && document.documentElement;
 
 
 // check on default Array iterator
-var Iterators = __webpack_require__(55),
-    ITERATOR = __webpack_require__(25)('iterator'),
-    ArrayProto = Array.prototype;
+var Iterators = __webpack_require__(55);
+var ITERATOR = __webpack_require__(25)('iterator');
+var ArrayProto = Array.prototype;
 
 module.exports = function (it) {
   return it !== undefined && (Iterators.Array === it || ArrayProto[ITERATOR] === it);
@@ -21387,10 +21410,10 @@ module.exports = function (iterator, fn, value, entries) {
 "use strict";
 
 
-var create = __webpack_require__(91),
-    descriptor = __webpack_require__(56),
-    setToStringTag = __webpack_require__(93),
-    IteratorPrototype = {};
+var create = __webpack_require__(91);
+var descriptor = __webpack_require__(56);
+var setToStringTag = __webpack_require__(93);
+var IteratorPrototype = {};
 
 // 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
 __webpack_require__(43)(IteratorPrototype, __webpack_require__(25)('iterator'), function () {
@@ -21409,14 +21432,15 @@ module.exports = function (Constructor, NAME, next) {
 "use strict";
 
 
-var ITERATOR = __webpack_require__(25)('iterator'),
-    SAFE_CLOSING = false;
+var ITERATOR = __webpack_require__(25)('iterator');
+var SAFE_CLOSING = false;
 
 try {
   var riter = [7][ITERATOR]();
   riter['return'] = function () {
     SAFE_CLOSING = true;
   };
+  // eslint-disable-next-line no-throw-literal
   Array.from(riter, function () {
     throw 2;
   });
@@ -21426,8 +21450,8 @@ module.exports = function (exec, skipClosing) {
   if (!skipClosing && !SAFE_CLOSING) return false;
   var safe = false;
   try {
-    var arr = [7],
-        iter = arr[ITERATOR]();
+    var arr = [7];
+    var iter = arr[ITERATOR]();
     iter.next = function () {
       return { done: safe = true };
     };
@@ -21457,14 +21481,14 @@ module.exports = function (done, value) {
 "use strict";
 
 
-var getKeys = __webpack_require__(44),
-    toIObject = __webpack_require__(38);
+var getKeys = __webpack_require__(44);
+var toIObject = __webpack_require__(38);
 module.exports = function (object, el) {
-  var O = toIObject(object),
-      keys = getKeys(O),
-      length = keys.length,
-      index = 0,
-      key;
+  var O = toIObject(object);
+  var keys = getKeys(O);
+  var length = keys.length;
+  var index = 0;
+  var key;
   while (length > index) {
     if (O[key = keys[index++]] === el) return key;
   }
@@ -21479,11 +21503,11 @@ module.exports = function (object, el) {
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var META = __webpack_require__(66)('meta'),
-    isObject = __webpack_require__(54),
-    has = __webpack_require__(37),
-    setDesc = __webpack_require__(33).f,
-    id = 0;
+var META = __webpack_require__(66)('meta');
+var isObject = __webpack_require__(54);
+var has = __webpack_require__(37);
+var setDesc = __webpack_require__(33).f;
+var id = 0;
 var isExtensible = Object.isExtensible || function () {
   return true;
 };
@@ -21541,19 +21565,20 @@ var meta = module.exports = {
 
 // 19.1.2.1 Object.assign(target, source, ...)
 
-var getKeys = __webpack_require__(44),
-    gOPS = __webpack_require__(92),
-    pIE = __webpack_require__(65),
-    toObject = __webpack_require__(57),
-    IObject = __webpack_require__(137),
-    $assign = Object.assign;
+var getKeys = __webpack_require__(44);
+var gOPS = __webpack_require__(92);
+var pIE = __webpack_require__(65);
+var toObject = __webpack_require__(57);
+var IObject = __webpack_require__(137);
+var $assign = Object.assign;
 
 // should work with symbols and should have deterministic property order (V8 bug)
 module.exports = !$assign || __webpack_require__(42)(function () {
-  var A = {},
-      B = {},
-      S = Symbol(),
-      K = 'abcdefghijklmnopqrst';
+  var A = {};
+  var B = {};
+  // eslint-disable-next-line no-undef
+  var S = Symbol();
+  var K = 'abcdefghijklmnopqrst';
   A[S] = 7;
   K.split('').forEach(function (k) {
     B[k] = k;
@@ -21561,17 +21586,17 @@ module.exports = !$assign || __webpack_require__(42)(function () {
   return $assign({}, A)[S] != 7 || Object.keys($assign({}, B)).join('') != K;
 }) ? function assign(target, source) {
   // eslint-disable-line no-unused-vars
-  var T = toObject(target),
-      aLen = arguments.length,
-      index = 1,
-      getSymbols = gOPS.f,
-      isEnum = pIE.f;
+  var T = toObject(target);
+  var aLen = arguments.length;
+  var index = 1;
+  var getSymbols = gOPS.f;
+  var isEnum = pIE.f;
   while (aLen > index) {
-    var S = IObject(arguments[index++]),
-        keys = getSymbols ? getKeys(S).concat(getSymbols(S)) : getKeys(S),
-        length = keys.length,
-        j = 0,
-        key;
+    var S = IObject(arguments[index++]);
+    var keys = getSymbols ? getKeys(S).concat(getSymbols(S)) : getKeys(S);
+    var length = keys.length;
+    var j = 0;
+    var key;
     while (length > j) {
       if (isEnum.call(S, key = keys[j++])) T[key] = S[key];
     }
@@ -21585,16 +21610,16 @@ module.exports = !$assign || __webpack_require__(42)(function () {
 "use strict";
 
 
-var dP = __webpack_require__(33),
-    anObject = __webpack_require__(41),
-    getKeys = __webpack_require__(44);
+var dP = __webpack_require__(33);
+var anObject = __webpack_require__(41);
+var getKeys = __webpack_require__(44);
 
 module.exports = __webpack_require__(36) ? Object.defineProperties : function defineProperties(O, Properties) {
   anObject(O);
-  var keys = getKeys(Properties),
-      length = keys.length,
-      i = 0,
-      P;
+  var keys = getKeys(Properties);
+  var length = keys.length;
+  var i = 0;
+  var P;
   while (length > i) {
     dP.f(O, P = keys[i++], Properties[P]);
   }return O;
@@ -21610,9 +21635,9 @@ module.exports = __webpack_require__(36) ? Object.defineProperties : function de
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 // fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
-var toIObject = __webpack_require__(38),
-    gOPN = __webpack_require__(140).f,
-    toString = {}.toString;
+var toIObject = __webpack_require__(38);
+var gOPN = __webpack_require__(140).f;
+var toString = {}.toString;
 
 var windowNames = (typeof window === 'undefined' ? 'undefined' : _typeof(window)) == 'object' && window && Object.getOwnPropertyNames ? Object.getOwnPropertyNames(window) : [];
 
@@ -21637,8 +21662,8 @@ module.exports.f = function getOwnPropertyNames(it) {
 
 // Works with __proto__ only. Old v8 can't work with null proto objects.
 /* eslint-disable no-proto */
-var isObject = __webpack_require__(54),
-    anObject = __webpack_require__(41);
+var isObject = __webpack_require__(54);
+var anObject = __webpack_require__(41);
 var check = function check(O, proto) {
   anObject(O);
   if (!isObject(proto) && proto !== null) throw TypeError(proto + ": can't set as prototype!");
@@ -21669,17 +21694,16 @@ module.exports = {
 "use strict";
 
 
-var toInteger = __webpack_require__(96),
-    defined = __webpack_require__(88);
+var toInteger = __webpack_require__(96);
+var defined = __webpack_require__(88);
 // true  -> String#at
 // false -> String#codePointAt
 module.exports = function (TO_STRING) {
   return function (that, pos) {
-    var s = String(defined(that)),
-        i = toInteger(pos),
-        l = s.length,
-        a,
-        b;
+    var s = String(defined(that));
+    var i = toInteger(pos);
+    var l = s.length;
+    var a, b;
     if (i < 0 || i >= l) return TO_STRING ? '' : undefined;
     a = s.charCodeAt(i);
     return a < 0xd800 || a > 0xdbff || i + 1 === l || (b = s.charCodeAt(i + 1)) < 0xdc00 || b > 0xdfff ? TO_STRING ? s.charAt(i) : a : TO_STRING ? s.slice(i, i + 2) : (a - 0xd800 << 10) + (b - 0xdc00) + 0x10000;
@@ -21693,9 +21717,9 @@ module.exports = function (TO_STRING) {
 "use strict";
 
 
-var toInteger = __webpack_require__(96),
-    max = Math.max,
-    min = Math.min;
+var toInteger = __webpack_require__(96);
+var max = Math.max;
+var min = Math.min;
 module.exports = function (index, length) {
   index = toInteger(index);
   return index < 0 ? max(index + length, 0) : min(index, length);
@@ -21708,9 +21732,9 @@ module.exports = function (index, length) {
 "use strict";
 
 
-var classof = __webpack_require__(238),
-    ITERATOR = __webpack_require__(25)('iterator'),
-    Iterators = __webpack_require__(55);
+var classof = __webpack_require__(238);
+var ITERATOR = __webpack_require__(25)('iterator');
+var Iterators = __webpack_require__(55);
 module.exports = __webpack_require__(21).getIteratorMethod = function (it) {
   if (it != undefined) return it[ITERATOR] || it['@@iterator'] || Iterators[classof(it)];
 };
@@ -21722,31 +21746,28 @@ module.exports = __webpack_require__(21).getIteratorMethod = function (it) {
 "use strict";
 
 
-var ctx = __webpack_require__(87),
-    $export = __webpack_require__(31),
-    toObject = __webpack_require__(57),
-    call = __webpack_require__(244),
-    isArrayIter = __webpack_require__(242),
-    toLength = __webpack_require__(145),
-    createProperty = __webpack_require__(239),
-    getIterFn = __webpack_require__(256);
+var ctx = __webpack_require__(87);
+var $export = __webpack_require__(31);
+var toObject = __webpack_require__(57);
+var call = __webpack_require__(244);
+var isArrayIter = __webpack_require__(242);
+var toLength = __webpack_require__(145);
+var createProperty = __webpack_require__(239);
+var getIterFn = __webpack_require__(256);
 
 $export($export.S + $export.F * !__webpack_require__(246)(function (iter) {
   Array.from(iter);
 }), 'Array', {
   // 22.1.2.1 Array.from(arrayLike, mapfn = undefined, thisArg = undefined)
-  from: function from(arrayLike /*, mapfn = undefined, thisArg = undefined*/) {
-    var O = toObject(arrayLike),
-        C = typeof this == 'function' ? this : Array,
-        aLen = arguments.length,
-        mapfn = aLen > 1 ? arguments[1] : undefined,
-        mapping = mapfn !== undefined,
-        index = 0,
-        iterFn = getIterFn(O),
-        length,
-        result,
-        step,
-        iterator;
+  from: function from(arrayLike /* , mapfn = undefined, thisArg = undefined */) {
+    var O = toObject(arrayLike);
+    var C = typeof this == 'function' ? this : Array;
+    var aLen = arguments.length;
+    var mapfn = aLen > 1 ? arguments[1] : undefined;
+    var mapping = mapfn !== undefined;
+    var index = 0;
+    var iterFn = getIterFn(O);
+    var length, result, step, iterator;
     if (mapping) mapfn = ctx(mapfn, aLen > 2 ? arguments[2] : undefined, 2);
     // if object isn't iterable or it's array with default iterator - use simple case
     if (iterFn != undefined && !(C == Array && isArrayIter(iterFn))) {
@@ -21771,10 +21792,10 @@ $export($export.S + $export.F * !__webpack_require__(246)(function (iter) {
 "use strict";
 
 
-var addToUnscopables = __webpack_require__(236),
-    step = __webpack_require__(247),
-    Iterators = __webpack_require__(55),
-    toIObject = __webpack_require__(38);
+var addToUnscopables = __webpack_require__(236);
+var step = __webpack_require__(247);
+var Iterators = __webpack_require__(55);
+var toIObject = __webpack_require__(38);
 
 // 22.1.3.4 Array.prototype.entries()
 // 22.1.3.13 Array.prototype.keys()
@@ -21786,9 +21807,9 @@ module.exports = __webpack_require__(138)(Array, 'Array', function (iterated, ki
   this._k = kind; // kind
   // 22.1.5.2.1 %ArrayIteratorPrototype%.next()
 }, function () {
-  var O = this._t,
-      kind = this._k,
-      index = this._i++;
+  var O = this._t;
+  var kind = this._k;
+  var index = this._i++;
   if (!O || index >= O.length) {
     this._t = undefined;
     return step(1);
@@ -21847,8 +21868,8 @@ $export($export.S + $export.F * !__webpack_require__(36), 'Object', { defineProp
 
 
 // 19.1.2.9 Object.getPrototypeOf(O)
-var toObject = __webpack_require__(57),
-    $getPrototypeOf = __webpack_require__(141);
+var toObject = __webpack_require__(57);
+var $getPrototypeOf = __webpack_require__(141);
 
 __webpack_require__(143)('getPrototypeOf', function () {
   return function getPrototypeOf(it) {
@@ -21864,8 +21885,8 @@ __webpack_require__(143)('getPrototypeOf', function () {
 
 
 // 19.1.2.14 Object.keys(O)
-var toObject = __webpack_require__(57),
-    $keys = __webpack_require__(44);
+var toObject = __webpack_require__(57);
+var $keys = __webpack_require__(44);
 
 __webpack_require__(143)('keys', function () {
   return function keys(it) {
@@ -21901,47 +21922,47 @@ $export($export.S, 'Object', { setPrototypeOf: __webpack_require__(253).set });
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var global = __webpack_require__(32),
-    has = __webpack_require__(37),
-    DESCRIPTORS = __webpack_require__(36),
-    $export = __webpack_require__(31),
-    redefine = __webpack_require__(144),
-    META = __webpack_require__(249).KEY,
-    $fails = __webpack_require__(42),
-    shared = __webpack_require__(95),
-    setToStringTag = __webpack_require__(93),
-    uid = __webpack_require__(66),
-    wks = __webpack_require__(25),
-    wksExt = __webpack_require__(99),
-    wksDefine = __webpack_require__(98),
-    keyOf = __webpack_require__(248),
-    enumKeys = __webpack_require__(240),
-    isArray = __webpack_require__(243),
-    anObject = __webpack_require__(41),
-    toIObject = __webpack_require__(38),
-    toPrimitive = __webpack_require__(97),
-    createDesc = __webpack_require__(56),
-    _create = __webpack_require__(91),
-    gOPNExt = __webpack_require__(252),
-    $GOPD = __webpack_require__(139),
-    $DP = __webpack_require__(33),
-    $keys = __webpack_require__(44),
-    gOPD = $GOPD.f,
-    dP = $DP.f,
-    gOPN = gOPNExt.f,
-    $Symbol = global.Symbol,
-    $JSON = global.JSON,
-    _stringify = $JSON && $JSON.stringify,
-    PROTOTYPE = 'prototype',
-    HIDDEN = wks('_hidden'),
-    TO_PRIMITIVE = wks('toPrimitive'),
-    isEnum = {}.propertyIsEnumerable,
-    SymbolRegistry = shared('symbol-registry'),
-    AllSymbols = shared('symbols'),
-    OPSymbols = shared('op-symbols'),
-    ObjectProto = Object[PROTOTYPE],
-    USE_NATIVE = typeof $Symbol == 'function',
-    QObject = global.QObject;
+var global = __webpack_require__(32);
+var has = __webpack_require__(37);
+var DESCRIPTORS = __webpack_require__(36);
+var $export = __webpack_require__(31);
+var redefine = __webpack_require__(144);
+var META = __webpack_require__(249).KEY;
+var $fails = __webpack_require__(42);
+var shared = __webpack_require__(95);
+var setToStringTag = __webpack_require__(93);
+var uid = __webpack_require__(66);
+var wks = __webpack_require__(25);
+var wksExt = __webpack_require__(99);
+var wksDefine = __webpack_require__(98);
+var keyOf = __webpack_require__(248);
+var enumKeys = __webpack_require__(240);
+var isArray = __webpack_require__(243);
+var anObject = __webpack_require__(41);
+var toIObject = __webpack_require__(38);
+var toPrimitive = __webpack_require__(97);
+var createDesc = __webpack_require__(56);
+var _create = __webpack_require__(91);
+var gOPNExt = __webpack_require__(252);
+var $GOPD = __webpack_require__(139);
+var $DP = __webpack_require__(33);
+var $keys = __webpack_require__(44);
+var gOPD = $GOPD.f;
+var dP = $DP.f;
+var gOPN = gOPNExt.f;
+var $Symbol = global.Symbol;
+var $JSON = global.JSON;
+var _stringify = $JSON && $JSON.stringify;
+var PROTOTYPE = 'prototype';
+var HIDDEN = wks('_hidden');
+var TO_PRIMITIVE = wks('toPrimitive');
+var isEnum = {}.propertyIsEnumerable;
+var SymbolRegistry = shared('symbol-registry');
+var AllSymbols = shared('symbols');
+var OPSymbols = shared('op-symbols');
+var ObjectProto = Object[PROTOTYPE];
+var USE_NATIVE = typeof $Symbol == 'function';
+var QObject = global.QObject;
 // Don't use setters in Qt Script, https://github.com/zloirock/core-js/issues/173
 var setter = !QObject || !QObject[PROTOTYPE] || !QObject[PROTOTYPE].findChild;
 
@@ -21988,10 +22009,10 @@ var $defineProperty = function defineProperty(it, key, D) {
 };
 var $defineProperties = function defineProperties(it, P) {
   anObject(it);
-  var keys = enumKeys(P = toIObject(P)),
-      i = 0,
-      l = keys.length,
-      key;
+  var keys = enumKeys(P = toIObject(P));
+  var i = 0;
+  var l = keys.length;
+  var key;
   while (l > i) {
     $defineProperty(it, key = keys[i++], P[key]);
   }return it;
@@ -22013,20 +22034,20 @@ var $getOwnPropertyDescriptor = function getOwnPropertyDescriptor(it, key) {
   return D;
 };
 var $getOwnPropertyNames = function getOwnPropertyNames(it) {
-  var names = gOPN(toIObject(it)),
-      result = [],
-      i = 0,
-      key;
+  var names = gOPN(toIObject(it));
+  var result = [];
+  var i = 0;
+  var key;
   while (names.length > i) {
     if (!has(AllSymbols, key = names[i++]) && key != HIDDEN && key != META) result.push(key);
   }return result;
 };
 var $getOwnPropertySymbols = function getOwnPropertySymbols(it) {
-  var IS_OP = it === ObjectProto,
-      names = gOPN(IS_OP ? OPSymbols : toIObject(it)),
-      result = [],
-      i = 0,
-      key;
+  var IS_OP = it === ObjectProto;
+  var names = gOPN(IS_OP ? OPSymbols : toIObject(it));
+  var result = [];
+  var i = 0;
+  var key;
   while (names.length > i) {
     if (has(AllSymbols, key = names[i++]) && (IS_OP ? has(ObjectProto, key) : true)) result.push(AllSymbols[key]);
   }return result;
@@ -22066,12 +22087,12 @@ if (!USE_NATIVE) {
 
 $export($export.G + $export.W + $export.F * !USE_NATIVE, { Symbol: $Symbol });
 
-for (var symbols =
+for (var es6Symbols =
 // 19.4.2.2, 19.4.2.3, 19.4.2.4, 19.4.2.6, 19.4.2.8, 19.4.2.9, 19.4.2.10, 19.4.2.11, 19.4.2.12, 19.4.2.13, 19.4.2.14
-'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), i = 0; symbols.length > i;) {
-  wks(symbols[i++]);
-}for (var symbols = $keys(wks.store), i = 0; symbols.length > i;) {
-  wksDefine(symbols[i++]);
+'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), j = 0; es6Symbols.length > j;) {
+  wks(es6Symbols[j++]);
+}for (var wellKnownSymbols = $keys(wks.store), k = 0; wellKnownSymbols.length > k;) {
+  wksDefine(wellKnownSymbols[k++]);
 }$export($export.S + $export.F * !USE_NATIVE, 'Symbol', {
   // 19.4.2.1 Symbol.for(key)
   'for': function _for(key) {
@@ -22115,10 +22136,9 @@ $JSON && $export($export.S + $export.F * (!USE_NATIVE || $fails(function () {
 })), 'JSON', {
   stringify: function stringify(it) {
     if (it === undefined || isSymbol(it)) return; // IE8 returns string on undefined
-    var args = [it],
-        i = 1,
-        replacer,
-        $replacer;
+    var args = [it];
+    var i = 1;
+    var replacer, $replacer;
     while (arguments.length > i) {
       args.push(arguments[i++]);
     }replacer = args[1];
@@ -22167,15 +22187,17 @@ __webpack_require__(98)('observable');
 
 
 __webpack_require__(258);
-var global = __webpack_require__(32),
-    hide = __webpack_require__(43),
-    Iterators = __webpack_require__(55),
-    TO_STRING_TAG = __webpack_require__(25)('toStringTag');
+var global = __webpack_require__(32);
+var hide = __webpack_require__(43);
+var Iterators = __webpack_require__(55);
+var TO_STRING_TAG = __webpack_require__(25)('toStringTag');
 
-for (var collections = ['NodeList', 'DOMTokenList', 'MediaList', 'StyleSheetList', 'CSSRuleList'], i = 0; i < 5; i++) {
-  var NAME = collections[i],
-      Collection = global[NAME],
-      proto = Collection && Collection.prototype;
+var DOMIterables = ('CSSRuleList,CSSStyleDeclaration,CSSValueList,ClientRectList,DOMRectList,DOMStringList,' + 'DOMTokenList,DataTransferItemList,FileList,HTMLAllCollection,HTMLCollection,HTMLFormElement,HTMLSelectElement,' + 'MediaList,MimeTypeArray,NamedNodeMap,NodeList,PaintRequestList,Plugin,PluginArray,SVGLengthList,SVGNumberList,' + 'SVGPathSegList,SVGPointList,SVGStringList,SVGTransformList,SourceBufferList,StyleSheetList,TextTrackCueList,' + 'TextTrackList,TouchList').split(',');
+
+for (var i = 0; i < DOMIterables.length; i++) {
+  var NAME = DOMIterables[i];
+  var Collection = global[NAME];
+  var proto = Collection && Collection.prototype;
   if (proto && !proto[TO_STRING_TAG]) hide(proto, TO_STRING_TAG, NAME);
   Iterators[NAME] = Iterators.Array;
 }
@@ -23899,61 +23921,6 @@ module.exports = performanceNow;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/**
- * Copyright 2015, Yahoo! Inc.
- * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
- */
-
-
-var REACT_STATICS = {
-    childContextTypes: true,
-    contextTypes: true,
-    defaultProps: true,
-    displayName: true,
-    getDefaultProps: true,
-    mixins: true,
-    propTypes: true,
-    type: true
-};
-
-var KNOWN_STATICS = {
-    name: true,
-    length: true,
-    prototype: true,
-    caller: true,
-    arguments: true,
-    arity: true
-};
-
-var isGetOwnPropertySymbolsAvailable = typeof Object.getOwnPropertySymbols === 'function';
-
-module.exports = function hoistNonReactStatics(targetComponent, sourceComponent, customStatics) {
-    if (typeof sourceComponent !== 'string') {
-        // don't hoist over string (html) components
-        var keys = Object.getOwnPropertyNames(sourceComponent);
-
-        /* istanbul ignore else */
-        if (isGetOwnPropertySymbolsAvailable) {
-            keys = keys.concat(Object.getOwnPropertySymbols(sourceComponent));
-        }
-
-        for (var i = 0; i < keys.length; ++i) {
-            if (!REACT_STATICS[keys[i]] && !KNOWN_STATICS[keys[i]] && (!customStatics || !customStatics[keys[i]])) {
-                try {
-                    targetComponent[keys[i]] = sourceComponent[keys[i]];
-                } catch (error) {}
-            }
-        }
-    }
-
-    return targetComponent;
-};
-
-/***/ }),
-/* 290 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
 
 
 var uppercasePattern = /[A-Z]/g;
@@ -23967,7 +23934,7 @@ function hyphenateStyleName(string) {
 module.exports = hyphenateStyleName;
 
 /***/ }),
-/* 291 */
+/* 290 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23989,11 +23956,11 @@ var _createClass = function () {
 
 exports.default = createPrefixer;
 
-var _getBrowserInformation = __webpack_require__(307);
+var _getBrowserInformation = __webpack_require__(306);
 
 var _getBrowserInformation2 = _interopRequireDefault(_getBrowserInformation);
 
-var _getPrefixedKeyframes = __webpack_require__(308);
+var _getPrefixedKeyframes = __webpack_require__(307);
 
 var _getPrefixedKeyframes2 = _interopRequireDefault(_getPrefixedKeyframes);
 
@@ -24163,7 +24130,7 @@ function createPrefixer(_ref) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 292 */
+/* 291 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24195,7 +24162,7 @@ function calc(property, value, style, _ref) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 293 */
+/* 292 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24231,7 +24198,7 @@ function flex(property, value, style, _ref) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 294 */
+/* 293 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24294,7 +24261,7 @@ function flexboxIE(property, value, style, _ref) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 295 */
+/* 294 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24369,7 +24336,7 @@ function flexboxOld(property, value, style, _ref) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 296 */
+/* 295 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24402,7 +24369,7 @@ function gradient(property, value, style, _ref) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 297 */
+/* 296 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24452,7 +24419,7 @@ var values = {
 module.exports = exports['default'];
 
 /***/ }),
-/* 298 */
+/* 297 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24512,7 +24479,7 @@ function transition(property, value, style, _ref) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 299 */
+/* 298 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24523,7 +24490,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = createPrefixer;
 
-var _prefixProperty = __webpack_require__(309);
+var _prefixProperty = __webpack_require__(308);
 
 var _prefixProperty2 = _interopRequireDefault(_prefixProperty);
 
@@ -24590,7 +24557,7 @@ function createPrefixer(_ref) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 300 */
+/* 299 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24620,7 +24587,7 @@ function calc(property, value) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 301 */
+/* 300 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24643,7 +24610,7 @@ function flex(property, value) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 302 */
+/* 301 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24678,7 +24645,7 @@ function flexboxIE(property, value, style) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 303 */
+/* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24723,7 +24690,7 @@ function flexboxOld(property, value, style) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 304 */
+/* 303 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24756,7 +24723,7 @@ function gradient(property, value) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 305 */
+/* 304 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24795,7 +24762,7 @@ function sizing(property, value) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 306 */
+/* 305 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24895,7 +24862,7 @@ function transition(property, value, style, propertyPrefixMap) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 307 */
+/* 306 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25033,7 +25000,7 @@ function getBrowserInformation(userAgent) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 308 */
+/* 307 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25054,7 +25021,7 @@ function getPrefixedKeyframes(browserName, browserVersion, cssPrefix) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 309 */
+/* 308 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25084,7 +25051,7 @@ function prefixProperty(prefixProperties, property, style) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 310 */
+/* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25139,7 +25106,7 @@ module.exports = invariant;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 311 */
+/* 310 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25153,11 +25120,11 @@ var _Symbol2 = __webpack_require__(154);
 
 var _Symbol3 = _interopRequireDefault(_Symbol2);
 
-var _getRawTag = __webpack_require__(314);
+var _getRawTag = __webpack_require__(313);
 
 var _getRawTag2 = _interopRequireDefault(_getRawTag);
 
-var _objectToString = __webpack_require__(315);
+var _objectToString = __webpack_require__(314);
 
 var _objectToString2 = _interopRequireDefault(_objectToString);
 
@@ -25187,7 +25154,7 @@ function baseGetTag(value) {
 exports.default = baseGetTag;
 
 /***/ }),
-/* 312 */
+/* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25206,7 +25173,7 @@ exports.default = freeGlobal;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(81)))
 
 /***/ }),
-/* 313 */
+/* 312 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25216,7 +25183,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _overArg = __webpack_require__(316);
+var _overArg = __webpack_require__(315);
 
 var _overArg2 = _interopRequireDefault(_overArg);
 
@@ -25228,7 +25195,7 @@ var getPrototype = (0, _overArg2.default)(Object.getPrototypeOf, Object);
 exports.default = getPrototype;
 
 /***/ }),
-/* 314 */
+/* 313 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25290,7 +25257,7 @@ function getRawTag(value) {
 exports.default = getRawTag;
 
 /***/ }),
-/* 315 */
+/* 314 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25323,7 +25290,7 @@ function objectToString(value) {
 exports.default = objectToString;
 
 /***/ }),
-/* 316 */
+/* 315 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25349,7 +25316,7 @@ function overArg(func, transform) {
 exports.default = overArg;
 
 /***/ }),
-/* 317 */
+/* 316 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25361,7 +25328,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _freeGlobal = __webpack_require__(312);
+var _freeGlobal = __webpack_require__(311);
 
 var _freeGlobal2 = _interopRequireDefault(_freeGlobal);
 
@@ -25376,7 +25343,7 @@ var root = _freeGlobal2.default || freeSelf || Function('return this')();
 exports.default = root;
 
 /***/ }),
-/* 318 */
+/* 317 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25419,7 +25386,7 @@ function isObjectLike(value) {
 exports.default = isObjectLike;
 
 /***/ }),
-/* 319 */
+/* 318 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27581,7 +27548,7 @@ module.exports = merge;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(81), __webpack_require__(209)(module)))
 
 /***/ }),
-/* 320 */
+/* 319 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28027,7 +27994,7 @@ module.exports = throttle;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(81)))
 
 /***/ }),
-/* 321 */
+/* 320 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28400,7 +28367,7 @@ exports.default = AppBar;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 322 */
+/* 321 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28458,11 +28425,11 @@ var _transitions = __webpack_require__(16);
 
 var _transitions2 = _interopRequireDefault(_transitions);
 
-var _checkBoxOutlineBlank = __webpack_require__(362);
+var _checkBoxOutlineBlank = __webpack_require__(361);
 
 var _checkBoxOutlineBlank2 = _interopRequireDefault(_checkBoxOutlineBlank);
 
-var _checkBox = __webpack_require__(363);
+var _checkBox = __webpack_require__(362);
 
 var _checkBox2 = _interopRequireDefault(_checkBox);
 
@@ -28697,7 +28664,7 @@ exports.default = Checkbox;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 323 */
+/* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28708,7 +28675,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _Checkbox = __webpack_require__(322);
+var _Checkbox = __webpack_require__(321);
 
 var _Checkbox2 = _interopRequireDefault(_Checkbox);
 
@@ -28719,7 +28686,7 @@ function _interopRequireDefault(obj) {
 exports.default = _Checkbox2.default;
 
 /***/ }),
-/* 324 */
+/* 323 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29279,7 +29246,7 @@ exports.default = Dialog;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 325 */
+/* 324 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29290,7 +29257,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _Dialog = __webpack_require__(324);
+var _Dialog = __webpack_require__(323);
 
 var _Dialog2 = _interopRequireDefault(_Dialog);
 
@@ -29301,7 +29268,7 @@ function _interopRequireDefault(obj) {
 exports.default = _Dialog2.default;
 
 /***/ }),
-/* 326 */
+/* 325 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29382,7 +29349,7 @@ exports.default = Divider;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 327 */
+/* 326 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29860,7 +29827,7 @@ exports.default = Drawer;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 328 */
+/* 327 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29922,7 +29889,7 @@ var _EnhancedButton = __webpack_require__(68);
 
 var _EnhancedButton2 = _interopRequireDefault(_EnhancedButton);
 
-var _FlatButtonLabel = __webpack_require__(329);
+var _FlatButtonLabel = __webpack_require__(328);
 
 var _FlatButtonLabel2 = _interopRequireDefault(_FlatButtonLabel);
 
@@ -30222,7 +30189,7 @@ exports.default = FlatButton;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 329 */
+/* 328 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30316,7 +30283,7 @@ exports.default = FlatButtonLabel;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 330 */
+/* 329 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30483,7 +30450,7 @@ exports.default = FontIcon;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 331 */
+/* 330 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30494,7 +30461,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _FontIcon = __webpack_require__(330);
+var _FontIcon = __webpack_require__(329);
 
 var _FontIcon2 = _interopRequireDefault(_FontIcon);
 
@@ -30505,7 +30472,7 @@ function _interopRequireDefault(obj) {
 exports.default = _FontIcon2.default;
 
 /***/ }),
-/* 332 */
+/* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30567,11 +30534,11 @@ var _EnhancedButton = __webpack_require__(68);
 
 var _EnhancedButton2 = _interopRequireDefault(_EnhancedButton);
 
-var _FontIcon = __webpack_require__(331);
+var _FontIcon = __webpack_require__(330);
 
 var _FontIcon2 = _interopRequireDefault(_FontIcon);
 
-var _Tooltip = __webpack_require__(350);
+var _Tooltip = __webpack_require__(349);
 
 var _Tooltip2 = _interopRequireDefault(_Tooltip);
 
@@ -30886,7 +30853,7 @@ exports.default = IconButton;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 333 */
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31298,7 +31265,7 @@ exports.default = IconMenu;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 334 */
+/* 333 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31370,15 +31337,15 @@ var _IconButton = __webpack_require__(60);
 
 var _IconButton2 = _interopRequireDefault(_IconButton);
 
-var _expandLess = __webpack_require__(360);
+var _expandLess = __webpack_require__(359);
 
 var _expandLess2 = _interopRequireDefault(_expandLess);
 
-var _expandMore = __webpack_require__(361);
+var _expandMore = __webpack_require__(360);
 
 var _expandMore2 = _interopRequireDefault(_expandMore);
 
-var _NestedList = __webpack_require__(335);
+var _NestedList = __webpack_require__(334);
 
 var _NestedList2 = _interopRequireDefault(_NestedList);
 
@@ -32005,7 +31972,7 @@ exports.default = ListItem;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 335 */
+/* 334 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32062,7 +32029,7 @@ exports.default = NestedList;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 336 */
+/* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32109,7 +32076,7 @@ var HotKeyHolder = exports.HotKeyHolder = function () {
 }();
 
 /***/ }),
-/* 337 */
+/* 336 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32264,7 +32231,7 @@ exports.default = Paper;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 338 */
+/* 337 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32433,7 +32400,7 @@ exports.default = PopoverAnimationDefault;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 339 */
+/* 338 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32921,7 +32888,7 @@ exports.default = RaisedButton;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 340 */
+/* 339 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32932,7 +32899,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _RaisedButton = __webpack_require__(339);
+var _RaisedButton = __webpack_require__(338);
 
 var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
 
@@ -32943,7 +32910,7 @@ function _interopRequireDefault(obj) {
 exports.default = _RaisedButton2.default;
 
 /***/ }),
-/* 341 */
+/* 340 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33030,7 +32997,7 @@ exports.default = Subheader;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 342 */
+/* 341 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33041,7 +33008,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _Subheader = __webpack_require__(341);
+var _Subheader = __webpack_require__(340);
 
 var _Subheader2 = _interopRequireDefault(_Subheader);
 
@@ -33052,7 +33019,7 @@ function _interopRequireDefault(obj) {
 exports.default = _Subheader2.default;
 
 /***/ }),
-/* 343 */
+/* 342 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33221,7 +33188,7 @@ exports.default = SvgIcon;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 344 */
+/* 343 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33556,7 +33523,7 @@ exports.default = Toggle;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 345 */
+/* 344 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33689,7 +33656,7 @@ exports.default = AutoLockScrolling;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 346 */
+/* 345 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33869,7 +33836,7 @@ exports.default = CircleRipple;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 347 */
+/* 346 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34007,7 +33974,7 @@ exports.default = ClickAwayListener;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 348 */
+/* 347 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34061,7 +34028,7 @@ var _reactAddonsTransitionGroup = __webpack_require__(111);
 
 var _reactAddonsTransitionGroup2 = _interopRequireDefault(_reactAddonsTransitionGroup);
 
-var _ScaleInChild = __webpack_require__(349);
+var _ScaleInChild = __webpack_require__(348);
 
 var _ScaleInChild2 = _interopRequireDefault(_ScaleInChild);
 
@@ -34136,7 +34103,7 @@ exports.default = ScaleIn;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 349 */
+/* 348 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34310,7 +34277,7 @@ exports.default = ScaleInChild;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 350 */
+/* 349 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34537,7 +34504,7 @@ exports.default = Tooltip;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 351 */
+/* 350 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34551,7 +34518,7 @@ var _colors = __webpack_require__(69);
 
 var _colorManipulator = __webpack_require__(61);
 
-var _spacing = __webpack_require__(353);
+var _spacing = __webpack_require__(352);
 
 var _spacing2 = _interopRequireDefault(_spacing);
 
@@ -34590,7 +34557,7 @@ exports.default = {
     */
 
 /***/ }),
-/* 352 */
+/* 351 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34606,29 +34573,29 @@ var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
 
 exports.default = getMuiTheme;
 
-var _lodash = __webpack_require__(319);
+var _lodash = __webpack_require__(318);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
 var _colorManipulator = __webpack_require__(61);
 
-var _lightBaseTheme = __webpack_require__(351);
+var _lightBaseTheme = __webpack_require__(350);
 
 var _lightBaseTheme2 = _interopRequireDefault(_lightBaseTheme);
 
-var _zIndex = __webpack_require__(355);
+var _zIndex = __webpack_require__(354);
 
 var _zIndex2 = _interopRequireDefault(_zIndex);
 
-var _autoprefixer = __webpack_require__(364);
+var _autoprefixer = __webpack_require__(363);
 
 var _autoprefixer2 = _interopRequireDefault(_autoprefixer);
 
-var _callOnce = __webpack_require__(367);
+var _callOnce = __webpack_require__(366);
 
 var _callOnce2 = _interopRequireDefault(_callOnce);
 
-var _rtl = __webpack_require__(369);
+var _rtl = __webpack_require__(368);
 
 var _rtl2 = _interopRequireDefault(_rtl);
 
@@ -34636,7 +34603,7 @@ var _compose = __webpack_require__(482);
 
 var _compose2 = _interopRequireDefault(_compose);
 
-var _typography = __webpack_require__(354);
+var _typography = __webpack_require__(353);
 
 var _typography2 = _interopRequireDefault(_typography);
 
@@ -34977,7 +34944,7 @@ function getMuiTheme(muiTheme) {
 }
 
 /***/ }),
-/* 353 */
+/* 352 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35002,7 +34969,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 354 */
+/* 353 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35045,7 +35012,7 @@ var Typography = function Typography() {
 exports.default = new Typography();
 
 /***/ }),
-/* 355 */
+/* 354 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35068,7 +35035,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 356 */
+/* 355 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35104,7 +35071,7 @@ ActionDone.muiName = 'SvgIcon';
 exports.default = ActionDone;
 
 /***/ }),
-/* 357 */
+/* 356 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35140,7 +35107,7 @@ NavigationArrowBack.muiName = 'SvgIcon';
 exports.default = NavigationArrowBack;
 
 /***/ }),
-/* 358 */
+/* 357 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35176,7 +35143,7 @@ NavigationArrowForward.muiName = 'SvgIcon';
 exports.default = NavigationArrowForward;
 
 /***/ }),
-/* 359 */
+/* 358 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35212,7 +35179,7 @@ NavigationCheck.muiName = 'SvgIcon';
 exports.default = NavigationCheck;
 
 /***/ }),
-/* 360 */
+/* 359 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35248,7 +35215,7 @@ NavigationExpandLess.muiName = 'SvgIcon';
 exports.default = NavigationExpandLess;
 
 /***/ }),
-/* 361 */
+/* 360 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35284,7 +35251,7 @@ NavigationExpandMore.muiName = 'SvgIcon';
 exports.default = NavigationExpandMore;
 
 /***/ }),
-/* 362 */
+/* 361 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35320,7 +35287,7 @@ ToggleCheckBoxOutlineBlank.muiName = 'SvgIcon';
 exports.default = ToggleCheckBoxOutlineBlank;
 
 /***/ }),
-/* 363 */
+/* 362 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35356,7 +35323,7 @@ ToggleCheckBox.muiName = 'SvgIcon';
 exports.default = ToggleCheckBox;
 
 /***/ }),
-/* 364 */
+/* 363 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35416,19 +35383,19 @@ exports.default = function (muiTheme) {
   }
 };
 
-var _createPrefixer = __webpack_require__(299);
+var _createPrefixer = __webpack_require__(298);
 
 var _createPrefixer2 = _interopRequireDefault(_createPrefixer);
 
-var _createPrefixer3 = __webpack_require__(291);
+var _createPrefixer3 = __webpack_require__(290);
 
 var _createPrefixer4 = _interopRequireDefault(_createPrefixer3);
 
-var _autoprefixerDynamic = __webpack_require__(365);
+var _autoprefixerDynamic = __webpack_require__(364);
 
 var _autoprefixerDynamic2 = _interopRequireDefault(_autoprefixerDynamic);
 
-var _autoprefixerStatic = __webpack_require__(366);
+var _autoprefixerStatic = __webpack_require__(365);
 
 var _autoprefixerStatic2 = _interopRequireDefault(_autoprefixerStatic);
 
@@ -35444,7 +35411,7 @@ var hasWarnedAboutUserAgent = false;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 365 */
+/* 364 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35454,31 +35421,31 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _calc = __webpack_require__(292);
+var _calc = __webpack_require__(291);
 
 var _calc2 = _interopRequireDefault(_calc);
 
-var _flex = __webpack_require__(293);
+var _flex = __webpack_require__(292);
 
 var _flex2 = _interopRequireDefault(_flex);
 
-var _flexboxIE = __webpack_require__(294);
+var _flexboxIE = __webpack_require__(293);
 
 var _flexboxIE2 = _interopRequireDefault(_flexboxIE);
 
-var _flexboxOld = __webpack_require__(295);
+var _flexboxOld = __webpack_require__(294);
 
 var _flexboxOld2 = _interopRequireDefault(_flexboxOld);
 
-var _gradient = __webpack_require__(296);
+var _gradient = __webpack_require__(295);
 
 var _gradient2 = _interopRequireDefault(_gradient);
 
-var _sizing = __webpack_require__(297);
+var _sizing = __webpack_require__(296);
 
 var _sizing2 = _interopRequireDefault(_sizing);
 
-var _transition = __webpack_require__(298);
+var _transition = __webpack_require__(297);
 
 var _transition2 = _interopRequireDefault(_transition);
 
@@ -35492,7 +35459,7 @@ exports.default = {
 }; /* eslint-disable */
 
 /***/ }),
-/* 366 */
+/* 365 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35502,31 +35469,31 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _calc = __webpack_require__(300);
+var _calc = __webpack_require__(299);
 
 var _calc2 = _interopRequireDefault(_calc);
 
-var _flex = __webpack_require__(301);
+var _flex = __webpack_require__(300);
 
 var _flex2 = _interopRequireDefault(_flex);
 
-var _flexboxIE = __webpack_require__(302);
+var _flexboxIE = __webpack_require__(301);
 
 var _flexboxIE2 = _interopRequireDefault(_flexboxIE);
 
-var _flexboxOld = __webpack_require__(303);
+var _flexboxOld = __webpack_require__(302);
 
 var _flexboxOld2 = _interopRequireDefault(_flexboxOld);
 
-var _gradient = __webpack_require__(304);
+var _gradient = __webpack_require__(303);
 
 var _gradient2 = _interopRequireDefault(_gradient);
 
-var _sizing = __webpack_require__(305);
+var _sizing = __webpack_require__(304);
 
 var _sizing2 = _interopRequireDefault(_sizing);
 
-var _transition = __webpack_require__(306);
+var _transition = __webpack_require__(305);
 
 var _transition2 = _interopRequireDefault(_transition);
 
@@ -35540,7 +35507,7 @@ exports.default = {
 }; /* eslint-disable */
 
 /***/ }),
-/* 367 */
+/* 366 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35575,7 +35542,7 @@ function callOnce() {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 368 */
+/* 367 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35608,7 +35575,7 @@ var isIOS = exports.isIOS = function isIOS() {
 };
 
 /***/ }),
-/* 369 */
+/* 368 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35713,7 +35680,7 @@ function rtl(muiTheme) {
 }
 
 /***/ }),
-/* 370 */
+/* 369 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35783,7 +35750,7 @@ module.exports = checkPropTypes;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 371 */
+/* 370 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35843,7 +35810,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 372 */
+/* 371 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36114,7 +36081,7 @@ module.exports = createReactFragment;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 373 */
+/* 372 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36193,7 +36160,7 @@ var ARIADOMPropertyConfig = {
 module.exports = ARIADOMPropertyConfig;
 
 /***/ }),
-/* 374 */
+/* 373 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36222,7 +36189,7 @@ var AutoFocusUtils = {
 module.exports = AutoFocusUtils;
 
 /***/ }),
-/* 375 */
+/* 374 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36242,9 +36209,9 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 var EventPropagators = __webpack_require__(48);
 var ExecutionEnvironment = __webpack_require__(17);
-var FallbackCompositionState = __webpack_require__(382);
-var SyntheticCompositionEvent = __webpack_require__(425);
-var SyntheticInputEvent = __webpack_require__(428);
+var FallbackCompositionState = __webpack_require__(381);
+var SyntheticCompositionEvent = __webpack_require__(424);
+var SyntheticInputEvent = __webpack_require__(427);
 
 var END_KEYCODES = [9, 13, 27, 32]; // Tab, Return, Esc, Space
 var START_KEYCODE = 229;
@@ -36613,7 +36580,7 @@ var BeforeInputEventPlugin = {
 module.exports = BeforeInputEventPlugin;
 
 /***/ }),
-/* 376 */
+/* 375 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36634,7 +36601,7 @@ var ExecutionEnvironment = __webpack_require__(17);
 var ReactInstrumentation = __webpack_require__(22);
 
 var camelizeStyleName = __webpack_require__(275);
-var dangerousStyleValue = __webpack_require__(435);
+var dangerousStyleValue = __webpack_require__(434);
 var hyphenateStyleName = __webpack_require__(282);
 var memoizeStringOnly = __webpack_require__(286);
 var warning = __webpack_require__(4);
@@ -36834,7 +36801,7 @@ module.exports = CSSPropertyOperations;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 377 */
+/* 376 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37151,7 +37118,7 @@ var ChangeEventPlugin = {
 module.exports = ChangeEventPlugin;
 
 /***/ }),
-/* 378 */
+/* 377 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37203,7 +37170,7 @@ module.exports = Danger;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 379 */
+/* 378 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37234,7 +37201,7 @@ var DefaultEventPluginOrder = ['ResponderEventPlugin', 'SimpleEventPlugin', 'Tap
 module.exports = DefaultEventPluginOrder;
 
 /***/ }),
-/* 380 */
+/* 379 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37337,7 +37304,7 @@ var EnterLeaveEventPlugin = {
 module.exports = EnterLeaveEventPlugin;
 
 /***/ }),
-/* 381 */
+/* 380 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37435,7 +37402,7 @@ var EventConstants = {
 module.exports = EventConstants;
 
 /***/ }),
-/* 382 */
+/* 381 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37535,7 +37502,7 @@ PooledClass.addPoolingTo(FallbackCompositionState);
 module.exports = FallbackCompositionState;
 
 /***/ }),
-/* 383 */
+/* 382 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37776,7 +37743,7 @@ var HTMLDOMPropertyConfig = {
 module.exports = HTMLDOMPropertyConfig;
 
 /***/ }),
-/* 384 */
+/* 383 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37935,7 +37902,7 @@ module.exports = ReactChildReconciler;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 385 */
+/* 384 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37952,7 +37919,7 @@ module.exports = ReactChildReconciler;
 
 
 var DOMChildrenOperations = __webpack_require__(112);
-var ReactDOMIDOperations = __webpack_require__(392);
+var ReactDOMIDOperations = __webpack_require__(391);
 
 /**
  * Abstracts away all functionality of the reconciler that requires knowledge of
@@ -37968,7 +37935,7 @@ var ReactComponentBrowserEnvironment = {
 module.exports = ReactComponentBrowserEnvironment;
 
 /***/ }),
-/* 386 */
+/* 385 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37999,7 +37966,7 @@ var ReactNodeTypes = __webpack_require__(183);
 var ReactReconciler = __webpack_require__(49);
 
 if (process.env.NODE_ENV !== 'production') {
-  var checkReactTypeSpec = __webpack_require__(434);
+  var checkReactTypeSpec = __webpack_require__(433);
 }
 
 var emptyObject = __webpack_require__(67);
@@ -38876,7 +38843,7 @@ module.exports = ReactCompositeComponent;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 387 */
+/* 386 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38895,15 +38862,15 @@ module.exports = ReactCompositeComponent;
 
 
 var ReactDOMComponentTree = __webpack_require__(15);
-var ReactDefaultInjection = __webpack_require__(404);
+var ReactDefaultInjection = __webpack_require__(403);
 var ReactMount = __webpack_require__(182);
 var ReactReconciler = __webpack_require__(49);
 var ReactUpdates = __webpack_require__(26);
-var ReactVersion = __webpack_require__(419);
+var ReactVersion = __webpack_require__(418);
 
-var findDOMNode = __webpack_require__(436);
+var findDOMNode = __webpack_require__(435);
 var getHostComponentFromComposite = __webpack_require__(187);
-var renderSubtreeIntoContainer = __webpack_require__(443);
+var renderSubtreeIntoContainer = __webpack_require__(442);
 var warning = __webpack_require__(4);
 
 ReactDefaultInjection.inject();
@@ -38980,9 +38947,9 @@ if (process.env.NODE_ENV !== 'production') {
 
 if (process.env.NODE_ENV !== 'production') {
   var ReactInstrumentation = __webpack_require__(22);
-  var ReactDOMUnknownPropertyHook = __webpack_require__(401);
-  var ReactDOMNullInputValuePropHook = __webpack_require__(395);
-  var ReactDOMInvalidARIAHook = __webpack_require__(394);
+  var ReactDOMUnknownPropertyHook = __webpack_require__(400);
+  var ReactDOMNullInputValuePropHook = __webpack_require__(394);
+  var ReactDOMInvalidARIAHook = __webpack_require__(393);
 
   ReactInstrumentation.debugTool.addHook(ReactDOMUnknownPropertyHook);
   ReactInstrumentation.debugTool.addHook(ReactDOMNullInputValuePropHook);
@@ -38993,7 +38960,7 @@ module.exports = ReactDOM;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 388 */
+/* 387 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39016,8 +38983,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 var _prodInvariant = __webpack_require__(10),
     _assign = __webpack_require__(14);
 
-var AutoFocusUtils = __webpack_require__(374);
-var CSSPropertyOperations = __webpack_require__(376);
+var AutoFocusUtils = __webpack_require__(373);
+var CSSPropertyOperations = __webpack_require__(375);
 var DOMLazyTree = __webpack_require__(46);
 var DOMNamespaces = __webpack_require__(113);
 var DOMProperty = __webpack_require__(35);
@@ -39027,13 +38994,13 @@ var EventPluginRegistry = __webpack_require__(72);
 var ReactBrowserEventEmitter = __webpack_require__(74);
 var ReactDOMComponentFlags = __webpack_require__(176);
 var ReactDOMComponentTree = __webpack_require__(15);
-var ReactDOMInput = __webpack_require__(393);
-var ReactDOMOption = __webpack_require__(396);
+var ReactDOMInput = __webpack_require__(392);
+var ReactDOMOption = __webpack_require__(395);
 var ReactDOMSelect = __webpack_require__(177);
-var ReactDOMTextarea = __webpack_require__(399);
+var ReactDOMTextarea = __webpack_require__(398);
 var ReactInstrumentation = __webpack_require__(22);
-var ReactMultiChild = __webpack_require__(412);
-var ReactServerRenderingTransaction = __webpack_require__(417);
+var ReactMultiChild = __webpack_require__(411);
+var ReactServerRenderingTransaction = __webpack_require__(416);
 
 var emptyFunction = __webpack_require__(19);
 var escapeTextContentForBrowser = __webpack_require__(77);
@@ -40011,7 +39978,7 @@ module.exports = ReactDOMComponent;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 389 */
+/* 388 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40050,7 +40017,7 @@ module.exports = ReactDOMContainerInfo;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 390 */
+/* 389 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40115,7 +40082,7 @@ _assign(ReactDOMEmptyComponent.prototype, {
 module.exports = ReactDOMEmptyComponent;
 
 /***/ }),
-/* 391 */
+/* 390 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40139,7 +40106,7 @@ var ReactDOMFeatureFlags = {
 module.exports = ReactDOMFeatureFlags;
 
 /***/ }),
-/* 392 */
+/* 391 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40177,7 +40144,7 @@ var ReactDOMIDOperations = {
 module.exports = ReactDOMIDOperations;
 
 /***/ }),
-/* 393 */
+/* 392 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40470,7 +40437,7 @@ module.exports = ReactDOMInput;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 394 */
+/* 393 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40569,7 +40536,7 @@ module.exports = ReactDOMInvalidARIAHook;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 395 */
+/* 394 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40618,7 +40585,7 @@ module.exports = ReactDOMNullInputValuePropHook;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 396 */
+/* 395 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40746,7 +40713,7 @@ module.exports = ReactDOMOption;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 397 */
+/* 396 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40764,7 +40731,7 @@ module.exports = ReactDOMOption;
 
 var ExecutionEnvironment = __webpack_require__(17);
 
-var getNodeForCharacterOffset = __webpack_require__(440);
+var getNodeForCharacterOffset = __webpack_require__(439);
 var getTextContentAccessor = __webpack_require__(188);
 
 /**
@@ -40963,7 +40930,7 @@ var ReactDOMSelection = {
 module.exports = ReactDOMSelection;
 
 /***/ }),
-/* 398 */
+/* 397 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41131,7 +41098,7 @@ module.exports = ReactDOMTextComponent;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 399 */
+/* 398 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41297,7 +41264,7 @@ module.exports = ReactDOMTextarea;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 400 */
+/* 399 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41439,7 +41406,7 @@ module.exports = {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 401 */
+/* 400 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41557,7 +41524,7 @@ module.exports = ReactDOMUnknownPropertyHook;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 402 */
+/* 401 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41576,8 +41543,8 @@ module.exports = ReactDOMUnknownPropertyHook;
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var ReactInvalidSetStateWarningHook = __webpack_require__(410);
-var ReactHostOperationHistoryHook = __webpack_require__(408);
+var ReactInvalidSetStateWarningHook = __webpack_require__(409);
+var ReactHostOperationHistoryHook = __webpack_require__(407);
 var ReactComponentTreeHook = __webpack_require__(20);
 var ExecutionEnvironment = __webpack_require__(17);
 
@@ -41926,7 +41893,7 @@ module.exports = ReactDebugTool;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 403 */
+/* 402 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41999,7 +41966,7 @@ var ReactDefaultBatchingStrategy = {
 module.exports = ReactDefaultBatchingStrategy;
 
 /***/ }),
-/* 404 */
+/* 403 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42015,25 +41982,25 @@ module.exports = ReactDefaultBatchingStrategy;
 
 
 
-var ARIADOMPropertyConfig = __webpack_require__(373);
-var BeforeInputEventPlugin = __webpack_require__(375);
-var ChangeEventPlugin = __webpack_require__(377);
-var DefaultEventPluginOrder = __webpack_require__(379);
-var EnterLeaveEventPlugin = __webpack_require__(380);
-var HTMLDOMPropertyConfig = __webpack_require__(383);
-var ReactComponentBrowserEnvironment = __webpack_require__(385);
-var ReactDOMComponent = __webpack_require__(388);
+var ARIADOMPropertyConfig = __webpack_require__(372);
+var BeforeInputEventPlugin = __webpack_require__(374);
+var ChangeEventPlugin = __webpack_require__(376);
+var DefaultEventPluginOrder = __webpack_require__(378);
+var EnterLeaveEventPlugin = __webpack_require__(379);
+var HTMLDOMPropertyConfig = __webpack_require__(382);
+var ReactComponentBrowserEnvironment = __webpack_require__(384);
+var ReactDOMComponent = __webpack_require__(387);
 var ReactDOMComponentTree = __webpack_require__(15);
-var ReactDOMEmptyComponent = __webpack_require__(390);
-var ReactDOMTreeTraversal = __webpack_require__(400);
-var ReactDOMTextComponent = __webpack_require__(398);
-var ReactDefaultBatchingStrategy = __webpack_require__(403);
-var ReactEventListener = __webpack_require__(407);
-var ReactInjection = __webpack_require__(409);
-var ReactReconcileTransaction = __webpack_require__(415);
-var SVGDOMPropertyConfig = __webpack_require__(420);
-var SelectEventPlugin = __webpack_require__(421);
-var SimpleEventPlugin = __webpack_require__(422);
+var ReactDOMEmptyComponent = __webpack_require__(389);
+var ReactDOMTreeTraversal = __webpack_require__(399);
+var ReactDOMTextComponent = __webpack_require__(397);
+var ReactDefaultBatchingStrategy = __webpack_require__(402);
+var ReactEventListener = __webpack_require__(406);
+var ReactInjection = __webpack_require__(408);
+var ReactReconcileTransaction = __webpack_require__(414);
+var SVGDOMPropertyConfig = __webpack_require__(419);
+var SelectEventPlugin = __webpack_require__(420);
+var SimpleEventPlugin = __webpack_require__(421);
 
 var alreadyInjected = false;
 
@@ -42090,7 +42057,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 405 */
+/* 404 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42115,7 +42082,7 @@ var REACT_ELEMENT_TYPE = typeof Symbol === 'function' && Symbol['for'] && Symbol
 module.exports = REACT_ELEMENT_TYPE;
 
 /***/ }),
-/* 406 */
+/* 405 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42152,7 +42119,7 @@ var ReactEventEmitterMixin = {
 module.exports = ReactEventEmitterMixin;
 
 /***/ }),
-/* 407 */
+/* 406 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42312,7 +42279,7 @@ var ReactEventListener = {
 module.exports = ReactEventListener;
 
 /***/ }),
-/* 408 */
+/* 407 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42351,7 +42318,7 @@ var ReactHostOperationHistoryHook = {
 module.exports = ReactHostOperationHistoryHook;
 
 /***/ }),
-/* 409 */
+/* 408 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42390,7 +42357,7 @@ var ReactInjection = {
 module.exports = ReactInjection;
 
 /***/ }),
-/* 410 */
+/* 409 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42433,7 +42400,7 @@ module.exports = ReactInvalidSetStateWarningHook;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 411 */
+/* 410 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42449,7 +42416,7 @@ module.exports = ReactInvalidSetStateWarningHook;
 
 
 
-var adler32 = __webpack_require__(433);
+var adler32 = __webpack_require__(432);
 
 var TAG_END = /\/?>/;
 var COMMENT_START = /^<\!\-\-/;
@@ -42488,7 +42455,7 @@ var ReactMarkupChecksum = {
 module.exports = ReactMarkupChecksum;
 
 /***/ }),
-/* 412 */
+/* 411 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42512,10 +42479,10 @@ var ReactInstrumentation = __webpack_require__(22);
 
 var ReactCurrentOwner = __webpack_require__(27);
 var ReactReconciler = __webpack_require__(49);
-var ReactChildReconciler = __webpack_require__(384);
+var ReactChildReconciler = __webpack_require__(383);
 
 var emptyFunction = __webpack_require__(19);
-var flattenChildren = __webpack_require__(437);
+var flattenChildren = __webpack_require__(436);
 var invariant = __webpack_require__(2);
 
 /**
@@ -42940,7 +42907,7 @@ module.exports = ReactMultiChild;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 413 */
+/* 412 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43039,7 +43006,7 @@ module.exports = ReactOwner;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 414 */
+/* 413 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43070,7 +43037,7 @@ module.exports = ReactPropTypeLocationNames;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 415 */
+/* 414 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43254,7 +43221,7 @@ module.exports = ReactReconcileTransaction;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 416 */
+/* 415 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43273,7 +43240,7 @@ module.exports = ReactReconcileTransaction;
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var ReactOwner = __webpack_require__(413);
+var ReactOwner = __webpack_require__(412);
 
 var ReactRef = {};
 
@@ -43350,7 +43317,7 @@ ReactRef.detachRefs = function (instance, element) {
 module.exports = ReactRef;
 
 /***/ }),
-/* 417 */
+/* 416 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43371,7 +43338,7 @@ var _assign = __webpack_require__(14);
 var PooledClass = __webpack_require__(39);
 var Transaction = __webpack_require__(76);
 var ReactInstrumentation = __webpack_require__(22);
-var ReactServerUpdateQueue = __webpack_require__(418);
+var ReactServerUpdateQueue = __webpack_require__(417);
 
 /**
  * Executed within the scope of the `Transaction` instance. Consider these as
@@ -43446,7 +43413,7 @@ module.exports = ReactServerRenderingTransaction;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 418 */
+/* 417 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43590,7 +43557,7 @@ module.exports = ReactServerUpdateQueue;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 419 */
+/* 418 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43609,7 +43576,7 @@ module.exports = ReactServerUpdateQueue;
 module.exports = '15.6.1';
 
 /***/ }),
-/* 420 */
+/* 419 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43916,7 +43883,7 @@ Object.keys(ATTRS).forEach(function (key) {
 module.exports = SVGDOMPropertyConfig;
 
 /***/ }),
-/* 421 */
+/* 420 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44109,7 +44076,7 @@ var SelectEventPlugin = {
 module.exports = SelectEventPlugin;
 
 /***/ }),
-/* 422 */
+/* 421 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44131,17 +44098,17 @@ var _prodInvariant = __webpack_require__(10);
 var EventListener = __webpack_require__(148);
 var EventPropagators = __webpack_require__(48);
 var ReactDOMComponentTree = __webpack_require__(15);
-var SyntheticAnimationEvent = __webpack_require__(423);
-var SyntheticClipboardEvent = __webpack_require__(424);
+var SyntheticAnimationEvent = __webpack_require__(422);
+var SyntheticClipboardEvent = __webpack_require__(423);
 var SyntheticEvent = __webpack_require__(30);
-var SyntheticFocusEvent = __webpack_require__(427);
-var SyntheticKeyboardEvent = __webpack_require__(429);
+var SyntheticFocusEvent = __webpack_require__(426);
+var SyntheticKeyboardEvent = __webpack_require__(428);
 var SyntheticMouseEvent = __webpack_require__(75);
-var SyntheticDragEvent = __webpack_require__(426);
-var SyntheticTouchEvent = __webpack_require__(430);
-var SyntheticTransitionEvent = __webpack_require__(431);
+var SyntheticDragEvent = __webpack_require__(425);
+var SyntheticTouchEvent = __webpack_require__(429);
+var SyntheticTransitionEvent = __webpack_require__(430);
 var SyntheticUIEvent = __webpack_require__(50);
-var SyntheticWheelEvent = __webpack_require__(432);
+var SyntheticWheelEvent = __webpack_require__(431);
 
 var emptyFunction = __webpack_require__(19);
 var getEventCharCode = __webpack_require__(121);
@@ -44341,7 +44308,7 @@ module.exports = SimpleEventPlugin;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 423 */
+/* 422 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44385,7 +44352,7 @@ SyntheticEvent.augmentClass(SyntheticAnimationEvent, AnimationEventInterface);
 module.exports = SyntheticAnimationEvent;
 
 /***/ }),
-/* 424 */
+/* 423 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44428,7 +44395,7 @@ SyntheticEvent.augmentClass(SyntheticClipboardEvent, ClipboardEventInterface);
 module.exports = SyntheticClipboardEvent;
 
 /***/ }),
-/* 425 */
+/* 424 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44469,7 +44436,7 @@ SyntheticEvent.augmentClass(SyntheticCompositionEvent, CompositionEventInterface
 module.exports = SyntheticCompositionEvent;
 
 /***/ }),
-/* 426 */
+/* 425 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44510,7 +44477,7 @@ SyntheticMouseEvent.augmentClass(SyntheticDragEvent, DragEventInterface);
 module.exports = SyntheticDragEvent;
 
 /***/ }),
-/* 427 */
+/* 426 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44551,7 +44518,7 @@ SyntheticUIEvent.augmentClass(SyntheticFocusEvent, FocusEventInterface);
 module.exports = SyntheticFocusEvent;
 
 /***/ }),
-/* 428 */
+/* 427 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44593,7 +44560,7 @@ SyntheticEvent.augmentClass(SyntheticInputEvent, InputEventInterface);
 module.exports = SyntheticInputEvent;
 
 /***/ }),
-/* 429 */
+/* 428 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44612,7 +44579,7 @@ module.exports = SyntheticInputEvent;
 var SyntheticUIEvent = __webpack_require__(50);
 
 var getEventCharCode = __webpack_require__(121);
-var getEventKey = __webpack_require__(438);
+var getEventKey = __webpack_require__(437);
 var getEventModifierState = __webpack_require__(122);
 
 /**
@@ -44682,7 +44649,7 @@ SyntheticUIEvent.augmentClass(SyntheticKeyboardEvent, KeyboardEventInterface);
 module.exports = SyntheticKeyboardEvent;
 
 /***/ }),
-/* 430 */
+/* 429 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44732,7 +44699,7 @@ SyntheticUIEvent.augmentClass(SyntheticTouchEvent, TouchEventInterface);
 module.exports = SyntheticTouchEvent;
 
 /***/ }),
-/* 431 */
+/* 430 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44776,7 +44743,7 @@ SyntheticEvent.augmentClass(SyntheticTransitionEvent, TransitionEventInterface);
 module.exports = SyntheticTransitionEvent;
 
 /***/ }),
-/* 432 */
+/* 431 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44832,7 +44799,7 @@ SyntheticMouseEvent.augmentClass(SyntheticWheelEvent, WheelEventInterface);
 module.exports = SyntheticWheelEvent;
 
 /***/ }),
-/* 433 */
+/* 432 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44881,7 +44848,7 @@ function adler32(data) {
 module.exports = adler32;
 
 /***/ }),
-/* 434 */
+/* 433 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44901,7 +44868,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 var _prodInvariant = __webpack_require__(10);
 
-var ReactPropTypeLocationNames = __webpack_require__(414);
+var ReactPropTypeLocationNames = __webpack_require__(413);
 var ReactPropTypesSecret = __webpack_require__(184);
 
 var invariant = __webpack_require__(2);
@@ -44976,7 +44943,7 @@ module.exports = checkReactTypeSpec;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 435 */
+/* 434 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45061,7 +45028,7 @@ module.exports = dangerousStyleValue;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 436 */
+/* 435 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45127,7 +45094,7 @@ module.exports = findDOMNode;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 437 */
+/* 436 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45211,7 +45178,7 @@ module.exports = flattenChildren;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 438 */
+/* 437 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45328,7 +45295,7 @@ function getEventKey(nativeEvent) {
 module.exports = getEventKey;
 
 /***/ }),
-/* 439 */
+/* 438 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45374,7 +45341,7 @@ function getIteratorFn(maybeIterable) {
 module.exports = getIteratorFn;
 
 /***/ }),
-/* 440 */
+/* 439 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45453,7 +45420,7 @@ function getNodeForCharacterOffset(root, offset) {
 module.exports = getNodeForCharacterOffset;
 
 /***/ }),
-/* 441 */
+/* 440 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45559,7 +45526,7 @@ function getVendorPrefixedEventName(eventName) {
 module.exports = getVendorPrefixedEventName;
 
 /***/ }),
-/* 442 */
+/* 441 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45590,7 +45557,7 @@ function quoteAttributeValueForBrowser(value) {
 module.exports = quoteAttributeValueForBrowser;
 
 /***/ }),
-/* 443 */
+/* 442 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45611,7 +45578,7 @@ var ReactMount = __webpack_require__(182);
 module.exports = ReactMount.renderSubtreeIntoContainer;
 
 /***/ }),
-/* 444 */
+/* 443 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45638,7 +45605,7 @@ function defineProperty(o, p, attr) {
 }
 
 /***/ }),
-/* 445 */
+/* 444 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45649,7 +45616,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.passiveOption = exports.detachEvent = exports.attachEvent = exports.removeEventListener = exports.addEventListener = exports.canUseDOM = undefined;
 
-var _defineProperty = __webpack_require__(444);
+var _defineProperty = __webpack_require__(443);
 
 var _defineProperty2 = _interopRequireDefault(_defineProperty);
 
@@ -45694,7 +45661,7 @@ var passiveOption = exports.passiveOption = function () {
 }();
 
 /***/ }),
-/* 446 */
+/* 445 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45796,7 +45763,6 @@ function createProvider() {
     children: _propTypes2.default.element.isRequired
   };
   Provider.childContextTypes = (_Provider$childContex = {}, _Provider$childContex[storeKey] = _PropTypes.storeShape.isRequired, _Provider$childContex[subscriptionKey] = _PropTypes.subscriptionShape, _Provider$childContex);
-  Provider.displayName = 'Provider';
 
   return Provider;
 }
@@ -45805,7 +45771,7 @@ exports.default = createProvider();
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 447 */
+/* 446 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45823,23 +45789,23 @@ var _connectAdvanced = __webpack_require__(194);
 
 var _connectAdvanced2 = _interopRequireDefault(_connectAdvanced);
 
-var _shallowEqual = __webpack_require__(455);
+var _shallowEqual = __webpack_require__(454);
 
 var _shallowEqual2 = _interopRequireDefault(_shallowEqual);
 
-var _mapDispatchToProps = __webpack_require__(448);
+var _mapDispatchToProps = __webpack_require__(447);
 
 var _mapDispatchToProps2 = _interopRequireDefault(_mapDispatchToProps);
 
-var _mapStateToProps = __webpack_require__(449);
+var _mapStateToProps = __webpack_require__(448);
 
 var _mapStateToProps2 = _interopRequireDefault(_mapStateToProps);
 
-var _mergeProps = __webpack_require__(450);
+var _mergeProps = __webpack_require__(449);
 
 var _mergeProps2 = _interopRequireDefault(_mergeProps);
 
-var _selectorFactory = __webpack_require__(451);
+var _selectorFactory = __webpack_require__(450);
 
 var _selectorFactory2 = _interopRequireDefault(_selectorFactory);
 
@@ -45955,7 +45921,7 @@ function createConnect() {
 exports.default = createConnect();
 
 /***/ }),
-/* 448 */
+/* 447 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45994,7 +45960,7 @@ function whenMapDispatchToPropsIsObject(mapDispatchToProps) {
 exports.default = [whenMapDispatchToPropsIsFunction, whenMapDispatchToPropsIsMissing, whenMapDispatchToPropsIsObject];
 
 /***/ }),
-/* 449 */
+/* 448 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46021,7 +45987,7 @@ function whenMapStateToPropsIsMissing(mapStateToProps) {
 exports.default = [whenMapStateToPropsIsFunction, whenMapStateToPropsIsMissing];
 
 /***/ }),
-/* 450 */
+/* 449 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46095,7 +46061,7 @@ exports.default = [whenMergePropsIsFunction, whenMergePropsIsOmitted];
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 451 */
+/* 450 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46108,7 +46074,7 @@ exports.impureFinalPropsSelectorFactory = impureFinalPropsSelectorFactory;
 exports.pureFinalPropsSelectorFactory = pureFinalPropsSelectorFactory;
 exports.default = finalPropsSelectorFactory;
 
-var _verifySubselectors = __webpack_require__(452);
+var _verifySubselectors = __webpack_require__(451);
 
 var _verifySubselectors2 = _interopRequireDefault(_verifySubselectors);
 
@@ -46221,7 +46187,7 @@ function finalPropsSelectorFactory(dispatch, _ref2) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 452 */
+/* 451 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46255,7 +46221,7 @@ function verifySubselectors(mapStateToProps, mapDispatchToProps, mergeProps, dis
 }
 
 /***/ }),
-/* 453 */
+/* 452 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46266,7 +46232,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.connect = exports.connectAdvanced = exports.createProvider = exports.Provider = undefined;
 
-var _Provider = __webpack_require__(446);
+var _Provider = __webpack_require__(445);
 
 var _Provider2 = _interopRequireDefault(_Provider);
 
@@ -46274,7 +46240,7 @@ var _connectAdvanced = __webpack_require__(194);
 
 var _connectAdvanced2 = _interopRequireDefault(_connectAdvanced);
 
-var _connect = __webpack_require__(447);
+var _connect = __webpack_require__(446);
 
 var _connect2 = _interopRequireDefault(_connect);
 
@@ -46286,7 +46252,7 @@ exports.connectAdvanced = _connectAdvanced2.default;
 exports.connect = _connect2.default;
 
 /***/ }),
-/* 454 */
+/* 453 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46326,6 +46292,9 @@ function createListenerCollection() {
       for (var i = 0; i < listeners.length; i++) {
         listeners[i]();
       }
+    },
+    get: function get() {
+      return next;
     },
     subscribe: function subscribe(listener) {
       var isSubscribed = true;
@@ -46390,7 +46359,7 @@ var Subscription = function () {
 exports.default = Subscription;
 
 /***/ }),
-/* 455 */
+/* 454 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46433,6 +46402,81 @@ function shallowEqual(objA, objB) {
 
   return true;
 }
+
+/***/ }),
+/* 455 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright 2015, Yahoo! Inc.
+ * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
+ */
+
+
+var REACT_STATICS = {
+    childContextTypes: true,
+    contextTypes: true,
+    defaultProps: true,
+    displayName: true,
+    getDefaultProps: true,
+    mixins: true,
+    propTypes: true,
+    type: true
+};
+
+var KNOWN_STATICS = {
+    name: true,
+    length: true,
+    prototype: true,
+    caller: true,
+    callee: true,
+    arguments: true,
+    arity: true
+};
+
+var getOwnPropertySymbols = Object.getOwnPropertySymbols;
+var hasOwnProperty = Object.prototype.hasOwnProperty;
+var propIsEnumerable = Object.prototype.propertyIsEnumerable;
+var getPrototypeOf = Object.getPrototypeOf;
+var objectPrototype = getPrototypeOf && getPrototypeOf(Object);
+var getOwnPropertyNames = Object.getOwnPropertyNames;
+
+module.exports = function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
+    if (typeof sourceComponent !== 'string') {
+        // don't hoist over string (html) components
+
+        if (objectPrototype) {
+            var inheritedComponent = getPrototypeOf(sourceComponent);
+            if (inheritedComponent && inheritedComponent !== objectPrototype) {
+                hoistNonReactStatics(targetComponent, inheritedComponent, blacklist);
+            }
+        }
+
+        var keys = getOwnPropertyNames(sourceComponent);
+
+        if (getOwnPropertySymbols) {
+            keys = keys.concat(getOwnPropertySymbols(sourceComponent));
+        }
+
+        for (var i = 0; i < keys.length; ++i) {
+            var key = keys[i];
+            if (!REACT_STATICS[key] && !KNOWN_STATICS[key] && (!blacklist || !blacklist[key])) {
+                // Only hoist enumerables and non-enumerable functions
+                if (propIsEnumerable.call(sourceComponent, key) || typeof sourceComponent[key] === 'function') {
+                    try {
+                        // Avoid failures from read-only properties
+                        targetComponent[key] = sourceComponent[key];
+                    } catch (e) {}
+                }
+            }
+        }
+
+        return targetComponent;
+    }
+
+    return targetComponent;
+};
 
 /***/ }),
 /* 456 */
@@ -47680,7 +47724,7 @@ exports.default = _SwipeableViews2.default; //  weak
 
 
 
-var EventConstants = __webpack_require__(381);
+var EventConstants = __webpack_require__(380);
 var EventPluginUtils = __webpack_require__(73);
 var EventPropagators = __webpack_require__(48);
 var SyntheticUIEvent = __webpack_require__(50);
@@ -50162,11 +50206,11 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _arrowBack = __webpack_require__(357);
+var _arrowBack = __webpack_require__(356);
 
 var _arrowBack2 = _interopRequireDefault(_arrowBack);
 
-var _arrowForward = __webpack_require__(358);
+var _arrowForward = __webpack_require__(357);
 
 var _arrowForward2 = _interopRequireDefault(_arrowForward);
 
@@ -50590,7 +50634,7 @@ var _reactSwipeableViews = __webpack_require__(462);
 
 var _reactSwipeableViews2 = _interopRequireDefault(_reactSwipeableViews);
 
-var _RaisedButton = __webpack_require__(340);
+var _RaisedButton = __webpack_require__(339);
 
 var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
 
@@ -50731,8 +50775,8 @@ var Book = function (_Component) {
           fontSize: 15,
           textAlign: 'left',
           minBoundary: 12,
-          maxBoundary: 50,
-          skipFactor: 50
+          maxBoundary: 25,
+          skipFactor: 20
         }
       };
 
@@ -50881,9 +50925,7 @@ var Helper = function (_Component) {
       // should be a reducer here TBD
       switch (helpEvent.type) {
         case 'CHANGE_LANGUAGE':
-          //props.context.handleLangChange(helpEvent.lang)
-          var rollUp = context.processRollUp(context.state.page);
-          context.setState({ rollUp: rollUp, lang: helpEvent.lang, showHelperDialog: false });
+          context.setState({ lang: helpEvent.lang, showHelperDialog: false });
           break;
         case 'QUIZ_MODE':
           context.setState({ quizMode: !context.state.quizMode, quizButtonClicked: false, showHelperDialog: false });
@@ -51011,7 +51053,7 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Checkbox = __webpack_require__(323);
+var _Checkbox = __webpack_require__(322);
 
 var _Checkbox2 = _interopRequireDefault(_Checkbox);
 
@@ -51151,7 +51193,7 @@ var _MenuItem2 = _interopRequireDefault(_MenuItem);
 
 var _controlText = __webpack_require__(63);
 
-var _done = __webpack_require__(356);
+var _done = __webpack_require__(355);
 
 var _done2 = _interopRequireDefault(_done);
 
@@ -52173,22 +52215,10 @@ module.exports = __webpack_require__.p + "28d579a573dd5d39f34e4e38f2fc6030.png";
 /* 515 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "14d5961315ab0c05048006832c7212c3.png";
+module.exports = __webpack_require__.p + "7136e9552e9fdf89d8d6d6e132c8a487.png";
 
 /***/ }),
 /* 516 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "7b8fa1b2287490559b7dcbd519bf46e2.png";
-
-/***/ }),
-/* 517 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "d43156e4d1159cb046400c2982fdd584.png";
-
-/***/ }),
-/* 518 */
 /***/ (function(module, exports) {
 
 module.exports = function() {
