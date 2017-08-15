@@ -9,11 +9,6 @@ body {
   min-width: 100%;
 }
 
-html {
-  /*overflow-y: hidden;*/
-}
-
-
 /* disable copy */
 body, html{
     -webkit-touch-callout: none;
@@ -22,4 +17,16 @@ body, html{
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+/* smooth scrolling */
+body, html {
+    -webkit-overflow-scrolling: touch;
+    -webkit-transform: translateZ(0px);
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-perspective: 1000;
+}
+
+* {
+    -webkit-overflow-scrolling: touch;
 }

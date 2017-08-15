@@ -33,9 +33,7 @@ const c0 = (lang) => {
     }
     return (
       <div>
-        <img src={require('../img/c10.png')} alt="icon_title" />
-        <img style={styles.middleImg} src={require('../img/c11.png')} alt="icon_title" className="fit shim-left"  />
-        <img style={styles.bottomImg} src={require('../img/c12.png')} alt="icon_series_num" className="fit shim-left" />
+        <img src={require('../img/front-cover.png')} alt="icon_title" />
       </div>
     )
 }
